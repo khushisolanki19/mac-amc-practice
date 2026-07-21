@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MAC — practice AMC 10/12 style problems with filters, solutions, and local progress tracking." />
+  <title>MAC — AMC Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="fixes.css" />
+</head>
+<body>
+  <header class="topbar">
+    <nav aria-label="Primary navigation">
+      <button class="nav-btn active" data-view="practice">Practice</button>
+      <button class="nav-btn" data-view="browse">Browse</button>
+      <button class="nav-btn" data-view="stats">My Stats</button>
+      <button class="nav-btn" data-view="leaderboard">Leaderboard</button>
+    </nav>
+    <a class="brand" href="#" data-view="practice" aria-label="MAC home">
+      <span class="brand-mark">MAC</span>
+      <span class="brand-sub">AMC Practice</span>
+    </a>
+    <button id="signInBtn" class="nav-btn">Sign In</button>
+  </header>
+
+  <main>
+    <section id="practiceView" class="view practice-layout">
+      <aside class="filters card">
+        <h2>Filters</h2>
+        <fieldset>
+          <legend>Exam</legend>
+          <label class="toggle-row"><input type="checkbox" id="amc10" checked><span class="toggle"></span>AMC 10</label>
+          <label class="toggle-row"><input type="checkbox" id="amc12" checked><span class="toggle"></span>AMC 12</label>
+        </fieldset>
+        <div class="range-head"><span>Difficulty range</span><strong id="rangeLabel">1 – 9</strong></div>
+        <div class="ranges">
+          <input id="minDifficulty" aria-label="Minimum difficulty" type="range" min="1" max="9" value="1">
+          <input id="maxDifficulty" aria-label="Maximum difficulty" type="range" min="1" max="9" value="9">
+        </div>
+        <div class="ticks"><span>1</span><span>3</span><span>5</span><span>7</span><span>9</span></div>
+        <label for="typeFilter">Problem type</label>
+        <select id="typeFilter">
+          <option>All types</option>
+          <option>Algebra</option>
+          <option>Geometry</option>
+          <option>Number Theory</option>
+          <option>Combinatorics</option>
+          <option>Probability</option>
+        </select>
+        <button id="randomizeBtn" class="primary">↝ &nbsp;Randomize</button>
+        <p id="poolCount" class="pool"></p>
+      </aside>
+
+      <section id="problemArea" class="problem-area card" aria-live="polite">
+        <div id="emptyState">
+          <p class="hero-brand">MAC</p>
+          <h2>Ready to practice?</h2>
+          <p>Over <strong id="totalCount">100</strong> AMC 10/12–style problems. Set your filters and hit <strong>Randomize</strong>.</p>
+          <button id="startBtn" class="primary">Start practicing</button>
+        </div>
+        <div id="problemState" hidden>
+          <div id="problemMeta" class="meta"></div>
+          <p id="question" class="question"></p>
+          <div id="answers" class="answers"></div>
+          <div class="actions">
+            <button id="submitBtn" class="primary" disabled>Submit answer</button>
+            <button id="solutionBtn" class="secondary">Show solution</button>
+            <button id="anotherBtn" class="secondary">Another one</button>
+          </div>
+          <div id="feedback" class="feedback" hidden></div>
+          <section id="recap" class="recap" hidden></section>
+        </div>
+      </section>
+    </section>
+
+    <section id="browseView" class="view dashboard" hidden>
+      <p class="eyebrow">Problem bank</p>
+      <h2>Browse all problems</h2>
+      <p class="lede">Search and open any problem from the pool. Filters on Practice also apply here.</p>
+      <div class="browse-toolbar card">
+        <label class="search-label">
+          <span>Search</span>
+          <input id="browseSearch" type="search" placeholder="Topic, year, or keyword…" autocomplete="off">
+        </label>
+        <p id="browseCount" class="browse-count"></p>
+      </div>
+      <div id="browseList" class="browse-list"></div>
+    </section>
+
+    <section id="statsView" class="view dashboard card" hidden>
+      <p class="eyebrow">Your progress</p>
+      <h2>Practice stats</h2>
+      <div id="statsGrid" class="stats-grid"></div>
+      <h3>Performance by topic</h3>
+      <div id="topicStats" class="topic-stats"></div>
+      <button id="clearStats" class="secondary">Reset local stats</button>
+    </section>
+
+    <section id="leaderboardView" class="view dashboard" hidden>
+      <p class="eyebrow">Community</p>
+      <h2>Leaderboards</h2>
+      <div class="board-grid">
+        <article class="card board">
+          <h3>Daily leaderboard</h3>
+          <p>Resets daily at midnight UTC.</p>
+          <ol>
+            <li><span><b>1</b> Aarna</span><strong>84</strong></li>
+            <li><span><b>2</b> MathWhiz</span><strong>62</strong></li>
+            <li><span><b>3</b> Local player</span><strong id="dailyScore">0</strong></li>
+          </ol>
+        </article>
+        <article class="card board">
+          <h3>Global leaderboard</h3>
+          <p>All-time top scores across every user.</p>
+          <ol>
+            <li><span><b>1</b> Aarna</span><strong>840</strong></li>
+            <li><span><b>2</b> EuclidFan</span><strong>516</strong></li>
+            <li><span><b>3</b> Local player</span><strong id="globalScore">0</strong></li>
+          </ol>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>MAC · Original AMC-style practice set · Not affiliated with MAA</p>
+    <p id="repoLink" class="repo-link"></p>
+  </footer>
+
+  <dialog id="authDialog">
+    <button id="closeDialog" class="close" aria-label="Close account modal">×</button>
+    <p class="eyebrow">Account</p>
+    <h2>Welcome back</h2>
+    <p>Sign in or create a local demo account to personalize this browser.</p>
+    <div class="auth-tabs">
+      <button class="active" data-auth="Sign in">Sign in</button>
+      <button data-auth="Create account">Create account</button>
+    </div>
+    <label>Email<input id="email" type="email" placeholder="you@example.com"></label>
+    <label>Password<input id="password" type="password" placeholder="••••••••"></label>
+    <button id="authSubmit" class="primary">Sign in</button>
+    <p id="authMessage" class="auth-message"></p>
+  </dialog>
+
+  <script src="problems.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
