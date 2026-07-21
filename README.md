@@ -1,46 +1,44 @@
 # MAC — AMC Practice
 
-Practice **AMC 10 / AMC 12–style** contest math with filters, instant feedback, short solutions, browse mode, and local progress tracking — plus an **Official AMC** tab that links to real contests.
+**Live:** https://khushisolanki19.github.io/mac-amc-practice/  
+**Repo:** https://github.com/khushisolanki19/mac-amc-practice
 
-> **Not affiliated with the MAA.** Official AMC problems are © Mathematical Association of America. This site does **not** republish official problem text; the Official tab links out to the [MAA AMC site](https://maa.org/student-programs/amc/) and [AoPS Wiki](https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions).
+Local-first AMC 10/12 trainer with practice modes, mock exams, hints, progress charts, and a full official-contest link archive.
 
-## Features
+> **Not affiliated with the MAA.** Official AMC problem text is © MAA. The Official tab links to [AoPS Wiki](https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions) and [MAA AMC](https://maa.org/student-programs/amc/) instead of republishing contest wording.
 
-- **120+** original AMC-style problems across Algebra, Geometry, Number Theory, Combinatorics, and Probability
-- **Official AMC** hub: 15 years × AMC 10/12 A/B × 25 problems ≈ **1,500 links** to AoPS Wiki + MAA resources
-- Filter by exam (AMC 10 / 12), difficulty (1–9), and topic
-- Random practice that avoids recent repeats
-- Browse + search the original practice bank
-- Local stats, streak, and topic accuracy (saved in your browser)
-- Keyboard: `1`–`5` select answers, `Enter` submit, `N` next problem
+## Features (shipped)
+
+- 120+ original practice problems with hints, step-by-step solutions, alt checks
+- Official archive links: AMC 10/12 A & B, **2000–2024** (~2,500 problem links)
+- Modes: random, topic, adaptive, incorrect-only, bookmarks, daily challenge + streaks
+- Timed 25-question mock exams with official-style scoring (6 / 1.5 / 0)
+- Scratchpad, progressive hints, miss-reason logging, bookmarks, report
+- Stats: topic & difficulty accuracy, avg time, 14-day chart, review queue, readiness estimate
+- CSV export · light/dark theme · mobile filter drawer · KaTeX · A–E / Enter / N / H keys · reduced motion
+
+## Not yet (needs backend)
+
+- Real cloud sign-in / sync across devices
+- Teacher class codes, assignments, class dashboards
+- True multi-user private leaderboards
+- PDF export
 
 ## Run locally
-
-Open `index.html` in a browser, or from this folder:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then visit [http://localhost:8000](http://localhost:8000).
+Open http://localhost:8000
 
-## Deploy on GitHub Pages
-
-1. Push this repo to GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, set Source to **Deploy from a branch**.
-4. Choose branch `main` and folder `/ (root)`, then Save.
-
-Your site will be at:
-
-`https://<your-username>.github.io/<repo-name>/`
-
-## Project structure
+## Files
 
 | File | Purpose |
 |------|---------|
 | `index.html` | App shell |
-| `style.css` / `fixes.css` | Styles |
-| `problems.js` | Original practice problem bank |
-| `official.js` | Official contest link catalog (AoPS / MAA) |
-| `script.js` | Practice UI logic |
+| `style.css` / `fixes.css` | Themes & layout |
+| `problems.js` | Original practice bank |
+| `official.js` | Official contest link catalog |
+| `storage.js` | Local persistence |
+| `script.js` | App logic |

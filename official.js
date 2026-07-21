@@ -2,10 +2,7 @@
  * Catalog of official AMC 10/12 contests.
  * Problem text is copyright MAA — we only link to AoPS Wiki / MAA, we do not host official wording.
  */
-const OFFICIAL_YEARS = [
-  2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015,
-  2014, 2013, 2012, 2011, 2010,
-];
+const OFFICIAL_YEARS = Array.from({ length: 2024 - 2000 + 1 }, (_, i) => 2024 - i);
 
 const OFFICIAL_CONTESTS = [
   { exam: 'AMC 10', version: 'A', label: 'AMC 10A' },

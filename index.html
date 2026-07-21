@@ -1,48 +1,69 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MAC — practice AMC 10/12 style problems with filters, solutions, and local progress tracking." />
+  <meta name="description" content="MAC — AMC 10/12 practice with mock exams, adaptive modes, hints, and progress tracking." />
   <title>MAC — AMC Practice</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="fixes.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="topbar">
+    <button id="drawerToggle" class="nav-btn drawer-toggle" aria-expanded="false" aria-controls="filtersDrawer">Filters</button>
     <nav aria-label="Primary navigation">
       <button class="nav-btn active" data-view="practice">Practice</button>
-      <button class="nav-btn" data-view="official">Official AMC</button>
+      <button class="nav-btn" data-view="modes">Modes</button>
+      <button class="nav-btn" data-view="official">Official</button>
       <button class="nav-btn" data-view="browse">Browse</button>
-      <button class="nav-btn" data-view="stats">My Stats</button>
-      <button class="nav-btn" data-view="leaderboard">Leaderboard</button>
+      <button class="nav-btn" data-view="stats">Stats</button>
+      <button class="nav-btn" data-view="leaderboard">Board</button>
     </nav>
     <a class="brand" href="#" data-view="practice" aria-label="MAC home">
       <span class="brand-mark">MAC</span>
       <span class="brand-sub">AMC Practice</span>
     </a>
-    <button id="signInBtn" class="nav-btn">Sign In</button>
+    <div class="top-actions">
+      <button id="themeBtn" class="nav-btn" type="button" aria-label="Toggle light and dark theme">Theme</button>
+      <button id="signInBtn" class="nav-btn" type="button">Profile</button>
+    </div>
   </header>
 
-  <main>
+  <div id="drawerBackdrop" class="drawer-backdrop" hidden></div>
+
+  <main id="main">
     <section id="practiceView" class="view practice-layout">
-      <aside class="filters card">
-        <h2>Filters</h2>
+      <aside id="filtersDrawer" class="filters card">
+        <div class="drawer-head">
+          <h2>Filters &amp; mode</h2>
+          <button id="drawerClose" class="nav-btn" type="button">Close</button>
+        </div>
+        <label for="modeSelect">Practice mode</label>
+        <select id="modeSelect">
+          <option value="random">Random practice</option>
+          <option value="topic">Topic-focused</option>
+          <option value="adaptive">Adaptive (weak areas)</option>
+          <option value="incorrect">Incorrect only</option>
+          <option value="bookmarks">Bookmarks only</option>
+          <option value="daily">Daily challenge</option>
+        </select>
         <fieldset>
           <legend>Exam</legend>
           <label class="toggle-row"><input type="checkbox" id="amc10" checked><span class="toggle"></span>AMC 10</label>
           <label class="toggle-row"><input type="checkbox" id="amc12" checked><span class="toggle"></span>AMC 12</label>
         </fieldset>
-        <div class="range-head"><span>Difficulty range</span><strong id="rangeLabel">1 – 9</strong></div>
+        <div class="range-head"><span>Difficulty</span><strong id="rangeLabel">1 – 9</strong></div>
         <div class="ranges">
           <input id="minDifficulty" aria-label="Minimum difficulty" type="range" min="1" max="9" value="1">
           <input id="maxDifficulty" aria-label="Maximum difficulty" type="range" min="1" max="9" value="9">
         </div>
         <div class="ticks"><span>1</span><span>3</span><span>5</span><span>7</span><span>9</span></div>
-        <label for="typeFilter">Problem type</label>
+        <label for="typeFilter">Topic</label>
         <select id="typeFilter">
           <option>All types</option>
           <option>Algebra</option>
@@ -51,25 +72,47 @@
           <option>Combinatorics</option>
           <option>Probability</option>
         </select>
-        <button id="randomizeBtn" class="primary">↝ &nbsp;Randomize</button>
+        <label for="practiceSearch">Keyword search</label>
+        <input id="practiceSearch" type="search" placeholder="Search question text…">
+        <button id="randomizeBtn" class="primary">↝ &nbsp;Next problem</button>
         <p id="poolCount" class="pool"></p>
+        <p class="hint-keys">Keys: A–E select · Enter submit · N next · H hint</p>
       </aside>
 
       <section id="problemArea" class="problem-area card" aria-live="polite">
         <div id="emptyState">
           <p class="hero-brand">MAC</p>
           <h2>Ready to practice?</h2>
-          <p>Over <strong id="totalCount">100</strong> AMC 10/12–style problems. Set your filters and hit <strong>Randomize</strong>.</p>
-          <button id="startBtn" class="primary">Start practicing</button>
+          <p><strong id="totalCount">100</strong> practice problems + a full official AMC archive via AoPS. Pick a mode and start.</p>
+          <div class="empty-actions">
+            <button id="startBtn" class="primary">Start practicing</button>
+            <button id="goModesBtn" class="secondary" data-view="modes">Practice modes</button>
+          </div>
         </div>
         <div id="problemState" hidden>
-          <div id="problemMeta" class="meta"></div>
-          <p id="question" class="question"></p>
+          <div class="problem-toolbar">
+            <div id="problemMeta" class="meta"></div>
+            <div class="tool-btns">
+              <span id="timerLive" class="timer-chip" hidden></span>
+              <button id="bookmarkBtn" class="secondary" type="button">Bookmark</button>
+              <button id="reportBtn" class="secondary" type="button">Report</button>
+            </div>
+          </div>
+          <div id="question" class="question"></div>
           <div id="answers" class="answers"></div>
           <div class="actions">
-            <button id="submitBtn" class="primary" disabled>Submit answer</button>
-            <button id="solutionBtn" class="secondary">Show solution</button>
-            <button id="anotherBtn" class="secondary">Another one</button>
+            <button id="hintBtn" class="secondary" type="button">Hint</button>
+            <button id="submitBtn" class="primary" disabled type="button">Submit answer</button>
+            <button id="solutionBtn" class="secondary" type="button">Show solution</button>
+            <button id="anotherBtn" class="secondary" type="button">Another one</button>
+            <button id="scratchToggle" class="secondary" type="button">Scratchpad</button>
+          </div>
+          <p id="hintBox" class="hint-box" hidden></p>
+          <div id="scratchWrap" class="scratch-wrap" hidden>
+            <canvas id="scratchpad" width="640" height="220" aria-label="Scratchpad drawing area"></canvas>
+            <div class="scratch-actions">
+              <button id="scratchClear" class="secondary" type="button">Clear pad</button>
+            </div>
           </div>
           <div id="feedback" class="feedback" hidden></div>
           <section id="recap" class="recap" hidden></section>
@@ -77,17 +120,70 @@
       </section>
     </section>
 
-    <section id="officialView" class="view dashboard" hidden>
-      <p class="eyebrow">From the contests</p>
-      <h2>Official AMC problems</h2>
-      <p class="lede">
-        Real AMC 10/12 problems are copyrighted by the
-        <a class="inline-link" href="https://maa.org/student-programs/amc/" target="_blank" rel="noopener">Mathematical Association of America</a>.
-        MAC does not republish them — instead we link you to each problem on the
-        <a class="inline-link" href="https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions" target="_blank" rel="noopener">AoPS Wiki</a>
-        (and to the official MAA site).
-      </p>
+    <section id="modesView" class="view dashboard" hidden>
+      <p class="eyebrow">Training</p>
+      <h2>Practice modes</h2>
+      <p class="lede">Mock exams use official AMC timing (75 minutes) and scoring (6 correct · 1.5 blank · 0 wrong). Practice points stay separate.</p>
+      <div class="mode-grid">
+        <article class="card mode-card">
+          <h3>Timed mock exam</h3>
+          <p>25 questions, 75:00 clock, AMC scoring explained at the end.</p>
+          <label for="mockExam">Exam</label>
+          <select id="mockExam">
+            <option value="AMC 10">AMC 10</option>
+            <option value="AMC 12">AMC 12</option>
+          </select>
+          <button id="startMockBtn" class="primary">Start mock</button>
+        </article>
+        <article class="card mode-card">
+          <h3>Daily challenge</h3>
+          <p>One seeded problem each day. Keep your streak alive.</p>
+          <p id="dailyStatus" class="mode-status"></p>
+          <button id="dailyBtn" class="primary">Today’s challenge</button>
+        </article>
+        <article class="card mode-card">
+          <h3>Adaptive drill</h3>
+          <p>Targets topics where your accuracy is lowest.</p>
+          <button id="adaptiveBtn" class="primary">Start adaptive</button>
+        </article>
+        <article class="card mode-card">
+          <h3>Review queue</h3>
+          <p>Revisit missed and bookmarked problems.</p>
+          <button id="reviewBtn" class="primary">Open review</button>
+        </article>
+      </div>
 
+      <div id="mockPanel" class="card mock-panel" hidden>
+        <div class="mock-head">
+          <div>
+            <p class="eyebrow">Mock exam in progress</p>
+            <h3 id="mockTitle">AMC Mock</h3>
+          </div>
+          <div class="mock-clock">
+            <span id="mockTimer">75:00</span>
+            <button id="endMockBtn" class="secondary" type="button">Finish exam</button>
+          </div>
+        </div>
+        <div id="mockProgress" class="mock-progress"></div>
+        <div id="mockQuestion" class="question"></div>
+        <div id="mockAnswers" class="answers"></div>
+        <div class="actions">
+          <button id="mockPrev" class="secondary" type="button">Previous</button>
+          <button id="mockNext" class="secondary" type="button">Next</button>
+          <button id="mockBlank" class="secondary" type="button">Leave blank</button>
+        </div>
+      </div>
+      <div id="mockResults" class="card mock-results" hidden></div>
+    </section>
+
+    <section id="officialView" class="view dashboard" hidden>
+      <p class="eyebrow">Full archive links</p>
+      <h2>Official AMC 10 / 12</h2>
+      <p class="lede">
+        2000–2024 archive (A &amp; B). Problem text is © MAA — MAC links to
+        <a class="inline-link" href="https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions" target="_blank" rel="noopener">AoPS Wiki</a>
+        and the <a class="inline-link" href="https://maa.org/student-programs/amc/" target="_blank" rel="noopener">MAA AMC site</a>.
+      </p>
       <div class="official-filters card">
         <fieldset>
           <legend>Exam</legend>
@@ -102,30 +198,28 @@
           <option value="A">A only</option>
           <option value="B">B only</option>
         </select>
-        <div class="range-head"><span>Problem # range</span><strong id="offRangeLabel">1 – 25</strong></div>
+        <div class="range-head"><span>Problem #</span><strong id="offRangeLabel">1 – 25</strong></div>
         <div class="ranges">
           <input id="offMinNum" aria-label="Minimum problem number" type="range" min="1" max="25" value="1">
           <input id="offMaxNum" aria-label="Maximum problem number" type="range" min="1" max="25" value="25">
         </div>
-        <div class="ticks"><span>1</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span></div>
-        <button id="offRandomBtn" class="primary">↝ &nbsp;Open random official problem</button>
+        <label for="offSearch">Search archive</label>
+        <input id="offSearch" type="search" placeholder="e.g. 2023 10A 15">
+        <button id="offRandomBtn" class="primary">Open random official problem</button>
         <p id="offPoolCount" class="pool"></p>
       </div>
-
       <div id="officialResources" class="resource-grid"></div>
-
-      <h3 class="official-list-title">Contests in this filter</h3>
+      <h3 class="official-list-title">Contests</h3>
       <div id="officialContestList" class="browse-list"></div>
     </section>
 
     <section id="browseView" class="view dashboard" hidden>
-      <p class="eyebrow">Original practice bank</p>
-      <h2>Browse practice problems</h2>
-      <p class="lede">Original MAC practice problems (not official MAA contests). Practice filters also apply here.</p>
+      <p class="eyebrow">Practice bank</p>
+      <h2>Browse &amp; search</h2>
       <div class="browse-toolbar card">
         <label class="search-label">
           <span>Search</span>
-          <input id="browseSearch" type="search" placeholder="Topic, year, or keyword…" autocomplete="off">
+          <input id="browseSearch" type="search" placeholder="Topic, year, keyword…" autocomplete="off">
         </label>
         <p id="browseCount" class="browse-count"></p>
       </div>
@@ -133,63 +227,75 @@
     </section>
 
     <section id="statsView" class="view dashboard card" hidden>
-      <p class="eyebrow">Your progress</p>
-      <h2>Practice stats</h2>
+      <p class="eyebrow">Progress</p>
+      <h2>Your stats</h2>
       <div id="statsGrid" class="stats-grid"></div>
-      <h3>Performance by topic</h3>
-      <div id="topicStats" class="topic-stats"></div>
-      <button id="clearStats" class="secondary">Reset local stats</button>
+      <div class="stats-split">
+        <div>
+          <h3>By topic</h3>
+          <div id="topicStats" class="topic-stats"></div>
+          <h3>By difficulty</h3>
+          <div id="diffStats" class="topic-stats"></div>
+        </div>
+        <div>
+          <h3>Last 14 days</h3>
+          <canvas id="chartCanvas" width="420" height="180" aria-label="Attempts chart"></canvas>
+          <h3>Readiness</h3>
+          <div id="readinessBox" class="readiness"></div>
+          <h3>Review queue</h3>
+          <div id="reviewList" class="browse-list"></div>
+        </div>
+      </div>
+      <div class="stats-actions">
+        <button id="exportCsvBtn" class="secondary" type="button">Export CSV</button>
+        <button id="clearStats" class="secondary" type="button">Reset local data</button>
+      </div>
+      <p class="lede">Cloud sync, class codes, and teacher dashboards need a backend account service — coming after this local-first release.</p>
     </section>
 
     <section id="leaderboardView" class="view dashboard" hidden>
       <p class="eyebrow">Community</p>
-      <h2>Leaderboards</h2>
+      <h2>Leaderboard</h2>
+      <p class="lede">Participation is private by default. Opt in from Profile to show your local practice points here.</p>
+      <label class="toggle-row board-opt">
+        <input type="checkbox" id="leaderboardOptIn"><span class="toggle"></span>
+        Show me on the local leaderboard
+      </label>
       <div class="board-grid">
         <article class="card board">
-          <h3>Daily leaderboard</h3>
-          <p>Resets daily at midnight UTC.</p>
-          <ol>
-            <li><span><b>1</b> Aarna</span><strong>84</strong></li>
-            <li><span><b>2</b> MathWhiz</span><strong>62</strong></li>
-            <li><span><b>3</b> Local player</span><strong id="dailyScore">0</strong></li>
-          </ol>
+          <h3>Practice points</h3>
+          <ol id="practiceBoard"></ol>
         </article>
         <article class="card board">
-          <h3>Global leaderboard</h3>
-          <p>All-time top scores across every user.</p>
-          <ol>
-            <li><span><b>1</b> Aarna</span><strong>840</strong></li>
-            <li><span><b>2</b> EuclidFan</span><strong>516</strong></li>
-            <li><span><b>3</b> Local player</span><strong id="globalScore">0</strong></li>
-          </ol>
+          <h3>Best mock score</h3>
+          <ol id="mockBoard"></ol>
         </article>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>MAC · Original practice + links to official contests · Not affiliated with MAA</p>
-    <p>Official AMC problems © Mathematical Association of America · linked via AoPS Wiki</p>
+    <p>MAC on GitHub · Not affiliated with MAA · Official problems © MAA (linked via AoPS)</p>
     <p id="repoLink" class="repo-link"></p>
   </footer>
 
   <dialog id="authDialog">
-    <button id="closeDialog" class="close" aria-label="Close account modal">×</button>
-    <p class="eyebrow">Account</p>
-    <h2>Welcome back</h2>
-    <p>Sign in or create a local demo account to personalize this browser.</p>
-    <div class="auth-tabs">
-      <button class="active" data-auth="Sign in">Sign in</button>
-      <button data-auth="Create account">Create account</button>
-    </div>
-    <label>Email<input id="email" type="email" placeholder="you@example.com"></label>
-    <label>Password<input id="password" type="password" placeholder="••••••••"></label>
-    <button id="authSubmit" class="primary">Sign in</button>
+    <button id="closeDialog" class="close" aria-label="Close">×</button>
+    <p class="eyebrow">Profile</p>
+    <h2>Student profile</h2>
+    <p>Saved in this browser. Secure cloud sync across devices is planned next (needs a backend).</p>
+    <label>Display name<input id="profileName" type="text" placeholder="Your name"></label>
+    <label>Email (optional)<input id="email" type="email" placeholder="you@example.com"></label>
+    <label class="toggle-row"><input type="checkbox" id="prefMotion"><span class="toggle"></span>Reduce motion</label>
+    <button id="authSubmit" class="primary">Save profile</button>
     <p id="authMessage" class="auth-message"></p>
   </dialog>
 
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
   <script src="problems.js"></script>
   <script src="official.js"></script>
+  <script src="storage.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
