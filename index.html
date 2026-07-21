@@ -7,15 +7,18 @@
   <title>MAC — AMC Practice</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <link rel="stylesheet" href="style.css?v=3" />
-  <link rel="stylesheet" href="fixes.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="fixes.css?v=4" />
 </head>
 <body>
   <header class="topbar">
-    <button id="drawerToggle" class="nav-btn drawer-toggle" aria-expanded="false" aria-controls="filtersDrawer">Filters</button>
+    <a class="brand" href="#" data-view="practice" aria-label="MAC home">
+      <span class="brand-mark">MAC</span>
+      <span class="brand-sub">AMC Practice</span>
+    </a>
     <nav aria-label="Primary navigation">
       <button class="nav-btn active" data-view="practice">Practice</button>
       <button class="nav-btn" data-view="modes">Modes</button>
@@ -24,12 +27,12 @@
       <button class="nav-btn" data-view="stats">Stats</button>
       <button class="nav-btn" data-view="leaderboard">Board</button>
     </nav>
-    <a class="brand" href="#" data-view="practice" aria-label="MAC home">
-      <span class="brand-mark">MAC</span>
-      <span class="brand-sub">AMC Practice</span>
-    </a>
     <div class="top-actions">
-      <button id="themeBtn" class="nav-btn" type="button" aria-label="Toggle light and dark theme">Theme</button>
+      <button id="drawerToggle" class="nav-btn drawer-toggle" aria-expanded="false" aria-controls="filtersDrawer">Filters</button>
+      <div class="theme-switch" role="group" aria-label="Color theme">
+        <button type="button" class="theme-opt" data-theme-set="light" aria-pressed="false">Light</button>
+        <button type="button" class="theme-opt" data-theme-set="dark" aria-pressed="true">Dark</button>
+      </div>
       <button id="signInBtn" class="nav-btn" type="button">Profile</button>
     </div>
   </header>
@@ -293,9 +296,9 @@
 
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-  <script src="problems.js?v=3"></script>
-  <script src="official.js?v=3"></script>
-  <script src="storage.js?v=3"></script>
-  <script src="script.js?v=3"></script>
+  <script src="problems.js?v=4"></script>
+  <script src="official.js?v=4"></script>
+  <script src="storage.js?v=4"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>

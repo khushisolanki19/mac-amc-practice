@@ -26,9 +26,13 @@ function persist() {
 }
 
 function applyTheme() {
-  document.documentElement.dataset.theme = state.prefs.theme || 'dark';
+  const theme = state.prefs.theme === 'light' ? 'light' : 'dark';
+  state.prefs.theme = theme;
+  document.documentElement.dataset.theme = theme;
   document.documentElement.classList.toggle('reduce-motion', !!state.prefs.reducedMotion);
-  $('themeBtn').textContent = state.prefs.theme === 'light' ? 'Dark' : 'Light';
+  document.querySelectorAll('[data-theme-set]').forEach((btn) => {
+    btn.setAttribute('aria-pressed', btn.dataset.themeSet === theme ? 'true' : 'false');
+  });
 }
 
 function renderMath(el) {
@@ -917,12 +921,14 @@ $('reviewBtn').onclick = () => {
   randomize();
 };
 
-$('themeBtn').onclick = () => {
-  state.prefs.theme = state.prefs.theme === 'light' ? 'dark' : 'light';
-  persist();
-  applyTheme();
-  drawChart();
-};
+document.querySelectorAll('[data-theme-set]').forEach((btn) => {
+  btn.onclick = () => {
+    state.prefs.theme = btn.dataset.themeSet;
+    persist();
+    applyTheme();
+    drawChart();
+  };
+});
 
 $('drawerToggle').onclick = () => {
   if (document.body.classList.contains('drawer-open')) closeDrawer();
