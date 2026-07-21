@@ -1,15 +1,16 @@
 # MAC — AMC Practice
 
-Practice **AMC 10 / AMC 12–style** contest math with filters, instant feedback, short solutions, browse mode, and local progress tracking.
+Practice **AMC 10 / AMC 12–style** contest math with filters, instant feedback, short solutions, browse mode, and local progress tracking — plus an **Official AMC** tab that links to real contests.
 
-> Sample practice set for learning. **Not affiliated with the MAA** and not official contest problems.
+> **Not affiliated with the MAA.** Official AMC problems are © Mathematical Association of America. This site does **not** republish official problem text; the Official tab links out to the [MAA AMC site](https://maa.org/student-programs/amc/) and [AoPS Wiki](https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions).
 
 ## Features
 
 - **120+** original AMC-style problems across Algebra, Geometry, Number Theory, Combinatorics, and Probability
+- **Official AMC** hub: 15 years × AMC 10/12 A/B × 25 problems ≈ **1,500 links** to AoPS Wiki + MAA resources
 - Filter by exam (AMC 10 / 12), difficulty (1–9), and topic
 - Random practice that avoids recent repeats
-- Browse + search the full bank
+- Browse + search the original practice bank
 - Local stats, streak, and topic accuracy (saved in your browser)
 - Keyboard: `1`–`5` select answers, `Enter` submit, `N` next problem
 
@@ -40,5 +41,6 @@ Your site will be at:
 |------|---------|
 | `index.html` | App shell |
 | `style.css` / `fixes.css` | Styles |
-| `problems.js` | Problem bank |
+| `problems.js` | Original practice problem bank |
+| `official.js` | Official contest link catalog (AoPS / MAA) |
 | `script.js` | Practice UI logic |

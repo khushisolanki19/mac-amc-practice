@@ -15,6 +15,7 @@
   <header class="topbar">
     <nav aria-label="Primary navigation">
       <button class="nav-btn active" data-view="practice">Practice</button>
+      <button class="nav-btn" data-view="official">Official AMC</button>
       <button class="nav-btn" data-view="browse">Browse</button>
       <button class="nav-btn" data-view="stats">My Stats</button>
       <button class="nav-btn" data-view="leaderboard">Leaderboard</button>
@@ -76,10 +77,51 @@
       </section>
     </section>
 
+    <section id="officialView" class="view dashboard" hidden>
+      <p class="eyebrow">From the contests</p>
+      <h2>Official AMC problems</h2>
+      <p class="lede">
+        Real AMC 10/12 problems are copyrighted by the
+        <a class="inline-link" href="https://maa.org/student-programs/amc/" target="_blank" rel="noopener">Mathematical Association of America</a>.
+        MAC does not republish them — instead we link you to each problem on the
+        <a class="inline-link" href="https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions" target="_blank" rel="noopener">AoPS Wiki</a>
+        (and to the official MAA site).
+      </p>
+
+      <div class="official-filters card">
+        <fieldset>
+          <legend>Exam</legend>
+          <label class="toggle-row"><input type="checkbox" id="offAmc10" checked><span class="toggle"></span>AMC 10</label>
+          <label class="toggle-row"><input type="checkbox" id="offAmc12" checked><span class="toggle"></span>AMC 12</label>
+        </fieldset>
+        <label for="offYear">Year</label>
+        <select id="offYear"></select>
+        <label for="offVersion">Contest</label>
+        <select id="offVersion">
+          <option value="all">A and B</option>
+          <option value="A">A only</option>
+          <option value="B">B only</option>
+        </select>
+        <div class="range-head"><span>Problem # range</span><strong id="offRangeLabel">1 – 25</strong></div>
+        <div class="ranges">
+          <input id="offMinNum" aria-label="Minimum problem number" type="range" min="1" max="25" value="1">
+          <input id="offMaxNum" aria-label="Maximum problem number" type="range" min="1" max="25" value="25">
+        </div>
+        <div class="ticks"><span>1</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span></div>
+        <button id="offRandomBtn" class="primary">↝ &nbsp;Open random official problem</button>
+        <p id="offPoolCount" class="pool"></p>
+      </div>
+
+      <div id="officialResources" class="resource-grid"></div>
+
+      <h3 class="official-list-title">Contests in this filter</h3>
+      <div id="officialContestList" class="browse-list"></div>
+    </section>
+
     <section id="browseView" class="view dashboard" hidden>
-      <p class="eyebrow">Problem bank</p>
-      <h2>Browse all problems</h2>
-      <p class="lede">Search and open any problem from the pool. Filters on Practice also apply here.</p>
+      <p class="eyebrow">Original practice bank</p>
+      <h2>Browse practice problems</h2>
+      <p class="lede">Original MAC practice problems (not official MAA contests). Practice filters also apply here.</p>
       <div class="browse-toolbar card">
         <label class="search-label">
           <span>Search</span>
@@ -126,7 +168,8 @@
   </main>
 
   <footer>
-    <p>MAC · Original AMC-style practice set · Not affiliated with MAA</p>
+    <p>MAC · Original practice + links to official contests · Not affiliated with MAA</p>
+    <p>Official AMC problems © Mathematical Association of America · linked via AoPS Wiki</p>
     <p id="repoLink" class="repo-link"></p>
   </footer>
 
@@ -146,6 +189,7 @@
   </dialog>
 
   <script src="problems.js"></script>
+  <script src="official.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

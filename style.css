@@ -482,6 +482,112 @@ dialog h2 {
 
 .empty-browse { color: var(--muted); }
 
+.inline-link {
+  color: #8aa4ff;
+  text-decoration: none;
+}
+
+.inline-link:hover { text-decoration: underline; }
+
+.official-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 20px;
+  padding: 22px 20px 14px;
+  margin: 22px 0 20px;
+  align-items: start;
+}
+
+.official-filters fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  grid-column: 1 / -1;
+}
+
+.official-filters legend { margin-bottom: 8px; }
+
+.official-filters > label {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.official-filters select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 9px;
+  border: 1px solid #293144;
+  background: #121722;
+  color: var(--text);
+  font: inherit;
+}
+
+.official-filters .range-head,
+.official-filters .ranges,
+.official-filters .ticks {
+  grid-column: 1 / -1;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.official-filters .primary {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 12px 0 0;
+}
+
+.official-filters .pool {
+  grid-column: 1 / -1;
+  margin: 4px 0 8px;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.resource-card {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.resource-card:hover {
+  border-color: #56688e;
+  transform: translateY(-1px);
+}
+
+.resource-card h3 {
+  font: 20px "Libre Caslon Display", serif;
+  margin: 0 0 8px;
+}
+
+.resource-card p {
+  color: var(--muted);
+  margin: 0 0 12px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.resource-card span {
+  color: #8aa4ff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.official-list-title {
+  font: 25px "Libre Caslon Display", serif;
+  margin: 8px 0 14px;
+}
+
 .board-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -664,6 +770,9 @@ dialog .primary {
   .topic-row { grid-template-columns: 110px 1fr 42px; }
 
   .browse-toolbar { flex-direction: column; align-items: stretch; }
+
+  .official-filters,
+  .resource-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 520px) {

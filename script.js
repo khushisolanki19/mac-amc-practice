@@ -204,6 +204,118 @@ function renderBrowse() {
   });
 }
 
+function officialPool() {
+  const list = typeof OFFICIAL_PROBLEMS !== 'undefined' ? OFFICIAL_PROBLEMS : [];
+  let lo = +$('offMinNum').value;
+  let hi = +$('offMaxNum').value;
+  if (lo > hi) [lo, hi] = [hi, lo];
+  const year = $('offYear').value;
+  const version = $('offVersion').value;
+  return list.filter(
+    (p) =>
+      p.num >= lo &&
+      p.num <= hi &&
+      (year === 'all' || String(p.year) === year) &&
+      (version === 'all' || p.version === version) &&
+      ((p.exam === 'AMC 10' && $('offAmc10').checked) || (p.exam === 'AMC 12' && $('offAmc12').checked))
+  );
+}
+
+function updateOfficialFilters(e) {
+  let lo = +$('offMinNum').value;
+  let hi = +$('offMaxNum').value;
+  if (lo > hi) {
+    if (e?.target?.id === 'offMinNum') $('offMaxNum').value = lo;
+    else $('offMinNum').value = hi;
+    lo = +$('offMinNum').value;
+    hi = +$('offMaxNum').value;
+  }
+  $('offRangeLabel').textContent = `${lo} – ${hi}`;
+  const n = officialPool().length;
+  $('offPoolCount').textContent = `${n.toLocaleString()} official problem link${n === 1 ? '' : 's'} in pool`;
+  renderOfficialContests();
+}
+
+function openRandomOfficial() {
+  const list = officialPool();
+  if (!list.length) {
+    $('offPoolCount').textContent = 'No contests match — widen your filters.';
+    return;
+  }
+  const p = list[Math.floor(Math.random() * list.length)];
+  window.open(p.problemUrl, '_blank', 'noopener');
+}
+
+function renderOfficialResources() {
+  const resources = typeof OFFICIAL_RESOURCES !== 'undefined' ? OFFICIAL_RESOURCES : [];
+  $('officialResources').innerHTML = resources
+    .map(
+      (r) => `
+    <a class="resource-card card" href="${r.url}" target="_blank" rel="noopener">
+      <h3>${r.title}</h3>
+      <p>${r.blurb}</p>
+      <span>Open ↗</span>
+    </a>`
+    )
+    .join('');
+}
+
+function renderOfficialContests() {
+  const pool = officialPool();
+  const byContest = new Map();
+  for (const p of pool) {
+    const key = `${p.year}-${p.label}`;
+    if (!byContest.has(key)) {
+      byContest.set(key, {
+        year: p.year,
+        label: p.label,
+        exam: p.exam,
+        contestUrl: p.contestUrl,
+        count: 0,
+        min: p.num,
+        max: p.num,
+      });
+    }
+    const row = byContest.get(key);
+    row.count++;
+    row.min = Math.min(row.min, p.num);
+    row.max = Math.max(row.max, p.num);
+  }
+
+  const contests = [...byContest.values()].sort((a, b) => b.year - a.year || a.label.localeCompare(b.label));
+  $('officialContestList').innerHTML = contests.length
+    ? contests
+        .map(
+          (c) => `
+      <a class="browse-item card" href="${c.contestUrl}" target="_blank" rel="noopener">
+        <div class="browse-meta">
+          <span>${c.label}</span>
+          <span>${c.year}</span>
+          <span>Problems ${c.min}–${c.max}</span>
+          <span>${c.count} links</span>
+        </div>
+        <p>Open full ${c.year} ${c.label} contest on AoPS Wiki (official problems © MAA)</p>
+      </a>`
+        )
+        .join('')
+    : '<p class="empty-browse">No contests match. Try different filters.</p>';
+}
+
+function initOfficialUi() {
+  if (!$('offYear')) return;
+  const years = typeof OFFICIAL_YEARS !== 'undefined' ? OFFICIAL_YEARS : [];
+  $('offYear').innerHTML =
+    `<option value="all">All years (${years[years.length - 1] || ''}–${years[0] || ''})</option>` +
+    years.map((y) => `<option value="${y}">${y}</option>`).join('');
+  renderOfficialResources();
+  ['offAmc10', 'offAmc12', 'offYear', 'offVersion', 'offMinNum', 'offMaxNum'].forEach((id) => {
+    $(id).oninput = updateOfficialFilters;
+    $(id).onchange = updateOfficialFilters;
+  });
+  $('offRandomBtn').onclick = openRandomOfficial;
+  updateOfficialFilters();
+}
+
 function showView(name) {
   document.querySelectorAll('.view').forEach((v) => (v.hidden = true));
   $(`${name}View`).hidden = false;
@@ -214,6 +326,7 @@ function showView(name) {
     $('globalScore').textContent = saved.points;
   }
   if (name === 'browse') renderBrowse();
+  if (name === 'official') updateOfficialFilters();
 }
 
 document.querySelectorAll('[data-view]').forEach((b) => {
@@ -273,10 +386,12 @@ document.addEventListener('keydown', (e) => {
 
 $('totalCount').textContent = String(problems.length);
 updateFilters();
+initOfficialUi();
 
 const host = location.hostname;
 if (host.includes('github.io')) {
   $('repoLink').innerHTML = `<a href="https://github.com/${host.split('.')[0]}/mac-amc-practice" target="_blank" rel="noopener">View source on GitHub</a>`;
 } else {
-  $('repoLink').textContent = 'Open-source practice · Deploy via GitHub Pages';
+  $('repoLink').innerHTML =
+    '<a href="https://github.com/khushisolanki19/mac-amc-practice" target="_blank" rel="noopener">View source on GitHub</a>';
 }
