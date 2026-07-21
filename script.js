@@ -33,6 +33,8 @@ function applyTheme() {
   document.querySelectorAll('[data-theme-set]').forEach((btn) => {
     btn.setAttribute('aria-pressed', btn.dataset.themeSet === theme ? 'true' : 'false');
   });
+  // Keep canvas charts in sync with theme tokens
+  if (!$('statsView')?.hidden) drawChart();
 }
 
 function renderMath(el) {
@@ -199,11 +201,12 @@ function randomize() {
   if (!list.length) {
     $('problemState').hidden = true;
     $('emptyState').hidden = false;
+    $('emptyState').className = 'hero-panel';
     $('emptyState').innerHTML = `
       <p class="hero-brand">MAC</p>
       <h2>No matching problems</h2>
-      <p>Widen filters or switch mode (Incorrect / Bookmarks need prior data).</p>
-      <button id="startBtn" class="primary">Try again</button>`;
+      <p class="hero-copy">Widen filters or switch mode. Incorrect / Bookmarks need prior attempts.</p>
+      <div class="empty-actions"><button id="startBtn" class="primary">Try again</button></div>`;
     $('startBtn').onclick = () => $('modeSelect').focus();
     return;
   }
@@ -656,8 +659,8 @@ function drawChart() {
   const counts = days.map((day) => state.history.filter((x) => x.at.slice(0, 10) === day).length);
   const max = Math.max(1, ...counts);
   const style = getComputedStyle(document.documentElement);
-  const bar = style.getPropertyValue('--blue').trim() || '#7192f5';
-  const muted = style.getPropertyValue('--muted').trim() || '#969fb3';
+  const bar = style.getPropertyValue('--accent').trim() || style.getPropertyValue('--blue').trim() || '#0b7a58';
+  const muted = style.getPropertyValue('--muted').trim() || '#4d5c54';
   ctx.strokeStyle = muted;
   ctx.globalAlpha = 0.35;
   ctx.beginPath();

@@ -10,16 +10,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <link rel="stylesheet" href="style.css?v=4" />
-  <link rel="stylesheet" href="fixes.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="fixes.css?v=5" />
 </head>
 <body>
+  <div class="page-shell">
   <header class="topbar">
     <a class="brand" href="#" data-view="practice" aria-label="MAC home">
       <span class="brand-mark">MAC</span>
       <span class="brand-sub">AMC Practice</span>
     </a>
-    <nav aria-label="Primary navigation">
+    <nav class="main-nav" aria-label="Primary navigation">
       <button class="nav-btn active" data-view="practice">Practice</button>
       <button class="nav-btn" data-view="modes">Modes</button>
       <button class="nav-btn" data-view="official">Official</button>
@@ -83,13 +84,13 @@
       </aside>
 
       <section id="problemArea" class="problem-area card" aria-live="polite">
-        <div id="emptyState">
+        <div id="emptyState" class="hero-panel">
           <p class="hero-brand">MAC</p>
-          <h2>Ready to practice?</h2>
-          <p><strong id="totalCount">100</strong> practice problems + a full official AMC archive via AoPS. Pick a mode and start.</p>
+          <h2>Train for AMC 10 &amp; 12</h2>
+          <p class="hero-copy">Practice with <strong id="totalCount">100</strong> problems, timed mocks, adaptive drills, and links to the official contest archive.</p>
           <div class="empty-actions">
             <button id="startBtn" class="primary">Start practicing</button>
-            <button id="goModesBtn" class="secondary" data-view="modes">Practice modes</button>
+            <button id="goModesBtn" class="secondary" data-view="modes">Explore modes</button>
           </div>
         </div>
         <div id="problemState" hidden>
@@ -281,6 +282,7 @@
     <p>MAC on GitHub · Not affiliated with MAA · Official problems © MAA (linked via AoPS)</p>
     <p id="repoLink" class="repo-link"></p>
   </footer>
+  </div>
 
   <dialog id="authDialog">
     <button id="closeDialog" class="close" aria-label="Close">×</button>
@@ -296,9 +298,9 @@
 
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
-  <script src="problems.js?v=4"></script>
-  <script src="official.js?v=4"></script>
-  <script src="storage.js?v=4"></script>
-  <script src="script.js?v=4"></script>
+  <script src="problems.js?v=5"></script>
+  <script src="official.js?v=5"></script>
+  <script src="storage.js?v=5"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
