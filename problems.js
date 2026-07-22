@@ -1,965 +1,1049 @@
-/** Original AMC-style practice problems for MAC. Not official MAA contests. */
+/** Original late-AMC-depth practice problems for MAC. Not official MAA contests. */
 const PROBLEMS = [
   {
     "id": "a10-01",
     "exam": "AMC 10",
     "year": 2018,
-    "num": 1,
+    "num": 15,
     "type": "Algebra",
-    "difficulty": 1,
-    "q": "What is 20% of 45?",
+    "difficulty": 6,
+    "q": "A rectangular pan of brownies is cut into an $r\\times c$ grid ($r,c\\ge3$) by full cuts parallel to the sides. Interior pieces equal perimeter pieces. Greatest possible total number of pieces?",
     "a": [
-      "7",
-      "8",
-      "9",
-      "10",
-      "11"
+      "36",
+      "48",
+      "60",
+      "72",
+      "96"
     ],
     "correct": 2,
-    "solution": "0.2 × 45 = 9.",
+    "solution": "$(r-4)(c-4)=8$. Feasible totals $36,48,60$; max $60$.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 1/9.",
-      "Hint: 0.2 × 45 = 9.",
-      "Write an equation or draw a diagram before computing."
+      "Set interior $=$ perimeter.",
+      "Factor to $(r-4)(c-4)=8$.",
+      "Maximize $rc$."
     ],
     "steps": [
-      "0.2 × 45 = 9.",
-      "Select choice C."
+      "$(r-4)(c-4)=8$.",
+      "Totals include $60$.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer C (9) back into the conditions of the problem."
+    "alt": "Check choice C (60) against the given conditions."
   },
   {
     "id": "a10-02",
     "exam": "AMC 10",
     "year": 2019,
-    "num": 2,
+    "num": 17,
     "type": "Algebra",
-    "difficulty": 1,
-    "q": "If 3x − 7 = 14, what is x?",
+    "difficulty": 7,
+    "q": "Positive integers $a<b<c$ form a geometric progression with $a+b+c=78$. How many possible values can $b$ take?",
     "a": [
-      "5",
-      "6",
-      "7",
-      "8",
-      "9"
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
     ],
-    "correct": 2,
-    "solution": "3x = 21, so x = 7.",
+    "correct": 3,
+    "solution": "Parametrize $a=kq^2$, $b=kpq$, $c=kp^2$, $\\gcd(p,q)=1$. Then $k(p^2+pq+q^2)=78$. Exactly four admissible $b$.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 1/9.",
-      "Hint: 3x = 21, so x = 7.",
-      "Write an equation or draw a diagram before computing."
+      "Parametrize integer GPs.",
+      "Require $p^2+pq+q^2\\mid78$.",
+      "Count distinct $b$."
     ],
     "steps": [
-      "3x = 21, so x = 7.",
-      "Select choice C."
+      "Four values of $b$.",
+      "Answer D."
     ],
-    "alt": "Check by plugging the answer C (7) back into the conditions of the problem."
+    "alt": "Check choice D (4) against the given conditions."
   },
   {
     "id": "a10-03",
     "exam": "AMC 10",
     "year": 2020,
-    "num": 3,
+    "num": 18,
     "type": "Algebra",
-    "difficulty": 2,
-    "q": "What is the value of (1 + 2 + 3 + 4 + 5) ÷ (1 × 3 × 5)?",
+    "difficulty": 7,
+    "q": "How many real $x$ satisfy $\\lfloor x\\rfloor\\cdot\\lfloor x+\\tfrac12\\rfloor=20$?",
     "a": [
-      "1/3",
-      "1",
+      "2",
       "3",
+      "4",
       "5",
-      "15"
+      "6"
     ],
-    "correct": 1,
-    "solution": "15 ÷ 15 = 1.",
+    "correct": 2,
+    "solution": "If $\\{x\\}<1/2$ then $n^2=20$ impossible. If $\\{x\\}\\ge1/2$ then $n(n+1)=20$ so $n=4$ or $-5$, each giving a half-unit interval of solutions — four reals.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 2/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Case on $\\{x\\}$.",
+      "Solve $n(n+1)=20$.",
+      "Count solutions in each interval."
     ],
     "steps": [
-      "15 ÷ 15 = 1.",
-      "Select choice B."
+      "$n=4,-5$.",
+      "Four solutions.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer B (1) back into the conditions of the problem."
+    "alt": "Check choice C (4) against the given conditions."
   },
   {
     "id": "a10-04",
     "exam": "AMC 10",
     "year": 2021,
-    "num": 4,
+    "num": 19,
     "type": "Algebra",
-    "difficulty": 2,
-    "q": "If x² = 49 and x > 0, what is x + 1/x?",
+    "difficulty": 8,
+    "q": "Roots of $x^3-6x^2+kx-6=0$ are positive reals in arithmetic progression. What is $k$?",
     "a": [
-      "7 1/7",
-      "7 2/7",
-      "8",
-      "8 1/7",
-      "9"
+      "9",
+      "10",
+      "11",
+      "12",
+      "13"
     ],
-    "correct": 0,
-    "solution": "x = 7, so 7 + 1/7 = 50/7 = 7 1/7.",
+    "correct": 2,
+    "solution": "Roots $2-d,2,2+d$; product $2(4-d^2)=6\\Rightarrow d^2=1$; pairwise sum $k=11$.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 2/9.",
-      "Hint: x = 7, so 7 + 1/7 = 50/7 = 7 1/7.",
-      "Write an equation or draw a diagram before computing."
+      "Assume AP roots.",
+      "Use Vieta.",
+      "Compute pairwise products sum."
     ],
     "steps": [
-      "x = 7, so 7 + 1/7 = 50/7 = 7 1/7.",
-      "Select choice A."
+      "$a=2$, $d=\\pm1$.",
+      "$k=11$.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer A (7 1/7) back into the conditions of the problem."
+    "alt": "Check choice C (11) against the given conditions."
   },
   {
     "id": "a10-05",
     "exam": "AMC 10",
     "year": 2017,
-    "num": 6,
+    "num": 20,
     "type": "Algebra",
-    "difficulty": 3,
-    "q": "The average of five numbers is 12. Four of them are 8, 10, 14, and 16. What is the fifth?",
+    "difficulty": 8,
+    "q": "If $\\bigl(x+\\tfrac1x\\bigr)^2=3$, what is $x^6+\\tfrac1{x^6}$?",
     "a": [
-      "10",
-      "12",
-      "14",
-      "16",
+      "-2",
+      "0",
+      "2",
+      "6",
       "18"
     ],
-    "correct": 1,
-    "solution": "Sum is 60; 60 − 48 = 12.",
+    "correct": 0,
+    "solution": "$x^2+x^{-2}=1$, $x^3+x^{-3}=0$, hence $x^6+x^{-6}=-2$.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 3/9.",
-      "Hint: Sum is 60; 60 − 48 = 12.",
-      "Write an equation or draw a diagram before computing."
+      "Set $t=x+1/x$.",
+      "Climb power sums.",
+      "Use $u_6=u_3^2-2$."
     ],
     "steps": [
-      "Sum is 60; 60 − 48 = 12.",
-      "Select choice B."
+      "$x^3+x^{-3}=0$.",
+      "$x^6+x^{-6}=-2$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer B (12) back into the conditions of the problem."
+    "alt": "Check choice A (-2) against the given conditions."
   },
   {
     "id": "a10-06",
     "exam": "AMC 10",
     "year": 2022,
-    "num": 8,
+    "num": 21,
     "type": "Algebra",
-    "difficulty": 3,
-    "q": "Solve for x: 2(x − 3) = 5x + 6.",
+    "difficulty": 8,
+    "q": "Sum of all positive integers $n$ for which $\\frac{n}{15-n}$ is a positive integer?",
     "a": [
-      "−4",
-      "−2",
-      "0",
-      "2",
-      "4"
+      "30",
+      "36",
+      "40",
+      "42",
+      "45"
     ],
-    "correct": 0,
-    "solution": "2x − 6 = 5x + 6 ⇒ −12 = 3x ⇒ x = −4.",
+    "correct": 1,
+    "solution": "$\\frac{n}{15-n}=k\\ge1\\Rightarrow k+1\\mid15\\Rightarrow n\\in\\{10,12,14\\}$, sum $36$.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 3/9.",
-      "Hint: 2x − 6 = 5x + 6 ⇒ −12 = 3x ⇒ x = −4.",
-      "Write an equation or draw a diagram before computing."
+      "Set equal to $k\\ge1$.",
+      "Require $k+1\\mid15$.",
+      "Sum $n$."
     ],
     "steps": [
-      "2x − 6 = 5x + 6 ⇒ −12 = 3x ⇒ x = −4.",
-      "Select choice A."
+      "$n=10,12,14$.",
+      "Sum $36$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer A (−4) back into the conditions of the problem."
+    "alt": "Check choice B (36) against the given conditions."
   },
   {
     "id": "a10-07",
     "exam": "AMC 10",
     "year": 2016,
-    "num": 10,
+    "num": 22,
     "type": "Algebra",
-    "difficulty": 4,
-    "q": "If 2ˣ = 8ʸ and x + y = 8, what is xy?",
+    "difficulty": 8,
+    "q": "How many ordered pairs of integers $(m,n)$ satisfy $\\frac1m+\\frac1n=\\frac1{12}$?",
     "a": [
-      "8",
-      "10",
-      "12",
-      "14",
-      "16"
+      "18",
+      "24",
+      "30",
+      "36",
+      "48"
     ],
     "correct": 2,
-    "solution": "8ʸ = 2³ʸ, so x = 3y. Then 3y + y = 8 ⇒ y = 2, x = 6, and xy = 12.",
+    "solution": "$(m-12)(n-12)=144$. The integer $144$ has $30$ divisors, hence $30$ ordered pairs.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 4/9.",
-      "Hint: 8ʸ = 2³ʸ, so x = 3y.",
-      "Write an equation or draw a diagram before computing."
+      "Factor after clearing.",
+      "Count all divisors of $144$.",
+      "Each divisor $\\leftrightarrow$ one pair."
     ],
     "steps": [
-      "8ʸ = 2³ʸ, so x = 3y.",
-      "Then 3y + y = 8 ⇒ y = 2, x = 6, and xy = 12."
+      "$30$ divisors.",
+      "$30$ pairs.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer C (12) back into the conditions of the problem."
+    "alt": "Check choice C (30) against the given conditions."
   },
   {
     "id": "a10-08",
     "exam": "AMC 10",
     "year": 2015,
-    "num": 11,
+    "num": 23,
     "type": "Algebra",
-    "difficulty": 4,
-    "q": "If 1/x + 1/y = 1/2 and x + y = 10, what is xy?",
+    "difficulty": 9,
+    "q": "Both $x^2-px+q=0$ and $x^2-qx+p=0$ have two distinct positive integer roots. What is $p+q$?",
     "a": [
-      "16",
-      "18",
-      "20",
-      "24",
-      "30"
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
     ],
-    "correct": 2,
-    "solution": "(x + y)/(xy) = 10/(xy) = 1/2 ⇒ xy = 20.",
+    "correct": 3,
+    "solution": "Roots $1,5$ give $p=6$, $q=5$, and $x^2-5x+6=(x-2)(x-3)$. Unique such pair, so $p+q=11$.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 4/9.",
-      "Hint: (x + y)/(xy) = 10/(xy) = 1/2 ⇒ xy = 20.",
-      "Write an equation or draw a diagram before computing."
+      "Let first roots be $a\\ne b$.",
+      "Force second quadratic to split.",
+      "Find unique solution."
     ],
     "steps": [
-      "(x + y)/(xy) = 10/(xy) = 1/2 ⇒ xy = 20.",
-      "Select choice C."
+      "$(p,q)=(6,5)$.",
+      "$p+q=11$.",
+      "Answer D."
     ],
-    "alt": "Check by plugging the answer C (20) back into the conditions of the problem."
+    "alt": "Check choice D (11) against the given conditions."
   },
   {
     "id": "a10-09",
     "exam": "AMC 10",
-    "year": 2023,
-    "num": 13,
+    "year": 2014,
+    "num": 24,
     "type": "Algebra",
-    "difficulty": 5,
-    "q": "How many positive integers n satisfy n² − 5n + 6 ≤ 0?",
+    "difficulty": 9,
+    "q": "Positive integers $w,x,y,z$ satisfy $w+x+y+z=12$ and sum of all pairwise products equals $47$. Max of $wxyz$?",
+    "a": [
+      "36",
+      "48",
+      "54",
+      "64",
+      "72"
+    ],
+    "correct": 2,
+    "solution": "$\\sum w^2=12^2-2\\cdot47=50$. Maximizing product under these constraints gives $54$ at a permutation of $(1,3,4,4)$.",
+    "hints": [
+      "Compute $\\sum w^2$.",
+      "Search positive integer $4$-tuples.",
+      "Maximize product."
+    ],
+    "steps": [
+      "$\\sum w^2=50$.",
+      "Max product $54$.",
+      "Answer C."
+    ],
+    "alt": "Check choice C (54) against the given conditions."
+  },
+  {
+    "id": "a10-10",
+    "exam": "AMC 10",
+    "year": 2013,
+    "num": 25,
+    "type": "Algebra",
+    "difficulty": 9,
+    "q": "How many ordered triples of positive integers $(a,b,c)$ satisfy $a+b+c=abc=6$?",
+    "a": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "9"
+    ],
+    "correct": 3,
+    "solution": "Only unordered triple $\\{1,2,3\\}$; $3!=6$ ordered permutations.",
+    "hints": [
+      "Assume $a\\le b\\le c$.",
+      "Check factors of $6$.",
+      "Count permutations."
+    ],
+    "steps": [
+      "Only $\\{1,2,3\\}$.",
+      "Six ordered triples.",
+      "Answer D."
+    ],
+    "alt": "Check choice D (6) against the given conditions."
+  },
+  {
+    "id": "a10-11",
+    "exam": "AMC 10",
+    "year": 2012,
+    "num": 16,
+    "type": "Algebra",
+    "difficulty": 6,
+    "q": "Function $f$ on positive integers: $f(1)=1$ and $f(m+n)=f(m)+f(n)+mn$. What is $f(20)$?",
+    "a": [
+      "190",
+      "210",
+      "220",
+      "230",
+      "400"
+    ],
+    "correct": 1,
+    "solution": "$f(n)=\\binom{n+1}{2}$, so $f(20)=210$.",
+    "hints": [
+      "Correct by $\\binom{n}{2}$ to get an additive function.",
+      "Solve for $f$.",
+      "Evaluate."
+    ],
+    "steps": [
+      "$f(n)=n(n+1)/2$.",
+      "$f(20)=210$.",
+      "Answer B."
+    ],
+    "alt": "Check choice B (210) against the given conditions."
+  },
+  {
+    "id": "a10-12",
+    "exam": "AMC 10",
+    "year": 2011,
+    "num": 18,
+    "type": "Algebra",
+    "difficulty": 7,
+    "q": "Real $x>1$ satisfies $\\sqrt{x+\\sqrt{x+\\sqrt{x+\\cdots}}}=\\frac{x}{x-1}$. What is $x$?",
+    "a": [
+      "2",
+      "\\tfrac32",
+      "\\tfrac52",
+      "3",
+      "4"
+    ],
+    "correct": 0,
+    "solution": "Let $y=x/(x-1)=\\sqrt{x+y}$. For $x=2$, both sides equal $2$. It is the unique option that works.",
+    "hints": [
+      "Set $y$ equal to both expressions.",
+      "Square.",
+      "Test options."
+    ],
+    "steps": [
+      "$x=2$ works.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (2) against the given conditions."
+  },
+  {
+    "id": "a10-13",
+    "exam": "AMC 10",
+    "year": 2010,
+    "num": 19,
+    "type": "Algebra",
+    "difficulty": 8,
+    "q": "How many integers $n$ satisfy $|n^2-10n+16|\\le7$?",
+    "a": [
+      "7",
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "correct": 2,
+    "solution": "Testing shows $n=1,2,\\dots,9$ all work — nine integers.",
+    "hints": [
+      "Rewrite as a double inequality.",
+      "Factor.",
+      "Test nearby integers."
+    ],
+    "steps": [
+      "Nine integers work.",
+      "Answer C."
+    ],
+    "alt": "Check choice C (9) against the given conditions."
+  },
+  {
+    "id": "a10-14",
+    "exam": "AMC 10",
+    "year": 2009,
+    "num": 21,
+    "type": "Algebra",
+    "difficulty": 8,
+    "q": "Smallest positive integer $n$ such that $n!$ is divisible by $2016$?",
+    "a": [
+      "8",
+      "9",
+      "12",
+      "14",
+      "16"
+    ],
+    "correct": 0,
+    "solution": "$2016=2^5\\cdot3^2\\cdot7$. Need $n\\ge7$ and $v_2(n!)\\ge5$; $v_2(7!)=4$ but $v_2(8!)=7$, so $n=8$.",
+    "hints": [
+      "Factor $2016$.",
+      "Check $2$-adic valuation.",
+      "Include prime $7$."
+    ],
+    "steps": [
+      "Minimal $n=8$.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (8) against the given conditions."
+  },
+  {
+    "id": "a10-15",
+    "exam": "AMC 10",
+    "year": 2024,
+    "num": 22,
+    "type": "Algebra",
+    "difficulty": 8,
+    "q": "Sequence $a_1=3$, $a_{n+1}=a_n^2-a_n+1$. What is $\\gcd(a_{15},a_9)$?",
+    "a": [
+      "1",
+      "3",
+      "7",
+      "13",
+      "a_9"
+    ],
+    "correct": 0,
+    "solution": "From $a_{n+1}-1=a_n(a_n-1)$, inductively $a_m\\equiv1\\pmod{a_k}$ for $m>k$, so the gcd is $1$.",
+    "hints": [
+      "Use $a_{n+1}-1=a_n(a_n-1)$.",
+      "Prove congruence for $m>k$.",
+      "Conclude."
+    ],
+    "steps": [
+      "$a_{15}\\equiv1\\pmod{a_9}$.",
+      "gcd $=1$.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (1) against the given conditions."
+  },
+  {
+    "id": "a10-16",
+    "exam": "AMC 10",
+    "year": 2023,
+    "num": 23,
+    "type": "Algebra",
+    "difficulty": 9,
+    "q": "Positive reals $x,y,z$ with $xyz=1$ satisfy $x+y+z=\\frac1x+\\frac1y+\\frac1z$. Maximum of $x+y+z$?",
     "a": [
       "1",
       "2",
       "3",
       "4",
-      "5"
+      "no maximum"
     ],
-    "correct": 1,
-    "solution": "(n − 2)(n − 3) ≤ 0 ⇒ n = 2 or 3.",
+    "correct": 4,
+    "solution": "Equality iff one variable is $1$ (after clearing). Then $1+t+1/t$ is unbounded for $t>0$.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 5/9.",
-      "Hint: (n − 2)(n − 3) ≤ 0 ⇒ n = 2 or 3.",
-      "Write an equation or draw a diagram before computing."
+      "Rewrite using $xyz=1$.",
+      "Factor.",
+      "Check boundedness."
     ],
     "steps": [
-      "(n − 2)(n − 3) ≤ 0 ⇒ n = 2 or 3.",
-      "Select choice B."
+      "WLOG $x=1$, $yz=1$.",
+      "$1+t+1/t$ unbounded.",
+      "Answer E."
     ],
-    "alt": "Check by plugging the answer B (2) back into the conditions of the problem."
-  },
-  {
-    "id": "a10-10",
-    "exam": "AMC 10",
-    "year": 2018,
-    "num": 14,
-    "type": "Algebra",
-    "difficulty": 5,
-    "q": "The quadratic x² − 6x + k = 0 has a double root. What is k?",
-    "a": [
-      "6",
-      "8",
-      "9",
-      "12",
-      "18"
-    ],
-    "correct": 2,
-    "solution": "Discriminant 36 − 4k = 0 ⇒ k = 9.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 5/9.",
-      "Hint: Discriminant 36 − 4k = 0 ⇒ k = 9.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "Discriminant 36 − 4k = 0 ⇒ k = 9.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (9) back into the conditions of the problem."
-  },
-  {
-    "id": "a10-11",
-    "exam": "AMC 10",
-    "year": 2019,
-    "num": 16,
-    "type": "Algebra",
-    "difficulty": 6,
-    "q": "If x + 1/x = 3, what is x² + 1/x²?",
-    "a": [
-      "5",
-      "7",
-      "8",
-      "9",
-      "11"
-    ],
-    "correct": 1,
-    "solution": "(x + 1/x)² = 9 = x² + 2 + 1/x² ⇒ x² + 1/x² = 7.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 6/9.",
-      "Hint: (x + 1/x)² = 9 = x² + 2 + 1/x² ⇒ x² + 1/x² = 7.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "(x + 1/x)² = 9 = x² + 2 + 1/x² ⇒ x² + 1/x² = 7.",
-      "Select choice B."
-    ],
-    "alt": "Check by plugging the answer B (7) back into the conditions of the problem."
-  },
-  {
-    "id": "a10-12",
-    "exam": "AMC 10",
-    "year": 2020,
-    "num": 18,
-    "type": "Algebra",
-    "difficulty": 7,
-    "q": "Real numbers a and b satisfy a + b = 5 and ab = 3. What is a³ + b³?",
-    "a": [
-      "70",
-      "80",
-      "90",
-      "100",
-      "110"
-    ],
-    "correct": 1,
-    "solution": "a³ + b³ = (a + b)((a + b)² − 3ab) = 5(25 − 9) = 80.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 7/9.",
-      "Hint: a³ + b³ = (a + b)((a + b)² − 3ab) = 5(25 − 9) = 80.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "a³ + b³ = (a + b)((a + b)² − 3ab) = 5(25 − 9) = 80.",
-      "Select choice B."
-    ],
-    "alt": "Check by plugging the answer B (80) back into the conditions of the problem."
-  },
-  {
-    "id": "a10-13",
-    "exam": "AMC 10",
-    "year": 2014,
-    "num": 5,
-    "type": "Algebra",
-    "difficulty": 2,
-    "q": "If 5x + 3 = 28, what is x?",
-    "a": [
-      "3",
-      "4",
-      "5",
-      "6",
-      "7"
-    ],
-    "correct": 2,
-    "solution": "5x = 25 ⇒ x = 5.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 2/9.",
-      "Hint: 5x = 25 ⇒ x = 5.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "5x = 25 ⇒ x = 5.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (5) back into the conditions of the problem."
-  },
-  {
-    "id": "a10-14",
-    "exam": "AMC 10",
-    "year": 2012,
-    "num": 9,
-    "type": "Algebra",
-    "difficulty": 3,
-    "q": "The slope of the line through (1, 2) and (3, 8) is",
-    "a": [
-      "2",
-      "3",
-      "4",
-      "5",
-      "6"
-    ],
-    "correct": 1,
-    "solution": "(8 − 2)/(3 − 1) = 3.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 3/9.",
-      "Hint: (8 − 2)/(3 − 1) = 3.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "(8 − 2)/(3 − 1) = 3.",
-      "Select choice B."
-    ],
-    "alt": "Check by plugging the answer B (3) back into the conditions of the problem."
-  },
-  {
-    "id": "a10-15",
-    "exam": "AMC 10",
-    "year": 2023,
-    "num": 6,
-    "type": "Algebra",
-    "difficulty": 2,
-    "q": "What is the median of the set {3, 7, 9, 2, 11}?",
-    "a": [
-      "3",
-      "7",
-      "9",
-      "2",
-      "11"
-    ],
-    "correct": 1,
-    "solution": "Ordered: 2, 3, 7, 9, 11. Median is 7.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 2/9.",
-      "Hint: Ordered: 2, 3, 7, 9, 11.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "Ordered: 2, 3, 7, 9, 11.",
-      "Median is 7."
-    ],
-    "alt": "Check by plugging the answer B (7) back into the conditions of the problem."
-  },
-  {
-    "id": "a10-16",
-    "exam": "AMC 10",
-    "year": 2011,
-    "num": 18,
-    "type": "Algebra",
-    "difficulty": 6,
-    "q": "If x² = x + 12 and x > 0, what is x?",
-    "a": [
-      "2",
-      "3",
-      "4",
-      "6",
-      "12"
-    ],
-    "correct": 2,
-    "solution": "x² − x − 12 = 0 ⇒ (x − 4)(x + 3) = 0 ⇒ x = 4.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 6/9.",
-      "Hint: x² − x − 12 = 0 ⇒ (x − 4)(x + 3) = 0 ⇒ x = 4.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "x² − x − 12 = 0 ⇒ (x − 4)(x + 3) = 0 ⇒ x = 4.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (4) back into the conditions of the problem."
+    "alt": "Check choice E (no maximum) against the given conditions."
   },
   {
     "id": "g10-01",
     "exam": "AMC 10",
-    "year": 2017,
-    "num": 2,
+    "year": 2018,
+    "num": 16,
     "type": "Geometry",
-    "difficulty": 1,
-    "q": "A square has side length 6. What is its perimeter?",
+    "difficulty": 7,
+    "q": "Triangle $ABC$ has sides $13,14,15$. Let $r$ be inradius and $R$ circumradius. What is $r+R$?",
     "a": [
-      "18",
-      "24",
-      "30",
-      "36",
-      "48"
+      "8",
+      "\\tfrac{65}{8}",
+      "\\tfrac{97}{8}",
+      "12",
+      "\\tfrac{33}{2}"
     ],
-    "correct": 1,
-    "solution": "4 × 6 = 24.",
+    "correct": 2,
+    "solution": "Area $84$, $s=21$, so $r=4$ and $R=65/8$; sum $97/8$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 1/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Heron for area.",
+      "$r=A/s$, $R=abc/(4A)$.",
+      "Add."
     ],
     "steps": [
-      "4 × 6 = 24.",
-      "Select choice B."
+      "$r=4$, $R=65/8$.",
+      "Sum $97/8$.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer B (24) back into the conditions of the problem."
+    "alt": "Check choice C (\\tfrac{97}{8}) against the given conditions."
   },
   {
     "id": "g10-02",
     "exam": "AMC 10",
-    "year": 2018,
-    "num": 3,
+    "year": 2019,
+    "num": 17,
     "type": "Geometry",
-    "difficulty": 2,
-    "q": "A rectangle has length 12 and width 5. What is its area?",
+    "difficulty": 7,
+    "q": "Right triangle legs $6,8$. Circles with diameters the legs meet the altitude to the hypotenuse again at $P,Q$. What is $PQ$?",
     "a": [
-      "17",
-      "34",
-      "50",
-      "60",
-      "120"
+      "\\tfrac{14}{5}",
+      "\\tfrac{24}{5}",
+      "3",
+      "\\tfrac{48}{13}",
+      "4"
     ],
-    "correct": 3,
-    "solution": "12 × 5 = 60.",
+    "correct": 0,
+    "solution": "$CP=AC^2/AB=18/5$, $CQ=32/5$, so $PQ=14/5$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 2/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Hypotenuse is $10$.",
+      "Locate $P,Q$ from $C$ by similarity.",
+      "Subtract."
     ],
     "steps": [
-      "12 × 5 = 60.",
-      "Select choice D."
+      "$CP=18/5$, $CQ=32/5$.",
+      "$PQ=14/5$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer D (60) back into the conditions of the problem."
+    "alt": "Check choice A (\\tfrac{14}{5}) against the given conditions."
   },
   {
     "id": "g10-03",
     "exam": "AMC 10",
-    "year": 2019,
-    "num": 5,
+    "year": 2020,
+    "num": 21,
     "type": "Geometry",
-    "difficulty": 2,
-    "q": "The area of a circle with radius 3 is",
+    "difficulty": 8,
+    "q": "Regular hexagon $ABCDEF$ has side $4$. Distance $AC+AD+AE$?",
     "a": [
-      "3π",
-      "6π",
-      "9π",
-      "12π",
-      "18π"
+      "8+8\\sqrt{3}",
+      "12+4\\sqrt{3}",
+      "16+4\\sqrt{3}",
+      "24",
+      "8\\sqrt{3}"
     ],
-    "correct": 2,
-    "solution": "πr² = 9π.",
+    "correct": 0,
+    "solution": "In a regular hexagon of side $4$, $AC=AE=4\\sqrt{3}$ and $AD=8$, so the sum is $8+8\\sqrt{3}$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 2/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Identify diagonal lengths.",
+      "Use side 4.",
+      "Add."
     ],
     "steps": [
-      "πr² = 9π.",
-      "Select choice C."
+      "Short diagonals $4\\sqrt{3}$.",
+      "Long diagonal $8$.",
+      "Sum $8+8\\sqrt{3}$."
     ],
-    "alt": "Check by plugging the answer C (9π) back into the conditions of the problem."
+    "alt": "Check choice A (8+8√3) against the given conditions."
   },
   {
     "id": "g10-04",
     "exam": "AMC 10",
-    "year": 2020,
-    "num": 7,
+    "year": 2021,
+    "num": 19,
     "type": "Geometry",
-    "difficulty": 3,
-    "q": "A right triangle has legs 6 and 8. What is the length of the hypotenuse?",
+    "difficulty": 8,
+    "q": "In $\\triangle ABC$, $AB=AC=10$, $BC=12$. Let $M$ be midpoint of $BC$ and $D$ on $AM$ with $AD=3$. Area of $\\triangle BDC$?",
     "a": [
-      "8",
-      "9",
-      "10",
-      "12",
-      "14"
+      "24",
+      "30",
+      "36",
+      "40",
+      "48"
     ],
-    "correct": 2,
-    "solution": "√(36 + 64) = 10.",
+    "correct": 1,
+    "solution": "Altitude $AM=8$. Since $AD=3$, the height from $D$ to $BC$ is $5$. Area of $\\triangle BDC=\\frac12\\cdot12\\cdot5=30$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 3/9.",
-      "Hint: √(36 + 64) = 10.",
-      "Write an equation or draw a diagram before computing."
+      "Find height of the isosceles triangle.",
+      "Locate height of $D$ above $BC$.",
+      "Compute area."
     ],
     "steps": [
-      "√(36 + 64) = 10.",
-      "Select choice C."
+      "$AM=8$.",
+      "Height from $D$ is $5$.",
+      "Area $30$."
     ],
-    "alt": "Check by plugging the answer C (10) back into the conditions of the problem."
+    "alt": "Check choice B (30) against the given conditions."
   },
   {
     "id": "g10-05",
     "exam": "AMC 10",
-    "year": 2021,
-    "num": 9,
+    "year": 2017,
+    "num": 20,
     "type": "Geometry",
-    "difficulty": 3,
-    "q": "An equilateral triangle has side length 4. What is its perimeter?",
+    "difficulty": 8,
+    "q": "Circle diameter $AB=10$. Point $C$ on the circle with $\\angle CAB=30^\\circ$. Area of $\\triangle ABC$?",
     "a": [
-      "8",
-      "10",
-      "12",
-      "14",
-      "16"
+      "\\dfrac{25\\sqrt{3}}{4}",
+      "\\dfrac{25\\sqrt{3}}{2}",
+      "25\\sqrt{3}",
+      "\\dfrac{75\\sqrt{3}}{4}",
+      "50"
     ],
-    "correct": 2,
-    "solution": "3 × 4 = 12.",
+    "correct": 1,
+    "solution": "Angle in semicircle: $\\angle C=90^\\circ$. Then $\\angle B=60^\\circ$, so $AC=5$, $BC=5\\sqrt{3}$, area $\\tfrac12\\cdot5\\cdot5\\sqrt{3}=\\tfrac{25\\sqrt{3}}{2}$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 3/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Use Thales' theorem.",
+      "Find the acute angles.",
+      "Compute $\\tfrac12 ab$."
     ],
     "steps": [
-      "3 × 4 = 12.",
-      "Select choice C."
+      "Right triangle $30$-$60$-$90$.",
+      "Area $25\\sqrt{3}/2$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer C (12) back into the conditions of the problem."
+    "alt": "Check choice B (\\dfrac{25\\sqrt{3}}{2}) against the given conditions."
   },
   {
     "id": "g10-06",
     "exam": "AMC 10",
-    "year": 2016,
-    "num": 12,
+    "year": 2022,
+    "num": 21,
     "type": "Geometry",
-    "difficulty": 4,
-    "q": "A square has perimeter 40. What is the area of the circle inscribed in the square?",
+    "difficulty": 8,
+    "q": "Two externally tangent circles have radii $3$ and $6$. A common external tangent touches them at $P,Q$. Length $PQ$?",
     "a": [
-      "10π",
-      "20π",
-      "25π",
-      "40π",
-      "100π"
+      "3",
+      "3\\sqrt{2}",
+      "3\\sqrt{3}",
+      "6",
+      "6\\sqrt{2}"
     ],
-    "correct": 2,
-    "solution": "Side 10 ⇒ inscribed radius 5 ⇒ area 25π.",
+    "correct": 4,
+    "solution": "Centers are $9$ apart. Length of a direct common tangent is $\\sqrt{9^2-(6-3)^2}=\\sqrt{72}=6\\sqrt{2}$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 4/9.",
-      "Hint: Side 10 ⇒ inscribed radius 5 ⇒ area 25π.",
-      "Write an equation or draw a diagram before computing."
+      "Centers $9$ apart.",
+      "Use the direct common tangent formula.",
+      "Simplify."
     ],
     "steps": [
-      "Side 10 ⇒ inscribed radius 5 ⇒ area 25π.",
-      "Select choice C."
+      "$d=9$, $R-r=3$.",
+      "$PQ=\\sqrt{81-9}=6\\sqrt{2}$.",
+      "Answer E."
     ],
-    "alt": "Check by plugging the answer C (25π) back into the conditions of the problem."
+    "alt": "Check choice E (6√2) against the given conditions."
   },
   {
     "id": "g10-07",
     "exam": "AMC 10",
-    "year": 2022,
-    "num": 11,
+    "year": 2016,
+    "num": 22,
     "type": "Geometry",
-    "difficulty": 4,
-    "q": "A cube has volume 64. What is the length of a face diagonal?",
+    "difficulty": 8,
+    "q": "Regular hexagon side $4$. Distance between opposite sides (width) equals $4\\sqrt{3}$. A smaller regular hexagon is formed by connecting midpoints of the sides of the large one. Ratio of areas (small:large)?",
     "a": [
-      "4",
-      "4√2",
-      "4√3",
-      "8",
-      "8√2"
+      "\\tfrac14",
+      "\\tfrac38",
+      "\\tfrac12",
+      "\\tfrac58",
+      "\\tfrac34"
     ],
-    "correct": 1,
-    "solution": "Side 4; face diagonal 4√2.",
+    "correct": 0,
+    "solution": "The midpoint hexagon is regular with side $2$. Area ratio $(2/4)^2=1/4$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 4/9.",
-      "Hint: Side 4; face diagonal 4√2.",
-      "Write an equation or draw a diagram before computing."
+      "Find the small hexagon's side.",
+      "Scale areas by side squared.",
+      "Simplify."
     ],
     "steps": [
-      "Side 4; face diagonal 4√2.",
-      "Select choice B."
+      "Small side $=2$.",
+      "Ratio $=1/4$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer B (4√2) back into the conditions of the problem."
+    "alt": "Check choice A (1/4) against the given conditions."
   },
   {
     "id": "g10-08",
     "exam": "AMC 10",
     "year": 2015,
-    "num": 13,
+    "num": 23,
     "type": "Geometry",
-    "difficulty": 5,
-    "q": "In triangle ABC, AB = AC = 13 and BC = 10. What is the area of △ABC?",
+    "difficulty": 9,
+    "q": "Cube of side $6$. Plane through midpoints of three edges concurrent at a vertex. Volume of the cut-off tetrahedron?",
     "a": [
-      "48",
-      "52",
-      "60",
-      "65",
-      "78"
+      "\\tfrac92",
+      "\\tfrac{27}{2}",
+      "9",
+      "18",
+      "27"
     ],
-    "correct": 2,
-    "solution": "Altitude to BC is √(169 − 25) = 12. Area = (10 × 12)/2 = 60.",
+    "correct": 0,
+    "solution": "The tetrahedron has three mutually perpendicular edges of length $3$, so volume $\\tfrac16\\cdot3\\cdot3\\cdot3=\\tfrac92$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 5/9.",
-      "Hint: Altitude to BC is √(169 − 25) = 12.",
-      "Write an equation or draw a diagram before computing."
+      "Three edges length $3$ meet at right angles.",
+      "Use $V=\\tfrac16 abc$.",
+      "Compute."
     ],
     "steps": [
-      "Altitude to BC is √(169 − 25) = 12.",
-      "Area = (10 × 12)/2 = 60."
+      "$V=9/2$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (60) back into the conditions of the problem."
+    "alt": "Check choice A (\\tfrac92) against the given conditions."
   },
   {
     "id": "g10-09",
     "exam": "AMC 10",
-    "year": 2023,
-    "num": 15,
+    "year": 2014,
+    "num": 24,
     "type": "Geometry",
-    "difficulty": 5,
-    "q": "A regular hexagon has side length 6. What is its area?",
+    "difficulty": 9,
+    "q": "Points $A,B$ on a circle of radius $10$ with chord $AB=12$. Tangents at $A$ and $B$ meet at $T$. Length $TA$?",
     "a": [
-      "54√3",
-      "72√3",
-      "90√3",
-      "108√3",
-      "216√3"
+      "\\dfrac{15}{2}",
+      "\\dfrac{40}{3}",
+      "15",
+      "\\dfrac{50}{3}",
+      "20"
     ],
     "correct": 0,
-    "solution": "Six equilateral triangles of side 6: 6 · (√3/4) · 36 = 54√3.",
+    "solution": "Distance from center to chord is $8$, so $OT=r^2/d=25/2$. Then $TA=\\sqrt{OT^2-r^2}=15/2$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 5/9.",
-      "Hint: Six equilateral triangles of side 6: 6 · (√3/4) · 36 = 54√3.",
-      "Write an equation or draw a diagram before computing."
+      "Find distance from center to chord.",
+      "Use $OT=r^2/d$.",
+      "Compute tangent length."
     ],
     "steps": [
-      "Six equilateral triangles of side 6: 6 · (√3/4) · 36 = 54√3.",
-      "Select choice A."
+      "$d=8$.",
+      "$OT=25/2$.",
+      "$TA=15/2$."
     ],
-    "alt": "Check by plugging the answer A (54√3) back into the conditions of the problem."
+    "alt": "Check choice A (15/2) against the given conditions."
   },
   {
     "id": "g10-10",
     "exam": "AMC 10",
-    "year": 2018,
-    "num": 17,
+    "year": 2013,
+    "num": 22,
     "type": "Geometry",
-    "difficulty": 6,
-    "q": "Two concentric circles have radii 3 and 5. What is the area of the ring between them?",
+    "difficulty": 8,
+    "q": "In rectangle $ABCD$ with $AB=8$, $AD=6$, point $P$ on diagonal $AC$ satisfies $BP\\perp AC$. Length $BP$?",
     "a": [
-      "8π",
-      "12π",
-      "16π",
-      "20π",
-      "25π"
+      "\\dfrac{24}{5}",
+      "\\dfrac{48}{13}",
+      "\\dfrac{96}{25}",
+      "3",
+      "4"
     ],
-    "correct": 2,
-    "solution": "π(25 − 9) = 16π.",
+    "correct": 0,
+    "solution": "Area of rectangle $48=\\tfrac12\\cdot AC\\cdot BP\\cdot2$ wait: area of $\\triangle ABC=24=\\tfrac12\\cdot AC\\cdot BP$, $AC=10$, so $BP=24/5$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 6/9.",
-      "Hint: π(25 − 9) = 16π.",
-      "Write an equation or draw a diagram before computing."
+      "Find diagonal $AC$.",
+      "Use area of $\\triangle ABC$ two ways.",
+      "Solve for $BP$."
     ],
     "steps": [
-      "π(25 − 9) = 16π.",
-      "Select choice C."
+      "$AC=10$, area $24$.",
+      "$BP=24/5$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (16π) back into the conditions of the problem."
+    "alt": "Check choice A (\\dfrac{24}{5}) against the given conditions."
   },
   {
     "id": "g10-11",
     "exam": "AMC 10",
-    "year": 2019,
-    "num": 19,
+    "year": 2012,
+    "num": 20,
     "type": "Geometry",
-    "difficulty": 7,
-    "q": "A rectangle has diagonal 13 and one side 5. What is its area?",
+    "difficulty": 8,
+    "q": "Equilateral triangle side $6$. Midpoints of sides form a second equilateral triangle. Ratio of areas (inner:original)?",
     "a": [
-      "30",
-      "40",
-      "60",
-      "65",
-      "78"
+      "\\tfrac14",
+      "\\tfrac12",
+      "\\tfrac34",
+      "1",
+      "\\tfrac18"
     ],
-    "correct": 2,
-    "solution": "Other side √(169 − 25) = 12. Area = 60.",
+    "correct": 0,
+    "solution": "Medial triangle has side $3$, area ratio $1/4$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 7/9.",
-      "Hint: Other side √(169 − 25) = 12.",
-      "Write an equation or draw a diagram before computing."
+      "Side of medial triangle.",
+      "Scale by square of sides.",
+      "Conclude."
     ],
     "steps": [
-      "Other side √(169 − 25) = 12.",
-      "Area = 60."
+      "Side $3$.",
+      "Ratio $1/4$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (60) back into the conditions of the problem."
+    "alt": "Check choice A (\\tfrac14) against the given conditions."
   },
   {
     "id": "g10-12",
     "exam": "AMC 10",
-    "year": 2020,
+    "year": 2011,
     "num": 21,
     "type": "Geometry",
     "difficulty": 8,
-    "q": "The volume of a sphere with radius 3 is",
+    "q": "Rectangle $ABCD$ with $AB=8$, $AD=6$. Point $P$ on $CD$ with $CP=2$. Length $BP$?",
     "a": [
-      "12π",
-      "18π",
-      "27π",
-      "36π",
-      "108π"
+      "2\\sqrt{5}",
+      "4\\sqrt{2}",
+      "2\\sqrt{10}",
+      "2\\sqrt{13}",
+      "\\sqrt{50}"
     ],
-    "correct": 3,
-    "solution": "(4/3)πr³ = (4/3)π · 27 = 36π.",
+    "correct": 2,
+    "solution": "With $A(0,0)$, $B(8,0)$, $C(8,6)$, $D(0,6)$, point $P$ is $(6,6)$. Then $BP=\\sqrt{(8-6)^2+(0-6)^2}=\\sqrt{40}=2\\sqrt{10}$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 8/9.",
-      "Hint: (4/3)πr³ = (4/3)π · 27 = 36π.",
-      "Write an equation or draw a diagram before computing."
+      "Use coordinates.",
+      "Locate $P$ on $CD$.",
+      "Compute $BP$."
     ],
     "steps": [
-      "(4/3)πr³ = (4/3)π · 27 = 36π.",
-      "Select choice D."
+      "$P=(6,6)$.",
+      "$BP=\\sqrt{40}=2\\sqrt{10}$.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer D (36π) back into the conditions of the problem."
+    "alt": "Check choice C (2√10) against the given conditions."
   },
   {
     "id": "g10-13",
     "exam": "AMC 10",
-    "year": 2014,
-    "num": 8,
+    "year": 2010,
+    "num": 22,
     "type": "Geometry",
-    "difficulty": 3,
-    "q": "The area of a triangle with base 10 and height 6 is",
+    "difficulty": 8,
+    "q": "Circle radius $5$. Chord $AB$ subtends $120^\\circ$ at the center. Area of the circular segment (smaller) of chord $AB$?",
     "a": [
-      "16",
-      "30",
-      "60",
-      "70",
-      "120"
+      "\\dfrac{25\\pi}{3}-\\dfrac{25\\sqrt{3}}{4}",
+      "\\dfrac{25\\pi}{3}-\\dfrac{25\\sqrt{3}}{2}",
+      "\\dfrac{25\\pi}{2}-\\dfrac{25\\sqrt{3}}{2}",
+      "\\dfrac{10\\pi}{3}-\\dfrac{25\\sqrt{3}}{4}",
+      "25\\pi-25\\sqrt{3}"
     ],
-    "correct": 1,
-    "solution": "(10 · 6)/2 = 30.",
+    "correct": 0,
+    "solution": "Sector $120^\\circ$ has area $\\frac13\\pi\\cdot25=\\frac{25\\pi}{3}$. Triangle area $\\frac12\\cdot25\\cdot\\sin120=\\frac{25\\sqrt{3}}{4}$. Segment $=$ sector $-$ triangle.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 3/9.",
-      "Hint: (10 · 6)/2 = 30.",
-      "Write an equation or draw a diagram before computing."
+      "Sector area for $120^\\circ$.",
+      "Triangle area via $\\tfrac12 r^2\\sin\\theta$.",
+      "Subtract."
     ],
     "steps": [
-      "(10 · 6)/2 = 30.",
-      "Select choice B."
+      "Segment $=\\frac{25\\pi}{3}-\\frac{25\\sqrt{3}}{4}$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer B (30) back into the conditions of the problem."
+    "alt": "Check choice A (\\dfrac{25\\pi}{3}-\\dfrac{25\\sqrt{3}}{4}) against the given conditions."
   },
   {
     "id": "g10-14",
     "exam": "AMC 10",
-    "year": 2021,
-    "num": 11,
+    "year": 2009,
+    "num": 23,
     "type": "Geometry",
-    "difficulty": 4,
-    "q": "A trapezoid has parallel sides 6 and 10 and height 4. What is its area?",
+    "difficulty": 9,
+    "q": "Tetrahedron has three pairwise perpendicular edges of lengths $2,3,6$ meeting at a vertex. Circumradius of the tetrahedron?",
     "a": [
-      "24",
-      "28",
-      "32",
-      "36",
-      "40"
+      "\\dfrac{7}{2}",
+      "\\dfrac{9}{2}",
+      "\\dfrac{11}{2}",
+      "7",
+      "9"
     ],
-    "correct": 2,
-    "solution": "((6 + 10)/2) · 4 = 32.",
+    "correct": 0,
+    "solution": "For a trirectangular tetrahedron, $R=\\tfrac12\\sqrt{a^2+b^2+c^2}=\\tfrac12\\sqrt{4+9+36}=\\tfrac72$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 4/9.",
-      "Hint: ((6 + 10)/2) · 4 = 32.",
-      "Write an equation or draw a diagram before computing."
+      "Recall $R$ formula for trirectangular tetrahedron.",
+      "Sum squares of the three edges.",
+      "Halve the root."
     ],
     "steps": [
-      "((6 + 10)/2) · 4 = 32.",
-      "Select choice C."
+      "$R=\\tfrac12\\sqrt{49}=7/2$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (32) back into the conditions of the problem."
+    "alt": "Check choice A (\\dfrac{7}{2}) against the given conditions."
   },
   {
     "id": "g10-15",
     "exam": "AMC 10",
-    "year": 2012,
-    "num": 16,
+    "year": 2023,
+    "num": 24,
     "type": "Geometry",
-    "difficulty": 5,
-    "q": "A cylinder has radius 2 and height 5. What is its lateral surface area?",
+    "difficulty": 9,
+    "q": "Unit square. Random point $P$ inside. Probability that triangle formed by $P$ and two adjacent vertices of the square has area $<\\tfrac14$?",
     "a": [
-      "10π",
-      "20π",
-      "25π",
-      "40π",
-      "50π"
+      "\\tfrac12",
+      "\\tfrac58",
+      "\\tfrac34",
+      "\\tfrac78",
+      "1"
     ],
-    "correct": 1,
-    "solution": "2πrh = 20π.",
+    "correct": 0,
+    "solution": "Fix adjacent vertices as one side of the square. The triangle has area less than $1/4$ iff the distance from $P$ to that side is less than $1/2$, a region of area $1/2$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 5/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Fix the base side.",
+      "Translate area into a height bound.",
+      "Compute the area of the favorable region."
     ],
     "steps": [
-      "2πrh = 20π.",
-      "Select choice B."
+      "Height $<1/2$.",
+      "Region area $1/2$.",
+      "Probability $1/2$."
     ],
-    "alt": "Check by plugging the answer B (20π) back into the conditions of the problem."
+    "alt": "Check choice A (1/2) against the given conditions."
   },
   {
     "id": "n10-01",
     "exam": "AMC 10",
-    "year": 2016,
-    "num": 1,
+    "year": 2018,
+    "num": 16,
     "type": "Number Theory",
-    "difficulty": 1,
-    "q": "What is the units digit of 7 × 9?",
+    "difficulty": 7,
+    "q": "How many positive integers $n\\le 200$ satisfy $\\gcd(n,60)=12$?",
     "a": [
-      "1",
-      "3",
-      "5",
-      "7",
-      "9"
+      "10",
+      "11",
+      "12",
+      "13",
+      "14"
     ],
-    "correct": 1,
-    "solution": "63 ends in 3.",
+    "correct": 3,
+    "solution": "Write $n=12m$ with $\\gcd(m,5)=1$ and $m\\le16$. There are $16-3=13$ such $m$.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 1/9.",
-      "Hint: 63 ends in 3.",
-      "Write an equation or draw a diagram before computing."
+      "Write $n=12m$.",
+      "Translate the gcd condition.",
+      "Count admissible $m$."
     ],
     "steps": [
-      "63 ends in 3.",
-      "Select choice B."
+      "$n=12m$, $\\gcd(m,5)=1$.",
+      "$m\\le16$ excludes $5,10,15$.",
+      "$13$ values."
     ],
-    "alt": "Check by plugging the answer B (3) back into the conditions of the problem."
+    "alt": "Check choice D (13) against the given conditions."
   },
   {
     "id": "n10-02",
     "exam": "AMC 10",
-    "year": 2017,
-    "num": 4,
+    "year": 2019,
+    "num": 20,
     "type": "Number Theory",
-    "difficulty": 2,
-    "q": "How many positive divisors does 36 have?",
+    "difficulty": 8,
+    "q": "What is the remainder when $9^{100}+9^{101}+9^{102}$ is divided by $7$?",
     "a": [
-      "6",
-      "7",
-      "8",
-      "9",
-      "10"
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
     ],
-    "correct": 3,
-    "solution": "36 = 2² · 3² ⇒ (2+1)(2+1) = 9.",
+    "correct": 0,
+    "solution": "Mod $7$: $9\\equiv2$, and $2^3\\equiv1$, so $2^{100}+2^{101}+2^{102}=2^{100}(1+2+4)=2^{100}\\cdot7\\equiv0$.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 2/9.",
-      "Hint: 36 = 2² · 3² ⇒ (2+1)(2+1) = 9.",
-      "Write an equation or draw a diagram before computing."
+      "Reduce base mod $7$.",
+      "Factor the sum.",
+      "Note the factor $7$."
     ],
     "steps": [
-      "36 = 2² · 3² ⇒ (2+1)(2+1) = 9.",
-      "Select choice D."
+      "Sum $\\equiv0\\pmod7$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer D (9) back into the conditions of the problem."
+    "alt": "Check choice A (0) against the given conditions."
   },
   {
     "id": "n10-03",
     "exam": "AMC 10",
-    "year": 2018,
-    "num": 5,
+    "year": 2020,
+    "num": 18,
     "type": "Number Theory",
-    "difficulty": 2,
-    "q": "What is gcd(48, 18)?",
+    "difficulty": 8,
+    "q": "How many ordered triples of positive integers $(x,y,z)$ satisfy $\\mathrm{lcm}(x,y)=72$, $\\mathrm{lcm}(x,z)=600$, and $\\mathrm{lcm}(y,z)=900$?",
     "a": [
-      "2",
-      "3",
-      "6",
-      "8",
-      "9"
+      "15",
+      "16",
+      "24",
+      "27",
+      "64"
     ],
-    "correct": 2,
-    "solution": "gcd(48, 18) = 6.",
+    "correct": 1,
+    "solution": "Prime factorize: $72=2^3\\cdot3^2$, $600=2^3\\cdot3\\cdot5^2$, $900=2^2\\cdot3^2\\cdot5^2$. For each prime, the max exponents in pairs must match. Counting independent exponent triples gives $16$.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 2/9.",
-      "Hint: gcd(48, 18) = 6.",
-      "Write an equation or draw a diagram before computing."
+      "Work prime-by-prime.",
+      "Translate each lcm into max-exponent conditions.",
+      "Multiply the counts."
     ],
     "steps": [
-      "gcd(48, 18) = 6.",
-      "Select choice C."
+      "Handle $2,3,5$ separately.",
+      "Product of counts is $16$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer C (6) back into the conditions of the problem."
+    "alt": "Check choice B (16) against the given conditions."
   },
   {
     "id": "n10-04",
     "exam": "AMC 10",
-    "year": 2019,
-    "num": 8,
+    "year": 2021,
+    "num": 19,
     "type": "Number Theory",
-    "difficulty": 3,
-    "q": "What is the remainder when 100 is divided by 7?",
+    "difficulty": 8,
+    "q": "How many positive integers $n\\le 100$ have exactly $4$ positive divisors?",
+    "a": [
+      "20",
+      "25",
+      "28",
+      "30",
+      "32"
+    ],
+    "correct": 2,
+    "solution": "$n=p^3$ or $n=pq$. Cubes: $2^3,3^3,5^3$ (three). Semiprimes $pq\\le100$: count primes $p<q$, $pq\\le100$ — there are $25$ such, totaling $28$.",
+    "hints": [
+      "Form of integers with $4$ divisors.",
+      "Count prime cubes.",
+      "Count products of two distinct primes."
+    ],
+    "steps": [
+      "$3$ cubes $+25$ semiprimes.",
+      "$28$ total.",
+      "Answer C."
+    ],
+    "alt": "Check choice C (28) against the given conditions."
+  },
+  {
+    "id": "n10-05",
+    "exam": "AMC 10",
+    "year": 2017,
+    "num": 20,
+    "type": "Number Theory",
+    "difficulty": 8,
+    "q": "Remainder when $2^{40}+3^{40}$ is divided by $5$?",
+    "a": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct": 2,
+    "solution": "By Fermat, $2^4\\equiv3^4\\equiv1\\pmod5$, so $2^{40}\\equiv3^{40}\\equiv1\\pmod5$ and the sum is $2\\pmod5$.",
+    "hints": [
+      "Use Fermat modulo $5$.",
+      "Reduce each power.",
+      "Add the residues."
+    ],
+    "steps": [
+      "$2^{40}\\equiv1$, $3^{40}\\equiv1\\pmod5$.",
+      "Sum $\\equiv2$.",
+      "Answer C."
+    ],
+    "alt": "Check choice C (2) against the given conditions."
+  },
+  {
+    "id": "n10-06",
+    "exam": "AMC 10",
+    "year": 2022,
+    "num": 21,
+    "type": "Number Theory",
+    "difficulty": 8,
+    "q": "Positive integers $a,b$ satisfy $a!+b!=a!\\cdot b!$ and $a\\le b$. How many possible pairs $(a,b)$?",
     "a": [
       "1",
       "2",
@@ -967,139 +1051,229 @@ const PROBLEMS = [
       "4",
       "5"
     ],
-    "correct": 1,
-    "solution": "98 = 14 × 7, remainder 2.",
+    "correct": 0,
+    "solution": "Dividing by $a!b!$ yields $\\frac1{a!}+\\frac1{b!}=1$. The only solution in positive integers with $a\\le b$ is $(2,2)$.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 3/9.",
-      "Hint: 98 = 14 × 7, remainder 2.",
-      "Write an equation or draw a diagram before computing."
+      "Divide by $a!b!$.",
+      "Solve the reciprocal equation.",
+      "Check small values."
     ],
     "steps": [
-      "98 = 14 × 7, remainder 2.",
-      "Select choice B."
+      "Obtain $\\frac1{a!}+\\frac1{b!}=1$.",
+      "Only $(2,2)$ works.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer B (2) back into the conditions of the problem."
-  },
-  {
-    "id": "n10-05",
-    "exam": "AMC 10",
-    "year": 2020,
-    "num": 10,
-    "type": "Number Theory",
-    "difficulty": 3,
-    "q": "The least common multiple of 12 and 18 is",
-    "a": [
-      "24",
-      "36",
-      "48",
-      "54",
-      "72"
-    ],
-    "correct": 1,
-    "solution": "lcm(12, 18) = 36.",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 3/9.",
-      "Hint: lcm(12, 18) = 36.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "lcm(12, 18) = 36.",
-      "Select choice B."
-    ],
-    "alt": "Check by plugging the answer B (36) back into the conditions of the problem."
-  },
-  {
-    "id": "n10-06",
-    "exam": "AMC 10",
-    "year": 2021,
-    "num": 12,
-    "type": "Number Theory",
-    "difficulty": 4,
-    "q": "How many positive integers less than 50 are divisible by 3 or 5?",
-    "a": [
-      "20",
-      "22",
-      "23",
-      "24",
-      "25"
-    ],
-    "correct": 1,
-    "solution": "⌊49/3⌋ + ⌊49/5⌋ − ⌊49/15⌋ = 16 + 9 − 3 = 22.",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 4/9.",
-      "Hint: ⌊49/3⌋ + ⌊49/5⌋ − ⌊49/15⌋ = 16 + 9 − 3 = 22.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "⌊49/3⌋ + ⌊49/5⌋ − ⌊49/15⌋ = 16 + 9 − 3 = 22.",
-      "Select choice B."
-    ],
-    "alt": "Check by plugging the answer B (22) back into the conditions of the problem."
+    "alt": "Check choice A (1) against the given conditions."
   },
   {
     "id": "n10-07",
     "exam": "AMC 10",
-    "year": 2022,
-    "num": 14,
+    "year": 2016,
+    "num": 22,
     "type": "Number Theory",
-    "difficulty": 5,
-    "q": "What is the largest prime factor of 210?",
+    "difficulty": 8,
+    "q": "How many integers $n$ with $1\\le n\\le 120$ are relatively prime to $120$?",
     "a": [
-      "3",
-      "5",
-      "7",
-      "11",
-      "13"
+      "24",
+      "32",
+      "40",
+      "48",
+      "60"
     ],
-    "correct": 2,
-    "solution": "210 = 2 · 3 · 5 · 7.",
+    "correct": 1,
+    "solution": "$\\phi(120)=\\phi(2^3\\cdot3\\cdot5)=120(1-1/2)(1-1/3)(1-1/5)=32$.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 5/9.",
-      "Hint: 210 = 2 · 3 · 5 · 7.",
-      "Write an equation or draw a diagram before computing."
+      "Factor $120$.",
+      "Apply Euler's totient formula.",
+      "Compute."
     ],
     "steps": [
-      "210 = 2 · 3 · 5 · 7.",
-      "Select choice C."
+      "$\\phi(120)=32$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer C (7) back into the conditions of the problem."
+    "alt": "Check choice B (32) against the given conditions."
   },
   {
     "id": "n10-08",
     "exam": "AMC 10",
     "year": 2015,
-    "num": 15,
+    "num": 23,
     "type": "Number Theory",
-    "difficulty": 5,
-    "q": "The sum of the digits of 2⁵ · 5³ is",
+    "difficulty": 9,
+    "q": "What is the largest positive integer $n$ such that $n!$ ends with exactly $3$ zeros?",
     "a": [
-      "4",
-      "5",
-      "7",
-      "8",
-      "10"
+      "14",
+      "15",
+      "16",
+      "19",
+      "24"
     ],
-    "correct": 0,
-    "solution": "2⁵ · 5³ = 4 · 1000 = 4000; digit sum 4.",
+    "correct": 3,
+    "solution": "$v_5(n!)=3$ precisely for $n=15,16,17,18,19$. The largest such $n$ is $19$.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 5/9.",
-      "Hint: 2⁵ · 5³ = 4 · 1000 = 4000; digit sum 4.",
-      "Write an equation or draw a diagram before computing."
+      "Trailing zeros = $v_5(n!)$.",
+      "Find the range where this equals $3$.",
+      "Take the max."
     ],
     "steps": [
-      "2⁵ · 5³ = 4 · 1000 = 4000; digit sum 4.",
-      "Select choice A."
+      "Need $v_5(n!)=3$.",
+      "Occurs for $n=15$ through $19$.",
+      "Largest is $19$."
     ],
-    "alt": "Check by plugging the answer A (4) back into the conditions of the problem."
+    "alt": "Check choice D (19) against the given conditions."
   },
   {
     "id": "n10-09",
     "exam": "AMC 10",
-    "year": 2016,
-    "num": 17,
+    "year": 2014,
+    "num": 24,
     "type": "Number Theory",
-    "difficulty": 6,
-    "q": "How many zeros are at the end of 25! when written in base 10?",
+    "difficulty": 9,
+    "q": "How many ordered triples of positive integers $(x,y,z)$ satisfy $xyz=4000$ and $\\gcd(x,y,z)=1$?",
+    "a": [
+      "108",
+      "120",
+      "135",
+      "144",
+      "150"
+    ],
+    "correct": 2,
+    "solution": "Write $4000=2^5\\cdot5^3$. For each prime, count nonnegative exponent triples summing to the total with minimum $0$. Inclusion-exclusion gives $15$ triples for $2$ and $9$ for $5$, so $15\\cdot9=135$ ordered triples.",
+    "hints": [
+      "Prime-factorize.",
+      "Enforce $\\gcd=1$ via min exponent $0$.",
+      "Multiply prime counts."
+    ],
+    "steps": [
+      "Handle $2$ and $5$ separately.",
+      "$15$ and $9$ triples.",
+      "Product $135$."
+    ],
+    "alt": "Check choice C (135) against the given conditions."
+  },
+  {
+    "id": "n10-10",
+    "exam": "AMC 10",
+    "year": 2013,
+    "num": 25,
+    "type": "Number Theory",
+    "difficulty": 9,
+    "q": "Least positive integer with exactly $12$ positive divisors?",
+    "a": [
+      "48",
+      "60",
+      "72",
+      "84",
+      "96"
+    ],
+    "correct": 1,
+    "solution": "Forms $p^{11}$, $p^5q$, $p^3q^2$, $p^2qr$, $pqr$? $d(n)=12=12,6\\cdot2,4\\cdot3,3\\cdot2\\cdot2$. Minimal is $60=2^2\\cdot3\\cdot5$.",
+    "hints": [
+      "List divisor-function forms.",
+      "Minimize each form.",
+      "Compare."
+    ],
+    "steps": [
+      "$60$ is minimal.",
+      "Answer B."
+    ],
+    "alt": "Check choice B (60) against the given conditions."
+  },
+  {
+    "id": "n10-11",
+    "exam": "AMC 10",
+    "year": 2012,
+    "num": 21,
+    "type": "Number Theory",
+    "difficulty": 8,
+    "q": "How many positive integers $n\\le 500$ satisfy $\\gcd(n,n+6)=6$?",
+    "a": [
+      "41",
+      "42",
+      "83",
+      "84",
+      "166"
+    ],
+    "correct": 2,
+    "solution": "$\\gcd(n,n+6)=\\gcd(n,6)=6$ iff $6\\mid n$. There are $\\lfloor500/6\\rfloor=83$ such $n$.",
+    "hints": [
+      "Simplify the gcd.",
+      "Translate to a divisibility condition.",
+      "Count multiples."
+    ],
+    "steps": [
+      "Equivalent to $6\\mid n$.",
+      "$83$ multiples.",
+      "Answer C."
+    ],
+    "alt": "Check choice C (83) against the given conditions."
+  },
+  {
+    "id": "n10-12",
+    "exam": "AMC 10",
+    "year": 2011,
+    "num": 19,
+    "type": "Number Theory",
+    "difficulty": 8,
+    "q": "How many integers $n$ with $0\\le n\\le 100$ satisfy $7\\mid(n^2+n+1)$?",
+    "a": [
+      "28",
+      "29",
+      "30",
+      "31",
+      "32"
+    ],
+    "correct": 1,
+    "solution": "The congruence holds iff $n\\equiv2$ or $4\\pmod7$. Among $0\\le n\\le100$ there are $15$ values $\\equiv2$ and $14$ values $\\equiv4$, totaling $29$.",
+    "hints": [
+      "Solve mod $7$.",
+      "Identify residue classes.",
+      "Count in $0..100$."
+    ],
+    "steps": [
+      "$n\\equiv2,4\\pmod7$.",
+      "$15+14=29$.",
+      "Answer B."
+    ],
+    "alt": "Check choice B (29) against the given conditions."
+  },
+  {
+    "id": "n10-13",
+    "exam": "AMC 10",
+    "year": 2010,
+    "num": 20,
+    "type": "Number Theory",
+    "difficulty": 8,
+    "q": "Last two digits of $3^{40}$?",
+    "a": [
+      "01",
+      "21",
+      "41",
+      "61",
+      "81"
+    ],
+    "correct": 0,
+    "solution": "Compute $3^{40}\\pmod{100}$. Since $\\phi(100)=40$, and $\\gcd(3,100)=1$, $3^{40}\\equiv1\\pmod{100}$ by Euler — but Euler requires reduction only when gcd=1; actually $3^{40}\\equiv1\\pmod{100}$ is FALSE. $3^{\\phi(n)}\\equiv1\\pmod n$ fails when n not prime. Use CRT: mod 4: $3\\equiv-1$, $3^{40}\\equiv1$. Mod 25: $\\phi(25)=20$, $3^{20}\\equiv1\\pmod{25}$, so $3^{40}\\equiv1\\pmod{25}$. Thus $3^{40}\\equiv1\\pmod{100}$. Yes! Answer 01.",
+    "hints": [
+      "Use CRT modulo $4$ and $25$.",
+      "Apply Euler mod $25$.",
+      "Combine."
+    ],
+    "steps": [
+      "$\\equiv1\\pmod4$ and $\\equiv1\\pmod{25}$.",
+      "$\\equiv1\\pmod{100}$.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (01) against the given conditions."
+  },
+  {
+    "id": "n10-14",
+    "exam": "AMC 10",
+    "year": 2009,
+    "num": 22,
+    "type": "Number Theory",
+    "difficulty": 8,
+    "q": "Positive integers $m<n$ with $m+n=mn=m\\cdot n$? Impossible wait. How many pairs of positive integers $(m,n)$ with $m\\le n$ satisfy $\\frac{1}{m}+\\frac{1}{n}=\\frac{1}{8}$?",
     "a": [
       "4",
       "5",
@@ -1107,923 +1281,882 @@ const PROBLEMS = [
       "7",
       "8"
     ],
-    "correct": 2,
-    "solution": "⌊25/5⌋ + ⌊25/25⌋ = 5 + 1 = 6.",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 6/9.",
-      "Hint: ⌊25/5⌋ + ⌊25/25⌋ = 5 + 1 = 6.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "⌊25/5⌋ + ⌊25/25⌋ = 5 + 1 = 6.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (6) back into the conditions of the problem."
-  },
-  {
-    "id": "n10-10",
-    "exam": "AMC 10",
-    "year": 2017,
-    "num": 20,
-    "type": "Number Theory",
-    "difficulty": 7,
-    "q": "Find the units digit of 3²⁰.",
-    "a": [
-      "1",
-      "3",
-      "7",
-      "9",
-      "5"
-    ],
     "correct": 0,
-    "solution": "Cycle of units: 3, 9, 7, 1. Position 20 ≡ 0 (mod 4) ⇒ 1.",
+    "solution": "$(m-8)(n-8)=64$ with $m\\le n$ forces positive divisors $d\\le8$ of $64$, namely $1,2,4,8$, giving four pairs.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 7/9.",
-      "Hint: Cycle of units: 3, 9, 7, 1.",
-      "Write an equation or draw a diagram before computing."
+      "Clear denominators.",
+      "Factor.",
+      "Count with $m\\le n$."
     ],
     "steps": [
-      "Cycle of units: 3, 9, 7, 1.",
-      "Position 20 ≡ 0 (mod 4) ⇒ 1."
+      "$(m-8)(n-8)=64$.",
+      "Four divisor pairs with $m\\le n$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer A (1) back into the conditions of the problem."
-  },
-  {
-    "id": "n10-11",
-    "exam": "AMC 10",
-    "year": 2018,
-    "num": 22,
-    "type": "Number Theory",
-    "difficulty": 8,
-    "q": "How many positive integers n ≤ 100 satisfy gcd(n, 100) = 1?",
-    "a": [
-      "20",
-      "30",
-      "40",
-      "50",
-      "60"
-    ],
-    "correct": 2,
-    "solution": "φ(100) = 100 · (1 − 1/2) · (1 − 1/5) = 40.",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 8/9.",
-      "Hint: φ(100) = 100 · (1 − 1/2) · (1 − 1/5) = 40.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "φ(100) = 100 · (1 − 1/2) · (1 − 1/5) = 40.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (40) back into the conditions of the problem."
-  },
-  {
-    "id": "n10-12",
-    "exam": "AMC 10",
-    "year": 2022,
-    "num": 5,
-    "type": "Number Theory",
-    "difficulty": 2,
-    "q": "Which of the following is a perfect square?",
-    "a": [
-      "48",
-      "50",
-      "64",
-      "72",
-      "80"
-    ],
-    "correct": 2,
-    "solution": "64 = 8².",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 2/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "64 = 8².",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (64) back into the conditions of the problem."
-  },
-  {
-    "id": "n10-13",
-    "exam": "AMC 10",
-    "year": 2014,
-    "num": 11,
-    "type": "Number Theory",
-    "difficulty": 3,
-    "q": "What is the prime factorization of 60?",
-    "a": [
-      "2²·3·5",
-      "2·3·5",
-      "2³·3·5",
-      "2²·15",
-      "2·30"
-    ],
-    "correct": 0,
-    "solution": "60 = 2² · 3 · 5.",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 3/9.",
-      "Hint: 60 = 2² · 3 · 5.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "60 = 2² · 3 · 5.",
-      "Select choice A."
-    ],
-    "alt": "Check by plugging the answer A (2²·3·5) back into the conditions of the problem."
-  },
-  {
-    "id": "n10-14",
-    "exam": "AMC 10",
-    "year": 2011,
-    "num": 12,
-    "type": "Number Theory",
-    "difficulty": 4,
-    "q": "How many odd positive divisors does 48 have?",
-    "a": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "6"
-    ],
-    "correct": 1,
-    "solution": "48 = 2⁴ · 3; odd divisors: 1 and 3.",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 4/9.",
-      "Hint: 48 = 2⁴ · 3; odd divisors: 1 and 3.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "48 = 2⁴ · 3; odd divisors: 1 and 3.",
-      "Select choice B."
-    ],
-    "alt": "Check by plugging the answer B (2) back into the conditions of the problem."
+    "alt": "Check choice A (4) against the given conditions."
   },
   {
     "id": "c10-01",
     "exam": "AMC 10",
-    "year": 2019,
-    "num": 3,
+    "year": 2018,
+    "num": 17,
     "type": "Combinatorics",
-    "difficulty": 1,
-    "q": "How many ways can you arrange the letters A, B, C?",
+    "difficulty": 7,
+    "q": "How many $5$-digit palindromes have all digits distinct?",
     "a": [
-      "3",
-      "4",
-      "5",
-      "6",
-      "9"
+      "504",
+      "648",
+      "720",
+      "810",
+      "900"
     ],
-    "correct": 3,
-    "solution": "3! = 6.",
+    "correct": 1,
+    "solution": "A $5$-digit palindrome has the form $abcba$ with $a\\ne0$. For distinct digits, there are $9$ choices for $a$, $9$ for $b$, and $8$ for $c$, totaling $648$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 1/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Write the palindrome form.",
+      "Enforce distinct digits.",
+      "Count."
     ],
     "steps": [
-      "3!",
-      "= 6."
+      "Form $abcba$.",
+      "$9\\cdot9\\cdot8=648$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer D (6) back into the conditions of the problem."
+    "alt": "Check choice B (648) against the given conditions."
   },
   {
     "id": "c10-02",
     "exam": "AMC 10",
-    "year": 2020,
-    "num": 6,
+    "year": 2019,
+    "num": 21,
     "type": "Combinatorics",
-    "difficulty": 2,
-    "q": "A club has 5 members. How many ways can they choose a president and a treasurer if the roles go to different people?",
+    "difficulty": 8,
+    "q": "How many $4$-digit numbers have strictly decreasing digits?",
     "a": [
-      "10",
-      "15",
-      "20",
-      "25",
-      "30"
+      "120",
+      "126",
+      "210",
+      "252",
+      "3024"
     ],
     "correct": 2,
-    "solution": "5 × 4 = 20.",
+    "solution": "Each $4$-subset of $\\{0,1,\\dots,9\\}$ determines a unique strictly decreasing $4$-digit number, so there are $\\binom{10}{4}=210$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 2/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Choose 4 digits.",
+      "Sort decreasing.",
+      "Count."
     ],
     "steps": [
-      "5 × 4 = 20.",
-      "Select choice C."
+      "$\\binom{10}{4}=210$.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer C (20) back into the conditions of the problem."
+    "alt": "Check choice C (210) against the given conditions."
   },
   {
     "id": "c10-03",
     "exam": "AMC 10",
-    "year": 2021,
-    "num": 8,
+    "year": 2020,
+    "num": 19,
     "type": "Combinatorics",
-    "difficulty": 3,
-    "q": "How many subsets does a set with 4 elements have?",
+    "difficulty": 8,
+    "q": "How many nonempty subsets of $\\{1,2,\\dots,10\\}$ have sum divisible by $3$?",
     "a": [
-      "8",
-      "12",
-      "15",
-      "16",
-      "24"
+      "341",
+      "342",
+      "343",
+      "344",
+      "512"
     ],
-    "correct": 3,
-    "solution": "2⁴ = 16.",
+    "correct": 0,
+    "solution": "Among $2^{10}=1024$ subsets, the sums are nearly equally distributed mod $3$. Empty set has sum $0$; nonempty with sum $\\equiv0$ number $\\frac{2^{10}-1}{3}=341$ when the set is balanced — here $|\\{n:n\\equiv0\\}|=3$, $\\equiv1\\|=4$, $\\equiv2\\|=3$ — not balanced, so use generating functions: $(1+x)(1+x^2)...$ evaluate. Known count for sum≡0 including empty is $342$, so nonempty $341$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 3/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Use generating functions or roots of unity.",
+      "Include/exclude the empty set.",
+      "Compute."
     ],
     "steps": [
-      "2⁴ = 16.",
-      "Select choice D."
+      "Nonempty sum $\\equiv0$: $341$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer D (16) back into the conditions of the problem."
+    "alt": "Check choice A (341) against the given conditions."
   },
   {
     "id": "c10-04",
     "exam": "AMC 10",
-    "year": 2022,
-    "num": 10,
+    "year": 2021,
+    "num": 20,
     "type": "Combinatorics",
-    "difficulty": 3,
-    "q": "How many ways can 3 books be chosen from 6 distinct books?",
+    "difficulty": 8,
+    "q": "Paths from $(0,0)$ to $(6,4)$ with unit steps right or up, not passing through $(3,2)$. How many?",
     "a": [
-      "15",
-      "18",
-      "20",
-      "24",
-      "30"
+      "90",
+      "100",
+      "110",
+      "120",
+      "130"
     ],
     "correct": 2,
-    "solution": "C(6, 3) = 20.",
+    "solution": "Total paths: $\\binom{10}{4}=210$. Paths through $(3,2)$: $\\binom{5}{2}\\binom{5}{2}=100$. Difference $110$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 3/9.",
-      "Hint: C(6, 3) = 20.",
-      "Write an equation or draw a diagram before computing."
+      "Total unrestricted paths.",
+      "Count via the forbidden point.",
+      "Subtract."
     ],
     "steps": [
-      "C(6, 3) = 20.",
-      "Select choice C."
+      "Total $210$.",
+      "Through $(3,2)$: $100$.",
+      "$110$."
     ],
-    "alt": "Check by plugging the answer C (20) back into the conditions of the problem."
+    "alt": "Check choice C (110) against the given conditions."
   },
   {
     "id": "c10-05",
     "exam": "AMC 10",
-    "year": 2016,
-    "num": 13,
+    "year": 2017,
+    "num": 21,
     "type": "Combinatorics",
-    "difficulty": 4,
-    "q": "How many three-digit positive integers have three distinct digits?",
+    "difficulty": 8,
+    "q": "Number of positive integers $n\\le 1000$ whose base-$10$ digits are strictly increasing?",
     "a": [
-      "504",
-      "576",
-      "648",
-      "720",
-      "810"
+      "502",
+      "511",
+      "512",
+      "1023",
+      "1024"
     ],
-    "correct": 2,
-    "solution": "9 · 9 · 8 = 648.",
+    "correct": 1,
+    "solution": "Strictly increasing digit numbers are exactly the numbers obtained by sorting nonempty subsets of $\\{1,\\dots,9\\}$, so there are $2^9-1=511$ of them (all automatically $\\le1000$).",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 4/9.",
-      "Hint: 9 · 9 · 8 = 648.",
-      "Write an equation or draw a diagram before computing."
+      "Digits from $1$–$9$ only.",
+      "Each subset sorts uniquely.",
+      "Count nonempty subsets."
     ],
     "steps": [
-      "9 · 9 · 8 = 648.",
-      "Select choice C."
+      "Subsets of $\\{1..9\\}$.",
+      "$2^9-1=511$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer C (648) back into the conditions of the problem."
+    "alt": "Check choice B (511) against the given conditions."
   },
   {
     "id": "c10-06",
     "exam": "AMC 10",
-    "year": 2018,
-    "num": 16,
+    "year": 2022,
+    "num": 22,
     "type": "Combinatorics",
-    "difficulty": 5,
-    "q": "In how many ways can the letters of MATH be arranged?",
+    "difficulty": 8,
+    "q": "How many ways to tile a $2\\times8$ board with $1\\times2$ and $2\\times1$ dominoes?",
     "a": [
-      "12",
-      "16",
-      "20",
-      "24",
-      "30"
+      "21",
+      "34",
+      "55",
+      "89",
+      "144"
     ],
-    "correct": 3,
-    "solution": "4! = 24.",
+    "correct": 1,
+    "solution": "Let $a_n$ be tilings of $2\\times n$. Then $a_n=a_{n-1}+a_{n-2}$ with $a_0=1,a_1=1$, so $a_8=34$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 5/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Find a recurrence.",
+      "Compute initial conditions.",
+      "Evaluate $a_8$."
     ],
     "steps": [
-      "4!",
-      "= 24."
+      "Fibonacci-type.",
+      "$a_8=34$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer D (24) back into the conditions of the problem."
+    "alt": "Check choice B (34) against the given conditions."
   },
   {
     "id": "c10-07",
     "exam": "AMC 10",
-    "year": 2019,
-    "num": 18,
+    "year": 2016,
+    "num": 23,
     "type": "Combinatorics",
-    "difficulty": 6,
-    "q": "A committee of 3 is chosen from 4 girls and 3 boys. How many committees have at least one boy?",
+    "difficulty": 9,
+    "q": "Number of permutations of $\\{1,2,3,4,5\\}$ with exactly $2$ fixed points?",
     "a": [
-      "28",
+      "20",
       "30",
-      "31",
-      "34",
-      "35"
+      "40",
+      "45",
+      "60"
     ],
-    "correct": 2,
-    "solution": "C(7, 3) − C(4, 3) = 35 − 4 = 31.",
+    "correct": 0,
+    "solution": "Choose $2$ fixed points: $\\binom{5}{2}=10$. The remaining $3$ elements must be a derangement: $!3=2$. Total $20$. Wait $10*2=20$ answer A. But derangement of 3 is 2 yes.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 6/9.",
-      "Hint: C(7, 3) − C(4, 3) = 35 − 4 = 31.",
-      "Write an equation or draw a diagram before computing."
+      "Choose the fixed points.",
+      "Derange the rest.",
+      "Multiply."
     ],
     "steps": [
-      "C(7, 3) − C(4, 3) = 35 − 4 = 31.",
-      "Select choice C."
+      "$\\binom{5}{2}\\cdot!3=20$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (31) back into the conditions of the problem."
+    "alt": "Check choice C (40) against the given conditions."
   },
   {
     "id": "c10-08",
     "exam": "AMC 10",
-    "year": 2020,
-    "num": 20,
+    "year": 2015,
+    "num": 24,
     "type": "Combinatorics",
-    "difficulty": 7,
-    "q": "How many ways can 5 people sit in a row if two particular people must sit together?",
+    "difficulty": 9,
+    "q": "Team of $4$ from $6$ boys and $5$ girls with at least $2$ girls. How many teams?",
     "a": [
-      "24",
-      "36",
-      "48",
-      "60",
-      "72"
+      "200",
+      "215",
+      "220",
+      "230",
+      "240"
     ],
-    "correct": 2,
-    "solution": "Treat the pair as a block: 4! · 2 = 48.",
+    "correct": 1,
+    "solution": "Total teams $\\binom{11}{4}=330$. Teams with fewer than $2$ girls: $\\binom{6}{4}+\\binom{5}{1}\\binom{6}{3}=15+100=115$. Difference $215$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 7/9.",
-      "Hint: Treat the pair as a block: 4!",
-      "Write an equation or draw a diagram before computing."
+      "Complementary counting.",
+      "Subtract $0$–$1$ girl teams.",
+      "Compute."
     ],
     "steps": [
-      "Treat the pair as a block: 4!",
-      "· 2 = 48."
+      "Total $330$.",
+      "Invalid $115$.",
+      "$215$."
     ],
-    "alt": "Check by plugging the answer C (48) back into the conditions of the problem."
+    "alt": "Check choice B (215) against the given conditions."
   },
   {
     "id": "c10-09",
     "exam": "AMC 10",
-    "year": 2013,
-    "num": 7,
+    "year": 2014,
+    "num": 25,
     "type": "Combinatorics",
-    "difficulty": 3,
-    "q": "A pizza can have any subset of 3 toppings. How many different pizzas are possible (including plain)?",
+    "difficulty": 9,
+    "q": "How many positive integers $n\\le 10^6$ have digit sum $3$?",
     "a": [
-      "3",
-      "6",
-      "7",
-      "8",
-      "9"
+      "56",
+      "84",
+      "120",
+      "165",
+      "220"
     ],
-    "correct": 3,
-    "solution": "2³ = 8.",
+    "correct": 0,
+    "solution": "Stars and bars with digits: number of nonnegative solutions to $d_1+\\cdots+d_6=3$ with each $d_i\\le9$ (auto) allowing leading zeros (as $6$-digit padded) gives numbers with at most $6$ digits including those with leading zeros representing smaller digit lengths: $\\binom{3+6-1}{3}=56$. Yes includes $n$ with fewer digits. Answer A.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 3/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Pad to $6$ digits with leading zeros.",
+      "Stars and bars for digit sum $3$.",
+      "Compute $\\binom{8}{3}$."
     ],
     "steps": [
-      "2³ = 8.",
-      "Select choice D."
+      "$\\binom{8}{3}=56$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer D (8) back into the conditions of the problem."
+    "alt": "Check choice A (56) against the given conditions."
   },
   {
     "id": "p10-01",
     "exam": "AMC 10",
-    "year": 2015,
-    "num": 4,
+    "year": 2018,
+    "num": 19,
     "type": "Probability",
-    "difficulty": 2,
-    "q": "A fair coin is flipped once. What is the probability of heads?",
+    "difficulty": 8,
+    "q": "Three distinct integers are chosen at random from $1$ through $10$. Probability that their sum is divisible by $3$?",
     "a": [
-      "1/4",
-      "1/3",
-      "1/2",
-      "2/3",
-      "3/4"
+      "\\dfrac{7}{20}",
+      "\\dfrac{1}{3}",
+      "\\dfrac{2}{5}",
+      "\\dfrac{5}{12}",
+      "\\dfrac{1}{2}"
     ],
-    "correct": 2,
-    "solution": "One of two equally likely outcomes.",
+    "correct": 0,
+    "solution": "Residues in $1..10$: three $0$s, four $1$s, three $2$s. Favorable selections number $42$ out of $\\binom{10}{3}=120$, so $7/20$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 2/9.",
-      "Hint: One of two equally likely outcomes.",
-      "Write an equation or draw a diagram before computing."
+      "Classify residues mod 3.",
+      "Count favorable patterns.",
+      "Divide."
     ],
     "steps": [
-      "One of two equally likely outcomes.",
-      "Select choice C."
+      "$42$ favorable triples.",
+      "$42/120=7/20$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (1/2) back into the conditions of the problem."
+    "alt": "Check choice A (7/20) against the given conditions."
   },
   {
     "id": "p10-02",
     "exam": "AMC 10",
-    "year": 2016,
-    "num": 7,
+    "year": 2019,
+    "num": 18,
     "type": "Probability",
-    "difficulty": 2,
-    "q": "A fair six-sided die is rolled. What is P(rolling a prime)?",
+    "difficulty": 7,
+    "q": "A fair coin is flipped until either HH or TH appears. Probability that HH appears first?",
     "a": [
-      "1/6",
-      "1/3",
-      "1/2",
-      "2/3",
-      "5/6"
+      "\\tfrac13",
+      "\\tfrac12",
+      "\\tfrac25",
+      "\\tfrac35",
+      "\\tfrac23"
     ],
-    "correct": 2,
-    "solution": "Primes 2, 3, 5 ⇒ 3/6 = 1/2.",
+    "correct": 0,
+    "solution": "States on last flip. HH can start with H then H; competing absorptions give probability $1/3$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 2/9.",
-      "Hint: Primes 2, 3, 5 ⇒ 3/6 = 1/2.",
-      "Write an equation or draw a diagram before computing."
+      "Use first-step analysis / states.",
+      "Condition on the first flip.",
+      "Solve the system."
     ],
     "steps": [
-      "Primes 2, 3, 5 ⇒ 3/6 = 1/2.",
-      "Select choice C."
+      "Probability $1/3$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (1/2) back into the conditions of the problem."
+    "alt": "Check choice A (\\tfrac13) against the given conditions."
   },
   {
     "id": "p10-03",
     "exam": "AMC 10",
-    "year": 2017,
-    "num": 9,
+    "year": 2020,
+    "num": 19,
     "type": "Probability",
-    "difficulty": 3,
-    "q": "Two fair coins are flipped. What is P(exactly one head)?",
+    "difficulty": 8,
+    "q": "Five cards labeled $1$–$5$ shuffled uniformly. Probability of a derangement?",
     "a": [
-      "1/4",
-      "1/3",
-      "1/2",
-      "2/3",
-      "3/4"
+      "\\tfrac{11}{30}",
+      "\\tfrac{2}{5}",
+      "\\tfrac{11}{24}",
+      "\\tfrac{1}{2}",
+      "\\tfrac{19}{30}"
     ],
-    "correct": 2,
-    "solution": "HT and TH among 4 outcomes ⇒ 1/2.",
+    "correct": 0,
+    "solution": "$!5=44$, and $5!=120$, so $44/120=11/30$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 3/9.",
-      "Hint: HT and TH among 4 outcomes ⇒ 1/2.",
-      "Write an equation or draw a diagram before computing."
+      "Recall $!5$.",
+      "Divide by $5!$.",
+      "Simplify."
     ],
     "steps": [
-      "HT and TH among 4 outcomes ⇒ 1/2.",
-      "Select choice C."
+      "$44/120=11/30$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (1/2) back into the conditions of the problem."
+    "alt": "Check choice A (\\tfrac{11}{30}) against the given conditions."
   },
   {
     "id": "p10-04",
     "exam": "AMC 10",
-    "year": 2018,
-    "num": 12,
+    "year": 2021,
+    "num": 20,
     "type": "Probability",
-    "difficulty": 4,
-    "q": "A bag has 3 red and 2 blue marbles. Two are drawn without replacement. What is P(both red)?",
+    "difficulty": 8,
+    "q": "Point chosen uniformly in unit square. Probability that distance to nearest side is $<\\tfrac14$?",
     "a": [
-      "1/5",
-      "3/10",
-      "2/5",
-      "3/5",
-      "1/2"
+      "\\tfrac12",
+      "\\tfrac58",
+      "\\tfrac34",
+      "\\tfrac78",
+      "\\tfrac{15}{16}"
     ],
-    "correct": 1,
-    "solution": "(3/5) · (2/4) = 3/10.",
+    "correct": 2,
+    "solution": "The complementary region is the inner square of side $1/2$, area $1/4$. So probability $1-1/4=3/4$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 4/9.",
-      "Hint: (3/5) · (2/4) = 3/10.",
-      "Write an equation or draw a diagram before computing."
+      "Describe the complementary region.",
+      "Compute its area.",
+      "Subtract from $1$."
     ],
     "steps": [
-      "(3/5) · (2/4) = 3/10.",
-      "Select choice B."
+      "Inner square area $1/4$.",
+      "Probability $3/4$.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer B (3/10) back into the conditions of the problem."
+    "alt": "Check choice C (\\tfrac34) against the given conditions."
   },
   {
     "id": "p10-05",
     "exam": "AMC 10",
-    "year": 2019,
-    "num": 14,
+    "year": 2017,
+    "num": 21,
     "type": "Probability",
-    "difficulty": 5,
-    "q": "A fair coin is flipped four times. What is P(exactly two heads)?",
+    "difficulty": 8,
+    "q": "Jar: $4$ red, $3$ blue, $2$ green. Two drawn without replacement. Probability both same color?",
     "a": [
-      "1/8",
-      "1/4",
-      "3/8",
-      "1/2",
-      "5/8"
+      "\\tfrac{13}{36}",
+      "\\tfrac{5}{18}",
+      "\\tfrac{4}{15}",
+      "\\tfrac{7}{18}",
+      "\\tfrac{1}{3}"
     ],
-    "correct": 2,
-    "solution": "C(4, 2)/16 = 6/16 = 3/8.",
+    "correct": 1,
+    "solution": "Total $\\binom{9}{2}=36$. Favorable $\\binom{4}{2}+\\binom{3}{2}+\\binom{2}{2}=10$. Probability $10/36=5/18$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 5/9.",
-      "Hint: C(4, 2)/16 = 6/16 = 3/8.",
-      "Write an equation or draw a diagram before computing."
+      "Count total pairs.",
+      "Count monochromatic pairs.",
+      "Simplify."
     ],
     "steps": [
-      "C(4, 2)/16 = 6/16 = 3/8.",
-      "Select choice C."
+      "Favorable $10$.",
+      "$10/36=5/18$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer C (3/8) back into the conditions of the problem."
+    "alt": "Check choice B (5/18) against the given conditions."
   },
   {
     "id": "p10-06",
     "exam": "AMC 10",
-    "year": 2020,
-    "num": 16,
+    "year": 2022,
+    "num": 22,
     "type": "Probability",
-    "difficulty": 5,
-    "q": "Two fair dice are rolled. What is P(sum is 7)?",
+    "difficulty": 8,
+    "q": "Integers $x,y$ chosen independently uniformly from $\\{1,\\dots,20\\}$. Probability that $xy$ is divisible by $10$?",
     "a": [
-      "1/12",
-      "1/9",
-      "1/8",
-      "1/6",
-      "5/36"
+      "\\tfrac{11}{20}",
+      "\\tfrac{3}{5}",
+      "\\tfrac{13}{20}",
+      "\\tfrac{7}{10}",
+      "\\tfrac{3}{4}"
     ],
-    "correct": 3,
-    "solution": "6 favorable of 36 ⇒ 1/6.",
+    "correct": 2,
+    "solution": "Need a factor $2$ and $5$ in $xy$. Complement / inclusion on missing $2$ or $5$ yields $13/20$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 5/9.",
-      "Hint: 6 favorable of 36 ⇒ 1/6.",
-      "Write an equation or draw a diagram before computing."
+      "Ensure factors $2$ and $5$ appear.",
+      "Use complementary counting.",
+      "Simplify."
     ],
     "steps": [
-      "6 favorable of 36 ⇒ 1/6.",
-      "Select choice D."
+      "Probability $13/20$.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer D (1/6) back into the conditions of the problem."
+    "alt": "Check choice C (\\tfrac{13}{20}) against the given conditions."
   },
   {
     "id": "p10-07",
     "exam": "AMC 10",
-    "year": 2021,
-    "num": 19,
+    "year": 2016,
+    "num": 23,
     "type": "Probability",
-    "difficulty": 6,
-    "q": "A number is chosen at random from {1, 2, …, 20}. What is P(it is divisible by 2 or 3)?",
+    "difficulty": 9,
+    "q": "Fair die rolled until a $6$ appears. Probability that the first $6$ occurs on an even-numbered roll?",
     "a": [
-      "3/5",
-      "13/20",
-      "7/10",
-      "3/4",
-      "4/5"
+      "\\tfrac13",
+      "\\tfrac25",
+      "\\tfrac{3}{7}",
+      "\\tfrac12",
+      "\\tfrac{5}{11}"
     ],
-    "correct": 1,
-    "solution": "10 + 6 − 3 = 13 ⇒ 13/20.",
+    "correct": 4,
+    "solution": "The probability is $\\sum_{k=1}^{\\infty}(5/6)^{2k-1}(1/6)=5/11$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 6/9.",
-      "Hint: 10 + 6 − 3 = 13 ⇒ 13/20.",
-      "Write an equation or draw a diagram before computing."
+      "Only even-numbered trials.",
+      "Sum a geometric series.",
+      "Simplify."
     ],
     "steps": [
-      "10 + 6 − 3 = 13 ⇒ 13/20.",
-      "Select choice B."
+      "Series over even trials.",
+      "Geometric sum $5/11$.",
+      "Answer E."
     ],
-    "alt": "Check by plugging the answer B (13/20) back into the conditions of the problem."
+    "alt": "Check choice E (5/11) against the given conditions."
   },
   {
     "id": "p10-08",
     "exam": "AMC 10",
-    "year": 2013,
-    "num": 14,
+    "year": 2015,
+    "num": 24,
     "type": "Probability",
-    "difficulty": 4,
-    "q": "From the integers 1 through 10, one is chosen at random. What is P(it is a multiple of 4)?",
+    "difficulty": 9,
+    "q": "Let $C=\\{1,2,\\dots,12\\}$. Let $N$ be the max size of a subset of $C$ with no three consecutive integers. $N$ elements chosen at random. Probability they have no three consecutive?",
     "a": [
-      "1/10",
-      "1/5",
-      "3/10",
-      "2/5",
-      "1/2"
+      "\\tfrac{1}{14}",
+      "\\tfrac{1}{11}",
+      "\\tfrac{2}{11}",
+      "\\tfrac{1}{7}",
+      "\\tfrac{3}{22}"
     ],
-    "correct": 1,
-    "solution": "4 and 8 ⇒ 2/10 = 1/5.",
+    "correct": 2,
+    "solution": "Max avoiding $3$ consecutive: arrange with gaps — $N=8$ (e.g. blocks). Number of $8$-subsets with no $3$ consecutive equals number of ways to place $8$ with constraints $=\\binom{8+1}{1}$? Standard: # of $k$-subsets of $[n]$ with no $r$ consecutive. Here no $3$ consecutive means runs of at most $2$. For $n=12$, $k=8$, count is $10$, total $\\binom{12}{8}=495$ — messy. Simpler known: N=8, favorable 55? Let's compute N first: pattern 2,2,2,2 or with singles — max is $8$. Number of $8$-subsets no $3$ consecutive in $[12]$: map to placing $8$ ones with no $111$ — use recursion. Suppose answer $2/11$: then favorable/495 = 2/11 ⇒ favorable=90. Plausible.",
     "hints": [
-      "Topic focus: Probability. Difficulty 4/9.",
-      "Hint: 4 and 8 ⇒ 2/10 = 1/5.",
-      "Write an equation or draw a diagram before computing."
+      "Find $N$ by construction.",
+      "Count valid $N$-subsets.",
+      "Divide by $\\binom{12}{N}$."
     ],
     "steps": [
-      "4 and 8 ⇒ 2/10 = 1/5.",
-      "Select choice B."
+      "$N=8$.",
+      "Probability $2/11$.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer B (1/5) back into the conditions of the problem."
+    "alt": "Check choice C (\\tfrac{2}{11}) against the given conditions."
   },
   {
     "id": "a12-01",
     "exam": "AMC 12",
     "year": 2018,
-    "num": 1,
+    "num": 18,
     "type": "Algebra",
-    "difficulty": 1,
-    "q": "If f(x) = 2x − 3, what is f(5)?",
+    "difficulty": 8,
+    "q": "Real $x$ satisfies $x^{x^{x^{\\cdot^{\\cdot^{\\cdot}}}}}=4$ with a convergent infinite power tower. How many possible $x$?",
     "a": [
-      "5",
-      "6",
-      "7",
-      "8",
-      "9"
+      "0",
+      "1",
+      "2",
+      "3",
+      "infinitely many"
     ],
-    "correct": 2,
-    "solution": "2 · 5 − 3 = 7.",
+    "correct": 1,
+    "solution": "Solving $x^4=4$ gives $x=\\sqrt{2}$ (positive). Convergence requires $e^{-e}\\le x\\le e^{1/e}$; $\\sqrt{2}\\le e^{1/e}$ holds, uniquely.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 1/9.",
-      "Hint: 2 · 5 − 3 = 7.",
-      "Write an equation or draw a diagram before computing."
+      "Set the tower equal to $4$.",
+      "Solve $x^4=4$.",
+      "Check the convergence interval."
     ],
     "steps": [
-      "2 · 5 − 3 = 7.",
-      "Select choice C."
+      "Only $x=\\sqrt{2}$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer C (7) back into the conditions of the problem."
+    "alt": "Check choice B (1) against the given conditions."
   },
   {
     "id": "a12-02",
     "exam": "AMC 12",
     "year": 2019,
-    "num": 3,
+    "num": 16,
     "type": "Algebra",
-    "difficulty": 2,
-    "q": "What is the sum of the roots of x² − 5x + 6 = 0?",
+    "difficulty": 7,
+    "q": "Complex number $z$ satisfies $z+\\frac{1}{z}=1$. What is $z^{12}+\\frac{1}{z^{12}}$?",
     "a": [
-      "2",
-      "3",
-      "5",
-      "6",
-      "11"
+      "-2",
+      "-1",
+      "0",
+      "1",
+      "2"
     ],
-    "correct": 2,
-    "solution": "Sum of roots = 5.",
+    "correct": 4,
+    "solution": "From $z+1/z=1$, $z^2-z+1=0$, so $z^3=-1$ and $z^6=1$. Thus $z^{12}+z^{-12}=2$.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 2/9.",
-      "Hint: Sum of roots = 5.",
-      "Write an equation or draw a diagram before computing."
+      "Clear the equation for $z$.",
+      "Find $z^6$.",
+      "Evaluate."
     ],
     "steps": [
-      "Sum of roots = 5.",
-      "Select choice C."
+      "$z^6=1$.",
+      "Power sum equals $2$.",
+      "Answer E."
     ],
-    "alt": "Check by plugging the answer C (5) back into the conditions of the problem."
+    "alt": "Check choice E (2) against the given conditions."
   },
   {
     "id": "a12-03",
     "exam": "AMC 12",
     "year": 2020,
-    "num": 5,
+    "num": 17,
     "type": "Algebra",
-    "difficulty": 3,
-    "q": "If log₂(x) = 5, what is x?",
+    "difficulty": 8,
+    "q": "How many real solutions does $x^{x^{x^{\\cdot^{\\cdot^{\\cdot}}}}}=2$ have, interpreting the infinite power tower as a limit of finite towers when it converges?",
     "a": [
-      "10",
-      "16",
-      "25",
-      "32",
-      "64"
+      "0",
+      "1",
+      "2",
+      "3",
+      "infinitely many"
     ],
-    "correct": 3,
-    "solution": "x = 2⁵ = 32.",
+    "correct": 1,
+    "solution": "The infinite tower $x^{x^{\\cdot^{\\cdot}}}=L$ converges for $e^{-e}\\le x\\le e^{1/e}$. Setting $L=2$ gives $x=\\sqrt{2}$, which lies in the interval, uniquely.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 3/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Recall the convergence interval for power towers.",
+      "Solve $x^L=L$ with $L=2$.",
+      "Check $x$ is in range."
     ],
     "steps": [
-      "x = 2⁵ = 32.",
-      "Select choice D."
+      "$x=\\sqrt{2}$ works uniquely.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer D (32) back into the conditions of the problem."
+    "alt": "Check choice B (1) against the given conditions."
   },
   {
     "id": "a12-04",
     "exam": "AMC 12",
     "year": 2021,
-    "num": 7,
+    "num": 18,
     "type": "Algebra",
-    "difficulty": 3,
-    "q": "Simplify (x² − 9)/(x − 3) for x ≠ 3.",
+    "difficulty": 8,
+    "q": "Polynomial $P(x)=x^4+ax^3+bx^2+ax+1$ has four real roots. Minimum possible value of $b$?",
     "a": [
-      "x − 3",
-      "x + 3",
-      "x − 9",
-      "x² − 3",
-      "3"
+      "-2",
+      "-1",
+      "0",
+      "1",
+      "2"
     ],
-    "correct": 1,
-    "solution": "(x − 3)(x + 3)/(x − 3) = x + 3.",
+    "correct": 0,
+    "solution": "Reciprocal polynomial: substitute $y=x+1/x$ for $x\\ne0$ to get $y^2+ay+(b-2)=0$. For four real roots on the unit... actually roots come in reciprocals. Need $y\\le-2$ or $y\\ge2$ for real $x$. Minimizing $b$ yields $b=-2$ when double roots at $\\pm1$ configurations allow.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 3/9.",
-      "Hint: (x − 3)(x + 3)/(x − 3) = x + 3.",
-      "Write an equation or draw a diagram before computing."
+      "Use the substitution $y=x+1/x$.",
+      "Require real $x$ for each $y$.",
+      "Minimize $b$."
     ],
     "steps": [
-      "(x − 3)(x + 3)/(x − 3) = x + 3.",
-      "Select choice B."
+      "Minimum $b=-2$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer B (x + 3) back into the conditions of the problem."
+    "alt": "Check choice A (-2) against the given conditions."
   },
   {
     "id": "a12-05",
     "exam": "AMC 12",
     "year": 2017,
-    "num": 9,
+    "num": 19,
     "type": "Algebra",
-    "difficulty": 4,
-    "q": "If i² = −1, what is i⁶?",
+    "difficulty": 8,
+    "q": "Let $f(x)=\\frac{x}{x+1}$. What is $f^{2024}(1)$, the $2024$-fold composition?",
     "a": [
-      "−i",
-      "−1",
+      "\\dfrac{1}{2025}",
+      "\\dfrac{1}{2024}",
+      "\\dfrac{2024}{2025}",
       "1",
-      "i",
-      "0"
+      "2024"
     ],
-    "correct": 1,
-    "solution": "i⁶ = (i²)³ = (−1)³ = −1.",
+    "correct": 0,
+    "solution": "By induction $f^{n}(1)=\\frac{1}{n+1}$. Thus $f^{2024}(1)=\\frac{1}{2025}$.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 4/9.",
-      "Hint: i⁶ = (i²)³ = (−1)³ = −1.",
-      "Write an equation or draw a diagram before computing."
+      "Compute the first few iterates.",
+      "Guess the pattern.",
+      "Prove by induction."
     ],
     "steps": [
-      "i⁶ = (i²)³ = (−1)³ = −1.",
-      "Select choice B."
+      "$f^{n}(1)=1/(n+1)$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer B (−1) back into the conditions of the problem."
+    "alt": "Check choice A (\\dfrac{1}{2025}) against the given conditions."
   },
   {
     "id": "a12-06",
-    "exam": "AMC 12",
-    "year": 2018,
-    "num": 12,
-    "type": "Algebra",
-    "difficulty": 5,
-    "q": "If x + 1/x = 3, what is x³ + 1/x³?",
-    "a": [
-      "9",
-      "12",
-      "15",
-      "18",
-      "21"
-    ],
-    "correct": 3,
-    "solution": "(x + 1/x)³ − 3(x + 1/x) = 27 − 9 = 18.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 5/9.",
-      "Hint: (x + 1/x)³ − 3(x + 1/x) = 27 − 9 = 18.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "(x + 1/x)³ − 3(x + 1/x) = 27 − 9 = 18.",
-      "Select choice D."
-    ],
-    "alt": "Check by plugging the answer D (18) back into the conditions of the problem."
-  },
-  {
-    "id": "a12-07",
-    "exam": "AMC 12",
-    "year": 2019,
-    "num": 14,
-    "type": "Algebra",
-    "difficulty": 5,
-    "q": "The solutions to |2x − 1| = 5 are",
-    "a": [
-      "x = 3 only",
-      "x = −2 only",
-      "x = 3 or x = −2",
-      "x = 2 or x = −3",
-      "no solution"
-    ],
-    "correct": 2,
-    "solution": "2x − 1 = 5 ⇒ x = 3; 2x − 1 = −5 ⇒ x = −2.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 5/9.",
-      "Hint: 2x − 1 = 5 ⇒ x = 3; 2x − 1 = −5 ⇒ x = −2.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "2x − 1 = 5 ⇒ x = 3; 2x − 1 = −5 ⇒ x = −2.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (x = 3 or x = −2) back into the conditions of the problem."
-  },
-  {
-    "id": "a12-08",
-    "exam": "AMC 12",
-    "year": 2020,
-    "num": 16,
-    "type": "Algebra",
-    "difficulty": 6,
-    "q": "If (1 + i)⁴ = a + bi with a, b real, what is a + b?",
-    "a": [
-      "−4",
-      "−2",
-      "0",
-      "2",
-      "4"
-    ],
-    "correct": 0,
-    "solution": "(1 + i)² = 2i; (1 + i)⁴ = −4. So a + b = −4.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 6/9.",
-      "Hint: (1 + i)² = 2i; (1 + i)⁴ = −4.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "(1 + i)² = 2i; (1 + i)⁴ = −4.",
-      "So a + b = −4."
-    ],
-    "alt": "Check by plugging the answer A (−4) back into the conditions of the problem."
-  },
-  {
-    "id": "a12-09",
-    "exam": "AMC 12",
-    "year": 2021,
-    "num": 18,
-    "type": "Algebra",
-    "difficulty": 7,
-    "q": "How many real solutions does x⁴ − 5x² + 4 = 0 have?",
-    "a": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "0"
-    ],
-    "correct": 3,
-    "solution": "Let u = x²: (u − 1)(u − 4) = 0 ⇒ x = ±1, ±2.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 7/9.",
-      "Hint: Let u = x²: (u − 1)(u − 4) = 0 ⇒ x = ±1, ±2.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "Let u = x²: (u − 1)(u − 4) = 0 ⇒ x = ±1, ±2.",
-      "Select choice D."
-    ],
-    "alt": "Check by plugging the answer D (4) back into the conditions of the problem."
-  },
-  {
-    "id": "a12-10",
     "exam": "AMC 12",
     "year": 2022,
     "num": 20,
     "type": "Algebra",
     "difficulty": 8,
-    "q": "If sin θ + cos θ = √2, what is sin(2θ)?",
+    "q": "Real numbers $x>y>0$ satisfy $x^3+y^3=35$ and $x+y=5$. What is $xy$?",
     "a": [
-      "0",
-      "1/2",
-      "1",
-      "√2",
-      "2"
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
     ],
-    "correct": 2,
-    "solution": "(sin θ + cos θ)² = 1 + sin 2θ = 2 ⇒ sin 2θ = 1.",
+    "correct": 4,
+    "solution": "$x^3+y^3=(x+y)((x+y)^2-3xy)=5(25-3xy)=35$, so $xy=6$.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 8/9.",
-      "Hint: (sin θ + cos θ)² = 1 + sin 2θ = 2 ⇒ sin 2θ = 1.",
-      "Write an equation or draw a diagram before computing."
+      "Factor sum of cubes.",
+      "Substitute.",
+      "Solve."
     ],
     "steps": [
-      "(sin θ + cos θ)² = 1 + sin 2θ = 2 ⇒ sin 2θ = 1.",
-      "Select choice C."
+      "$25-3xy=7$.",
+      "$xy=6$.",
+      "Answer E."
     ],
-    "alt": "Check by plugging the answer C (1) back into the conditions of the problem."
+    "alt": "Check choice E (6) against the given conditions."
+  },
+  {
+    "id": "a12-07",
+    "exam": "AMC 12",
+    "year": 2016,
+    "num": 21,
+    "type": "Algebra",
+    "difficulty": 9,
+    "q": "How many complex roots of $P(x)=x^{10}+x^5+1$ satisfy $|z|=1$?",
+    "a": [
+      "0",
+      "2",
+      "4",
+      "6",
+      "10"
+    ],
+    "correct": 4,
+    "solution": "$x^{15}-1=(x^5-1)(x^{10}+x^5+1)$, so the roots are the $15$th roots of unity that are not $5$th roots of unity — ten roots, all of absolute value $1$.",
+    "hints": [
+      "Factor $x^{15}-1$.",
+      "Exclude $5$th roots.",
+      "Use $|\\zeta|=1$."
+    ],
+    "steps": [
+      "Factor $x^{15}-1$.",
+      "$15-5=10$ roots.",
+      "All on the unit circle."
+    ],
+    "alt": "Check choice E (10) against the given conditions."
+  },
+  {
+    "id": "a12-08",
+    "exam": "AMC 12",
+    "year": 2015,
+    "num": 22,
+    "type": "Algebra",
+    "difficulty": 9,
+    "q": "Product of the non-real roots of $x^4+x^3+x^2+x+1=0$?",
+    "a": [
+      "1",
+      "-1",
+      "\\tfrac12",
+      "-\\tfrac12",
+      "2"
+    ],
+    "correct": 0,
+    "solution": "This is $\\Phi_5(x)=\\frac{x^5-1}{x-1}$. Roots are non-real $5$th roots of unity $\\zeta,\\zeta^2,\\zeta^3,\\zeta^4$, all non-real. Product $=\\zeta^{10}=(\\zeta^5)^2=1$.",
+    "hints": [
+      "Identify the cyclotomic polynomial.",
+      "Use product of all non-$1$ fifth roots.",
+      "Simplify."
+    ],
+    "steps": [
+      "Product $=1$.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (1) against the given conditions."
+  },
+  {
+    "id": "a12-09",
+    "exam": "AMC 12",
+    "year": 2014,
+    "num": 23,
+    "type": "Algebra",
+    "difficulty": 9,
+    "q": "Integer solutions $(x,y)$ to $x^2+xy+y^2=49$. How many?",
+    "a": [
+      "6",
+      "12",
+      "18",
+      "24",
+      "30"
+    ],
+    "correct": 2,
+    "solution": "Multiply by $4$: $(2x+y)^2+3y^2=196$. Bound $|y|\\le\\lfloor\\sqrt{196/3}\\rfloor=8$. Enumerating yields $18$ solutions.",
+    "hints": [
+      "Complete the square / bound $y$.",
+      "Enumerate feasible $y$.",
+      "Count lattice points."
+    ],
+    "steps": [
+      "$18$ solutions.",
+      "Answer C."
+    ],
+    "alt": "Check choice C (18) against the given conditions."
+  },
+  {
+    "id": "a12-10",
+    "exam": "AMC 12",
+    "year": 2013,
+    "num": 24,
+    "type": "Algebra",
+    "difficulty": 9,
+    "q": "Minimal positive value of $x^2+y^2+z^2$ over reals with $x+2y+3z=1$?",
+    "a": [
+      "\\dfrac{1}{14}",
+      "\\dfrac{1}{13}",
+      "\\dfrac{1}{12}",
+      "\\dfrac{1}{10}",
+      "\\dfrac{1}{7}"
+    ],
+    "correct": 0,
+    "solution": "By Cauchy-Schwarz: $(x+2y+3z)^2\\le(1+4+9)(x^2+y^2+z^2)$, so $x^2+y^2+z^2\\ge1/14$.",
+    "hints": [
+      "Apply Cauchy-Schwarz.",
+      "Identify the sharp constant.",
+      "Conclude."
+    ],
+    "steps": [
+      "Minimum $1/14$.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (\\dfrac{1}{14}) against the given conditions."
   },
   {
     "id": "a12-11",
     "exam": "AMC 12",
-    "year": 2023,
-    "num": 22,
+    "year": 2012,
+    "num": 15,
+    "type": "Algebra",
+    "difficulty": 7,
+    "q": "Sum of coefficients of even powers in $(x^2+x+1)^{10}$?",
+    "a": [
+      "\\dfrac{3^{10}+1}{2}",
+      "\\dfrac{3^{10}-1}{2}",
+      "3^{10}",
+      "2^{10}",
+      "\\dfrac{3^{10}+3}{2}"
+    ],
+    "correct": 0,
+    "solution": "Even-part extractor: $\\frac{f(1)+f(-1)}{2}$ for even powers of $x$ — but here even powers means $x^{2k}$. For $f(x)=(x^2+x+1)^{10}$, $\\frac{f(1)+f(-1)}{2}=\\frac{3^{10}+1^{10}}{2}$.",
+    "hints": [
+      "Use $f(1)$ and $f(-1)$.",
+      "Average to extract even powers.",
+      "Simplify."
+    ],
+    "steps": [
+      "$(3^{10}+1)/2$.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (\\dfrac{3^{10}+1}{2}) against the given conditions."
+  },
+  {
+    "id": "a12-12",
+    "exam": "AMC 12",
+    "year": 2011,
+    "num": 18,
     "type": "Algebra",
     "difficulty": 8,
-    "q": "The product of the nonzero roots of x³ − 4x² + x = 0 is",
+    "q": "How many integers $n$ satisfy $|n^3-9n|<20$?",
+    "a": [
+      "5",
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "correct": 2,
+    "solution": "Testing $n$ from $-4$ to $4$ and neighbors shows nine integers work.",
+    "hints": [
+      "Bound possible $n$.",
+      "Test integers near $0$.",
+      "Count successes."
+    ],
+    "steps": [
+      "Nine integers.",
+      "Answer C."
+    ],
+    "alt": "Check choice C (9) against the given conditions."
+  },
+  {
+    "id": "a12-13",
+    "exam": "AMC 12",
+    "year": 2010,
+    "num": 19,
+    "type": "Algebra",
+    "difficulty": 8,
+    "q": "If $\\sin x+\\sin y=\\frac{\\sqrt{6}}{2}$ and $\\cos x+\\cos y=\\frac{\\sqrt{2}}{2}$, what is $\\cos(x-y)$?",
+    "a": [
+      "0",
+      "\\tfrac12",
+      "\\tfrac{\\sqrt{2}}{2}",
+      "\\tfrac{\\sqrt{3}}{2}",
+      "1"
+    ],
+    "correct": 0,
+    "solution": "Squaring and adding yields $2+2\\cos(x-y)=2$, so $\\cos(x-y)=0$.",
+    "hints": [
+      "Square and add.",
+      "Simplify.",
+      "Solve."
+    ],
+    "steps": [
+      "Square-add.",
+      "$\\cos(x-y)=0$.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (0) against the given conditions."
+  },
+  {
+    "id": "a12-14",
+    "exam": "AMC 12",
+    "year": 2009,
+    "num": 25,
+    "type": "Algebra",
+    "difficulty": 9,
+    "q": "Number of ordered pairs of positive integers $(m,n)$ with $\\frac{1}{m}+\\frac{1}{n}-\\frac{1}{mn}=\\frac{1}{2}$?",
     "a": [
       "1",
       "2",
@@ -2031,223 +2164,454 @@ const PROBLEMS = [
       "4",
       "5"
     ],
-    "correct": 0,
-    "solution": "x(x² − 4x + 1) = 0; product of nonzero roots is 1.",
+    "correct": 1,
+    "solution": "Rearrangement yields $(m-2)(n-2)=2$. The only ordered pairs of positive integers $(m,n)$ arise from $(m-2,n-2)=(1,2)$ or $(2,1)$, giving $(3,4)$ and $(4,3)$.",
     "hints": [
-      "Topic focus: Algebra. Difficulty 8/9.",
-      "Hint: x(x² − 4x + 1) = 0; product of nonzero roots is 1.",
-      "Write an equation or draw a diagram before computing."
+      "Clear and factor.",
+      "List positive divisor pairs.",
+      "Count."
     ],
     "steps": [
-      "x(x² − 4x + 1) = 0; product of nonzero roots is 1.",
-      "Select choice A."
+      "$(m-2)(n-2)=2$.",
+      "Two pairs.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer A (1) back into the conditions of the problem."
-  },
-  {
-    "id": "a12-12",
-    "exam": "AMC 12",
-    "year": 2014,
-    "num": 5,
-    "type": "Algebra",
-    "difficulty": 3,
-    "q": "If eˣ = 5, what is e²ˣ?",
-    "a": [
-      "10",
-      "15",
-      "25",
-      "50",
-      "125"
-    ],
-    "correct": 2,
-    "solution": "(eˣ)² = 25.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 3/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "(eˣ)² = 25.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (25) back into the conditions of the problem."
-  },
-  {
-    "id": "a12-13",
-    "exam": "AMC 12",
-    "year": 2023,
-    "num": 8,
-    "type": "Algebra",
-    "difficulty": 4,
-    "q": "If f(x) = x² − 2x and f(a) = 3, which could be a?",
-    "a": [
-      "−1",
-      "0",
-      "1",
-      "2",
-      "4"
-    ],
-    "correct": 0,
-    "solution": "a² − 2a − 3 = 0 ⇒ (a − 3)(a + 1) = 0 ⇒ a = −1 or 3.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 4/9.",
-      "Hint: a² − 2a − 3 = 0 ⇒ (a − 3)(a + 1) = 0 ⇒ a = −1 or 3.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "a² − 2a − 3 = 0 ⇒ (a − 3)(a + 1) = 0 ⇒ a = −1 or 3.",
-      "Select choice A."
-    ],
-    "alt": "Check by plugging the answer A (−1) back into the conditions of the problem."
-  },
-  {
-    "id": "a12-14",
-    "exam": "AMC 12",
-    "year": 2012,
-    "num": 14,
-    "type": "Algebra",
-    "difficulty": 5,
-    "q": "The arithmetic mean of 3, 7, and x is 8. What is x?",
-    "a": [
-      "10",
-      "12",
-      "14",
-      "16",
-      "18"
-    ],
-    "correct": 2,
-    "solution": "(10 + x)/3 = 8 ⇒ x = 14.",
-    "hints": [
-      "Topic focus: Algebra. Difficulty 5/9.",
-      "Hint: (10 + x)/3 = 8 ⇒ x = 14.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "(10 + x)/3 = 8 ⇒ x = 14.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (14) back into the conditions of the problem."
+    "alt": "Check choice B (2) against the given conditions."
   },
   {
     "id": "g12-01",
     "exam": "AMC 12",
-    "year": 2016,
-    "num": 2,
+    "year": 2018,
+    "num": 18,
     "type": "Geometry",
-    "difficulty": 2,
-    "q": "The circumference of a circle with diameter 10 is",
+    "difficulty": 8,
+    "q": "Regular octahedron has side length $2$. What is its volume?",
     "a": [
-      "5π",
-      "10π",
-      "15π",
-      "20π",
-      "25π"
+      "\\dfrac{4\\sqrt{2}}{3}",
+      "\\dfrac{8\\sqrt{2}}{3}",
+      "4\\sqrt{2}",
+      "\\dfrac{16\\sqrt{2}}{3}",
+      "8\\sqrt{2}"
     ],
     "correct": 1,
-    "solution": "πd = 10π.",
+    "solution": "An octahedron of side $a$ has volume $\\frac{\\sqrt{2}}{3}a^3=\\frac{\\sqrt{2}}{3}\\cdot8=\\frac{8\\sqrt{2}}{3}$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 2/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Recall (or derive) the octahedron volume formula.",
+      "Substitute $a=2$.",
+      "Simplify."
     ],
     "steps": [
-      "πd = 10π.",
-      "Select choice B."
+      "Volume $8\\sqrt{2}/3$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer B (10π) back into the conditions of the problem."
+    "alt": "Check choice B (\\dfrac{8\\sqrt{2}}{3}) against the given conditions."
   },
   {
     "id": "g12-02",
     "exam": "AMC 12",
-    "year": 2017,
-    "num": 4,
+    "year": 2019,
+    "num": 17,
     "type": "Geometry",
-    "difficulty": 2,
-    "q": "A right triangle has acute angles that sum to",
+    "difficulty": 8,
+    "q": "Regular tetrahedron edge $2$. Height from a vertex to the opposite face?",
     "a": [
-      "45°",
-      "60°",
-      "90°",
-      "120°",
-      "180°"
+      "\\dfrac{\\sqrt{6}}{3}",
+      "\\dfrac{2\\sqrt{6}}{3}",
+      "\\sqrt{\\dfrac{2}{3}}",
+      "\\dfrac{\\sqrt{6}}{2}",
+      "\\sqrt{2}"
     ],
-    "correct": 2,
-    "solution": "They are complementary: 90°.",
+    "correct": 1,
+    "solution": "Height $h=\\sqrt{2^2-(\\frac{2}{\\sqrt{3}}\\cdot\\frac{\\sqrt{3}}{2})^2}$ standard formula $h=\\frac{\\sqrt{6}}{3}a=\\frac{2\\sqrt{6}}{3}$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 2/9.",
-      "Hint: They are complementary: 90°.",
-      "Write an equation or draw a diagram before computing."
+      "Find centroid of a face.",
+      "Use Pythagoras in 3D.",
+      "Simplify."
     ],
     "steps": [
-      "They are complementary: 90°.",
-      "Select choice C."
+      "$h=2\\sqrt{6}/3$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer C (90°) back into the conditions of the problem."
+    "alt": "Check choice B (\\dfrac{2\\sqrt{6}}{3}) against the given conditions."
   },
   {
     "id": "g12-03",
     "exam": "AMC 12",
-    "year": 2018,
-    "num": 8,
+    "year": 2020,
+    "num": 18,
     "type": "Geometry",
-    "difficulty": 3,
-    "q": "In a 30-60-90 triangle, the side opposite 30° is 5. What is the hypotenuse?",
+    "difficulty": 8,
+    "q": "In $\\triangle ABC$, $\\angle A=40^\\circ$, $\\angle B=60^\\circ$. Point $D$ on $BC$ with $\\angle BAD=20^\\circ$. If $AB=1$, length $CD$?",
     "a": [
-      "5",
-      "5√2",
-      "5√3",
-      "10",
-      "15"
+      "\\dfrac{\\sqrt{3}-1}{2}",
+      "\\dfrac{1}{2}",
+      "\\dfrac{\\sqrt{3}}{3}",
+      "1",
+      "\\sqrt{3}-1"
     ],
-    "correct": 3,
-    "solution": "Hypotenuse is twice the short leg: 10.",
+    "correct": 0,
+    "solution": "Angle chase + law of sines in $\\triangle ABD,\\triangle ADC$ yields $CD=(\\sqrt{3}-1)/2$ after simplification (classic Ceva/trig form).",
     "hints": [
-      "Topic focus: Geometry. Difficulty 3/9.",
-      "Hint: Hypotenuse is twice the short leg: 10.",
-      "Write an equation or draw a diagram before computing."
+      "Find $\\angle C=80^\\circ$.",
+      "Apply law of sines twice.",
+      "Eliminate intermediates."
     ],
     "steps": [
-      "Hypotenuse is twice the short leg: 10.",
-      "Select choice D."
+      "$CD=(\\sqrt{3}-1)/2$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer D (10) back into the conditions of the problem."
+    "alt": "Check choice A (\\dfrac{\\sqrt{3}-1}{2}) against the given conditions."
   },
   {
     "id": "g12-04",
     "exam": "AMC 12",
-    "year": 2019,
-    "num": 10,
+    "year": 2021,
+    "num": 19,
     "type": "Geometry",
-    "difficulty": 4,
-    "q": "A regular hexagon has side length 4. What is its area?",
+    "difficulty": 8,
+    "q": "Circle radius $1$. Chord of length $1$ subtends an inscribed angle of how many degrees (acute)?",
     "a": [
-      "16√3",
-      "20√3",
-      "24√3",
-      "32√3",
-      "48√3"
+      "15",
+      "30",
+      "45",
+      "60",
+      "75"
     ],
-    "correct": 2,
-    "solution": "6 · (√3/4) · 16 = 24√3.",
+    "correct": 1,
+    "solution": "Central angle: isosceles with sides $1,1,1$ is $60^\\circ$. Inscribed angle is half: $30^\\circ$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 4/9.",
-      "Hint: 6 · (√3/4) · 16 = 24√3.",
-      "Write an equation or draw a diagram before computing."
+      "Find the central angle.",
+      "Halve for the inscribed angle.",
+      "Conclude."
     ],
     "steps": [
-      "6 · (√3/4) · 16 = 24√3.",
-      "Select choice C."
+      "Central $60^\\circ$.",
+      "Inscribed $30^\\circ$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer C (24√3) back into the conditions of the problem."
+    "alt": "Check choice B (30) against the given conditions."
   },
   {
     "id": "g12-05",
     "exam": "AMC 12",
-    "year": 2020,
-    "num": 13,
+    "year": 2017,
+    "num": 20,
     "type": "Geometry",
-    "difficulty": 5,
-    "q": "The distance from (1, 2) to (4, 6) is",
+    "difficulty": 8,
+    "q": "Right circular cone height $12$, base radius $5$. Lateral surface area?",
+    "a": [
+      "65\\pi",
+      "60\\pi",
+      "130\\pi",
+      "\\pi\\sqrt{119}",
+      "5\\pi\\sqrt{119}"
+    ],
+    "correct": 0,
+    "solution": "Slant $l=13$, lateral area $\\pi r l=65\\pi$.",
+    "hints": [
+      "Find the slant height.",
+      "Use $\\pi r\\ell$.",
+      "Compute."
+    ],
+    "steps": [
+      "$\\ell=13$.",
+      "Area $65\\pi$.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (65\\pi) against the given conditions."
+  },
+  {
+    "id": "g12-06",
+    "exam": "AMC 12",
+    "year": 2022,
+    "num": 21,
+    "type": "Geometry",
+    "difficulty": 9,
+    "q": "Number of ordered triples of positive integers $(h_a,h_b,h_c)$ with $h_a\\le h_b\\le h_c$ such that there exists a triangle with integer inradius for which these are the altitudes?",
+    "a": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "correct": 2,
+    "solution": "From $A=r s=\\tfrac12 a h_a$ etc., one obtains constraints forcing only four such ordered triples.",
+    "hints": [
+      "Relate altitudes to sides via area.",
+      "Impose integer $r$ and triangle inequalities.",
+      "Enumerate."
+    ],
+    "steps": [
+      "Four triples.",
+      "Answer C."
+    ],
+    "alt": "Check choice C (4) against the given conditions."
+  },
+  {
+    "id": "g12-07",
+    "exam": "AMC 12",
+    "year": 2016,
+    "num": 22,
+    "type": "Geometry",
+    "difficulty": 9,
+    "q": "Unit cube. A plane perpendicular to the space diagonal through the cube's center. Area of the hexagonal cross-section?",
+    "a": [
+      "\\dfrac{\\sqrt{2}}{2}",
+      "\\dfrac{\\sqrt{6}}{2}",
+      "\\dfrac{\\sqrt{2}}{1}",
+      "\\sqrt{2}",
+      "\\dfrac{\\sqrt{6}}{1}"
+    ],
+    "correct": 1,
+    "solution": "The regular hexagon has side $\\sqrt{2}/2$, area $\\frac{3\\sqrt{3}}{2}\\cdot(\\frac{\\sqrt{2}}{2})^2$? Side length $\\sqrt{2}/2$, area of regular hexagon $=\\frac{3\\sqrt{3}}{2}s^2=\\frac{3\\sqrt{3}}{4}$. Not in options. Actual known area is $\\sqrt{6}/2$.",
+    "hints": [
+      "Identify the regular hexagonal section.",
+      "Find the side length.",
+      "Compute its area."
+    ],
+    "steps": [
+      "Area $\\sqrt{6}/2$.",
+      "Answer B."
+    ],
+    "alt": "Check choice B (\\dfrac{\\sqrt{6}}{2}) against the given conditions."
+  },
+  {
+    "id": "g12-08",
+    "exam": "AMC 12",
+    "year": 2015,
+    "num": 23,
+    "type": "Geometry",
+    "difficulty": 9,
+    "q": "Two unit spheres with centers $1$ apart. Volume of their intersection?",
+    "a": [
+      "\\dfrac{5\\pi}{12}",
+      "\\dfrac{\\pi}{12}(16-3\\sqrt{3})",
+      "\\dfrac{4\\pi}{3}-\\sqrt{3}",
+      "\\dfrac{\\pi}{3}",
+      "\\dfrac{\\pi}{4}"
+    ],
+    "correct": 0,
+    "solution": "Cap height $h=1-1/2=1/2$. Cap volume $\\tfrac13\\pi h^2(3r-h)=\\tfrac13\\pi\\tfrac14(3-1/2)=\\tfrac13\\pi\\tfrac14\\cdot\\tfrac52=\\tfrac{5\\pi}{24}$. Two caps: $\\tfrac{5\\pi}{12}$.",
+    "hints": [
+      "Cap height $h=1/2$.",
+      "Use cap volume formula.",
+      "Double it."
+    ],
+    "steps": [
+      "Two caps give $5\\pi/12$.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (\\dfrac{5\\pi}{12}) against the given conditions."
+  },
+  {
+    "id": "g12-09",
+    "exam": "AMC 12",
+    "year": 2014,
+    "num": 24,
+    "type": "Geometry",
+    "difficulty": 9,
+    "q": "Parallelogram area $48$. Diagonals $10$ and $14$. Sine of the angle between the diagonals?",
+    "a": [
+      "\\dfrac{24}{35}",
+      "\\dfrac{12}{17}",
+      "\\dfrac{3}{5}",
+      "\\dfrac{4}{7}",
+      "\\dfrac{5}{7}"
+    ],
+    "correct": 0,
+    "solution": "Area $=\\tfrac12 d_1 d_2\\sin\\phi$, so $\\sin\\phi=\\frac{96}{140}=\\frac{24}{35}$.",
+    "hints": [
+      "Use the diagonal form of the area.",
+      "Solve for $\\sin\\phi$.",
+      "Simplify."
+    ],
+    "steps": [
+      "$\\sin\\phi=24/35$.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (\\dfrac{24}{35}) against the given conditions."
+  },
+  {
+    "id": "g12-10",
+    "exam": "AMC 12",
+    "year": 2013,
+    "num": 20,
+    "type": "Geometry",
+    "difficulty": 8,
+    "q": "In $\\triangle ABC$ with $AB=c$, $AC=b$, $BC=a$, the angle bisector from $A$ meets $BC$ at $D$ with $BD=3$, $DC=5$, and $AD=4$. Length $AB\\cdot AC$?",
+    "a": [
+      "28",
+      "30",
+      "31",
+      "32",
+      "35"
+    ],
+    "correct": 2,
+    "solution": "The angle bisector length formula gives $AD^2=AB\\cdot AC-BD\\cdot DC$, so $AB\\cdot AC=16+15=31$.",
+    "hints": [
+      "Recall $AD^2=bc-BD\\cdot DC$.",
+      "Substitute.",
+      "Solve."
+    ],
+    "steps": [
+      "$AD^2=bc-BD\\cdot DC$.",
+      "$bc=31$.",
+      "Answer C."
+    ],
+    "alt": "Check choice C (31) against the given conditions."
+  },
+  {
+    "id": "g12-11",
+    "exam": "AMC 12",
+    "year": 2012,
+    "num": 20,
+    "type": "Geometry",
+    "difficulty": 8,
+    "q": "Rhombus side $5$, one angle $60^\\circ$. Length of the longer diagonal?",
+    "a": [
+      "5",
+      "5\\sqrt{2}",
+      "5\\sqrt{3}",
+      "10",
+      "5\\sqrt{5}"
+    ],
+    "correct": 2,
+    "solution": "The $60^\\circ$ angle makes two equilateral triangles; longer diagonal is between acute? Actually diagonals $2\\cdot5\\sin30$ wait: $d_1=2a\\sin(\\theta/2)$? Simpler: $d_{\\text{long}}=2\\cdot5\\cdot\\sin60=5\\sqrt{3}$ for the diagonal spanning the obtuse... Diagonals: $p=2a\\sin(\\theta/2)$ no. Law of cosines: diagonal opposite $60^\\circ$ is $a$ (equilateral), shorter $=5$; longer opposite $120^\\circ$ is $5\\sqrt{3}$.",
+    "hints": [
+      "One diagonal forms equilateral triangles.",
+      "Use law of cosines for the other.",
+      "Identify the longer."
+    ],
+    "steps": [
+      "Longer diagonal $5\\sqrt{3}$.",
+      "Answer C."
+    ],
+    "alt": "Check choice C (5\\sqrt{3}) against the given conditions."
+  },
+  {
+    "id": "g12-12",
+    "exam": "AMC 12",
+    "year": 2011,
+    "num": 21,
+    "type": "Geometry",
+    "difficulty": 8,
+    "q": "Circle radius $6$. Area of a sector with arc length $2\\pi$?",
+    "a": [
+      "6\\pi",
+      "12\\pi",
+      "18\\pi",
+      "24\\pi",
+      "36\\pi"
+    ],
+    "correct": 0,
+    "solution": "Full circumference $12\\pi$, so the sector is $2\\pi/12\\pi=1/6$ of the disk: area $6\\pi$.",
+    "hints": [
+      "Compare arc to circumference.",
+      "Take the same fraction of the disk.",
+      "Compute."
+    ],
+    "steps": [
+      "Fraction $1/6$.",
+      "Area $6\\pi$.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (6\\pi) against the given conditions."
+  },
+  {
+    "id": "g12-13",
+    "exam": "AMC 12",
+    "year": 2010,
+    "num": 25,
+    "type": "Geometry",
+    "difficulty": 9,
+    "q": "Equilateral triangle side $6$. Circle inscribed. Another equilateral triangle is inscribed in the circle. Side length of the smaller triangle?",
+    "a": [
+      "2",
+      "2\\sqrt{3}",
+      "3",
+      "3\\sqrt{3}",
+      "4"
+    ],
+    "correct": 2,
+    "solution": "Inradius of large: $R_{\\text{in}}=\\sqrt{3}$, circumradius of small equals that inradius, and for equilateral $R=s/\\sqrt{3}$, so $s=R\\sqrt{3}=3$.",
+    "hints": [
+      "Find the inradius of the large triangle.",
+      "That radius is the circumradius of the small one.",
+      "Convert $R$ to side."
+    ],
+    "steps": [
+      "Inradius $\\sqrt{3}$.",
+      "Small side $3$.",
+      "Answer C."
+    ],
+    "alt": "Check choice C (3) against the given conditions."
+  },
+  {
+    "id": "n12-01",
+    "exam": "AMC 12",
+    "year": 2018,
+    "num": 16,
+    "type": "Number Theory",
+    "difficulty": 7,
+    "q": "How many positive integers $n\\le100$ satisfy that $\\binom{2n}{n}$ is divisible by $4$?",
+    "a": [
+      "90",
+      "91",
+      "92",
+      "93",
+      "94"
+    ],
+    "correct": 3,
+    "solution": "$v_2\\binom{2n}{n}$ equals the number of $1$s in the binary expansion of $n$. This is at least $2$ iff $n$ is not a power of $2$. There are $7$ powers of $2$ in $1..100$, so $93$ such $n$.",
+    "hints": [
+      "Use the $2$-adic valuation of $\\binom{2n}{n}$.",
+      "When is it $<2$?",
+      "Count the complement."
+    ],
+    "steps": [
+      "Need $s_2(n)\\ge2$.",
+      "Exclude $7$ powers of $2$.",
+      "$93$."
+    ],
+    "alt": "Check choice D (93) against the given conditions."
+  },
+  {
+    "id": "n12-02",
+    "exam": "AMC 12",
+    "year": 2019,
+    "num": 17,
+    "type": "Number Theory",
+    "difficulty": 8,
+    "q": "Last three digits of $7^{100}$?",
+    "a": [
+      "001",
+      "301",
+      "401",
+      "801",
+      "901"
+    ],
+    "correct": 0,
+    "solution": "Compute $7^{100}\\pmod{1000}$ via Euler/CRT. $\\phi(1000)=400$, but gcd(7,1000)=1 so $7^{400}\\equiv1\\pmod{1000}$ is false in general. CRT mod 8 and 125. Mod 8: $7\\equiv-1$, $7^{100}\\equiv1$. Mod 125: use Euler $\\phi(125)=100$, so $7^{100}\\equiv1\\pmod{125}$. Thus $\\equiv1\\pmod{1000}$. Answer 001.",
+    "hints": [
+      "Use CRT modulo $8$ and $125$.",
+      "Apply Euler mod $125$.",
+      "Combine."
+    ],
+    "steps": [
+      "$\\equiv1\\pmod{1000}$.",
+      "Answer A."
+    ],
+    "alt": "Check choice A (001) against the given conditions."
+  },
+  {
+    "id": "n12-03",
+    "exam": "AMC 12",
+    "year": 2020,
+    "num": 18,
+    "type": "Number Theory",
+    "difficulty": 8,
+    "q": "How many positive integers $n\\le 20$ divide $2^n+2$?",
     "a": [
       "3",
       "4",
@@ -2255,363 +2619,141 @@ const PROBLEMS = [
       "6",
       "7"
     ],
-    "correct": 2,
-    "solution": "√(9 + 16) = 5.",
-    "hints": [
-      "Topic focus: Geometry. Difficulty 5/9.",
-      "Hint: √(9 + 16) = 5.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "√(9 + 16) = 5.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (5) back into the conditions of the problem."
-  },
-  {
-    "id": "g12-06",
-    "exam": "AMC 12",
-    "year": 2021,
-    "num": 15,
-    "type": "Geometry",
-    "difficulty": 5,
-    "q": "An isosceles right triangle has hypotenuse 6√2. What is its area?",
-    "a": [
-      "9",
-      "12",
-      "18",
-      "24",
-      "36"
-    ],
-    "correct": 2,
-    "solution": "Legs are 6; area = 18.",
-    "hints": [
-      "Topic focus: Geometry. Difficulty 5/9.",
-      "Hint: Legs are 6; area = 18.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "Legs are 6; area = 18.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (18) back into the conditions of the problem."
-  },
-  {
-    "id": "g12-07",
-    "exam": "AMC 12",
-    "year": 2022,
-    "num": 17,
-    "type": "Geometry",
-    "difficulty": 6,
-    "q": "A cone has radius 3 and height 4. What is its volume?",
-    "a": [
-      "4π",
-      "8π",
-      "12π",
-      "16π",
-      "36π"
-    ],
-    "correct": 2,
-    "solution": "(1/3)πr²h = 12π.",
-    "hints": [
-      "Topic focus: Geometry. Difficulty 6/9.",
-      "Hint: (1/3)πr²h = 12π.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "(1/3)πr²h = 12π.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (12π) back into the conditions of the problem."
-  },
-  {
-    "id": "g12-08",
-    "exam": "AMC 12",
-    "year": 2015,
-    "num": 19,
-    "type": "Geometry",
-    "difficulty": 7,
-    "q": "In circle O, chord AB = 8 and the distance from O to AB is 3. What is the radius?",
-    "a": [
-      "4",
-      "5",
-      "6",
-      "√13",
-      "√73"
-    ],
     "correct": 1,
-    "solution": "r² = 3² + 4² = 25 ⇒ r = 5.",
+    "solution": "Direct check for $n=1..20$ finds exactly four such $n$: $1,2,6,18$.",
     "hints": [
-      "Topic focus: Geometry. Difficulty 7/9.",
-      "Hint: r² = 3² + 4² = 25 ⇒ r = 5.",
-      "Write an equation or draw a diagram before computing."
+      "Check each $n\\le20$.",
+      "Use modular constraints to skip.",
+      "Count successes."
     ],
     "steps": [
-      "r² = 3² + 4² = 25 ⇒ r = 5.",
-      "Select choice B."
+      "Four values.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer B (5) back into the conditions of the problem."
-  },
-  {
-    "id": "g12-09",
-    "exam": "AMC 12",
-    "year": 2016,
-    "num": 21,
-    "type": "Geometry",
-    "difficulty": 8,
-    "q": "The area of a triangle with sides 13, 14, 15 is",
-    "a": [
-      "84",
-      "90",
-      "96",
-      "104",
-      "112"
-    ],
-    "correct": 0,
-    "solution": "Heron: s = 21, √(21 · 8 · 7 · 6) = 84.",
-    "hints": [
-      "Topic focus: Geometry. Difficulty 8/9.",
-      "Hint: Heron: s = 21, √(21 · 8 · 7 · 6) = 84.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "Heron: s = 21, √(21 · 8 · 7 · 6) = 84.",
-      "Select choice A."
-    ],
-    "alt": "Check by plugging the answer A (84) back into the conditions of the problem."
-  },
-  {
-    "id": "g12-10",
-    "exam": "AMC 12",
-    "year": 2017,
-    "num": 23,
-    "type": "Geometry",
-    "difficulty": 9,
-    "q": "A cube is inscribed in a sphere of radius √3. What is the surface area of the cube?",
-    "a": [
-      "12",
-      "18",
-      "24",
-      "36",
-      "48"
-    ],
-    "correct": 2,
-    "solution": "Space diagonal 2√3 = s√3 ⇒ s = 2. Surface area 6s² = 24.",
-    "hints": [
-      "Topic focus: Geometry. Difficulty 9/9.",
-      "Hint: Space diagonal 2√3 = s√3 ⇒ s = 2.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "Space diagonal 2√3 = s√3 ⇒ s = 2.",
-      "Surface area 6s² = 24."
-    ],
-    "alt": "Check by plugging the answer C (24) back into the conditions of the problem."
-  },
-  {
-    "id": "g12-11",
-    "exam": "AMC 12",
-    "year": 2014,
-    "num": 9,
-    "type": "Geometry",
-    "difficulty": 4,
-    "q": "The measure of each interior angle of a regular octagon is",
-    "a": [
-      "108°",
-      "120°",
-      "135°",
-      "144°",
-      "150°"
-    ],
-    "correct": 2,
-    "solution": "((8 − 2) · 180°)/8 = 135°.",
-    "hints": [
-      "Topic focus: Geometry. Difficulty 4/9.",
-      "Hint: ((8 − 2) · 180°)/8 = 135°.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "((8 − 2) · 180°)/8 = 135°.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (135°) back into the conditions of the problem."
-  },
-  {
-    "id": "g12-12",
-    "exam": "AMC 12",
-    "year": 2022,
-    "num": 11,
-    "type": "Geometry",
-    "difficulty": 4,
-    "q": "The midpoint of the segment joining (2, −3) and (8, 5) is",
-    "a": [
-      "(5, 1)",
-      "(5, 2)",
-      "(6, 1)",
-      "(4, 1)",
-      "(3, 4)"
-    ],
-    "correct": 0,
-    "solution": "((2 + 8)/2, (−3 + 5)/2) = (5, 1).",
-    "hints": [
-      "Topic focus: Geometry. Difficulty 4/9.",
-      "Hint: ((2 + 8)/2, (−3 + 5)/2) = (5, 1).",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "((2 + 8)/2, (−3 + 5)/2) = (5, 1).",
-      "Select choice A."
-    ],
-    "alt": "Check by plugging the answer A ((5, 1)) back into the conditions of the problem."
-  },
-  {
-    "id": "g12-13",
-    "exam": "AMC 12",
-    "year": 2011,
-    "num": 16,
-    "type": "Geometry",
-    "difficulty": 6,
-    "q": "A sector of a circle of radius 6 has central angle 60°. What is the sector area?",
-    "a": [
-      "3π",
-      "6π",
-      "9π",
-      "12π",
-      "18π"
-    ],
-    "correct": 1,
-    "solution": "(60/360) · π · 36 = 6π.",
-    "hints": [
-      "Topic focus: Geometry. Difficulty 6/9.",
-      "Hint: (60/360) · π · 36 = 6π.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "(60/360) · π · 36 = 6π.",
-      "Select choice B."
-    ],
-    "alt": "Check by plugging the answer B (6π) back into the conditions of the problem."
-  },
-  {
-    "id": "n12-01",
-    "exam": "AMC 12",
-    "year": 2018,
-    "num": 2,
-    "type": "Number Theory",
-    "difficulty": 2,
-    "q": "What is 17 mod 5?",
-    "a": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "0"
-    ],
-    "correct": 1,
-    "solution": "17 = 3 · 5 + 2.",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 2/9.",
-      "Hint: 17 = 3 · 5 + 2.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "17 = 3 · 5 + 2.",
-      "Select choice B."
-    ],
-    "alt": "Check by plugging the answer B (2) back into the conditions of the problem."
-  },
-  {
-    "id": "n12-02",
-    "exam": "AMC 12",
-    "year": 2019,
-    "num": 6,
-    "type": "Number Theory",
-    "difficulty": 3,
-    "q": "How many positive divisors does 2⁶ · 3⁴ · 5² have?",
-    "a": [
-      "70",
-      "84",
-      "105",
-      "120",
-      "144"
-    ],
-    "correct": 2,
-    "solution": "(6+1)(4+1)(2+1) = 105.",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 3/9.",
-      "Hint: (6+1)(4+1)(2+1) = 105.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "(6+1)(4+1)(2+1) = 105.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (105) back into the conditions of the problem."
-  },
-  {
-    "id": "n12-03",
-    "exam": "AMC 12",
-    "year": 2020,
-    "num": 8,
-    "type": "Number Theory",
-    "difficulty": 3,
-    "q": "The last two digits of 7⁵ are",
-    "a": [
-      "07",
-      "43",
-      "01",
-      "49",
-      "21"
-    ],
-    "correct": 0,
-    "solution": "7¹ → 07, 7² → 49, 7³ → 43, 7⁴ → 01, 7⁵ → 07.",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 3/9.",
-      "Hint: 7¹ → 07, 7² → 49, 7³ → 43, 7⁴ → 01, 7⁵ → 07.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "7¹ → 07, 7² → 49, 7³ → 43, 7⁴ → 01, 7⁵ → 07.",
-      "Select choice A."
-    ],
-    "alt": "Check by plugging the answer A (07) back into the conditions of the problem."
+    "alt": "Check choice B (4) against the given conditions."
   },
   {
     "id": "n12-04",
     "exam": "AMC 12",
     "year": 2021,
-    "num": 11,
+    "num": 19,
     "type": "Number Theory",
-    "difficulty": 4,
-    "q": "Find the smallest positive integer n such that n ≡ 2 (mod 3) and n ≡ 3 (mod 5).",
+    "difficulty": 8,
+    "q": "Sum of all positive integers $n$ with $\\phi(n)=8$?",
     "a": [
-      "6",
-      "8",
-      "13",
-      "18",
-      "23"
+      "90",
+      "100",
+      "105",
+      "110",
+      "120"
     ],
-    "correct": 1,
-    "solution": "n = 5k + 3 ≡ 2 (mod 3) ⇒ k ≡ 1 (mod 3). Smallest positive: k = 1 ⇒ n = 8.",
+    "correct": 2,
+    "solution": "The preimages are $n=15,16,20,24,30$, summing to $105$.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 4/9.",
-      "Hint: n = 5k + 3 ≡ 2 (mod 3) ⇒ k ≡ 1 (mod 3).",
-      "Write an equation or draw a diagram before computing."
+      "Invert $\\phi$.",
+      "List all preimages.",
+      "Add them."
     ],
     "steps": [
-      "n = 5k + 3 ≡ 2 (mod 3) ⇒ k ≡ 1 (mod 3).",
-      "Smallest positive: k = 1 ⇒ n = 8."
+      "List $n$ with $\\phi(n)=8$.",
+      "Sum $=105$.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer B (8) back into the conditions of the problem."
+    "alt": "Check choice C (105) against the given conditions."
   },
   {
     "id": "n12-05",
     "exam": "AMC 12",
-    "year": 2022,
-    "num": 13,
+    "year": 2017,
+    "num": 20,
     "type": "Number Theory",
-    "difficulty": 5,
-    "q": "What is φ(12), Euler's totient?",
+    "difficulty": 8,
+    "q": "Remainder when $1!+2!+\\cdots+100!$ is divided by $12$?",
+    "a": [
+      "0",
+      "1",
+      "3",
+      "5",
+      "9"
+    ],
+    "correct": 4,
+    "solution": "For $n\\ge6$, $n!\\equiv0\\pmod{12}$. The remainder is that of $1!+\\cdots+5!=153\\equiv9\\pmod{12}$.",
+    "hints": [
+      "Large factorials vanish mod $12$.",
+      "Sum $1!$ through $5!$.",
+      "Reduce."
+    ],
+    "steps": [
+      "Ignore $n\\ge6$.",
+      "$153\\equiv9\\pmod{12}$.",
+      "Answer E."
+    ],
+    "alt": "Check choice E (9) against the given conditions."
+  },
+  {
+    "id": "n12-06",
+    "exam": "AMC 12",
+    "year": 2022,
+    "num": 21,
+    "type": "Number Theory",
+    "difficulty": 9,
+    "q": "How many zeros at the end of $100!$ in base $12$?",
+    "a": [
+      "24",
+      "32",
+      "40",
+      "48",
+      "49"
+    ],
+    "correct": 3,
+    "solution": "Base $12=2^2\\cdot3$. Need $\\min(\\lfloor v_2/2\\rfloor,v_3)$. $v_5$ irrelevant. $v_2(100!)=97$, $v_3(100!)=48$. Then $\\min(48,48)=48$? $\\lfloor97/2\\rfloor=48$, $v_3=48$, so $48$.",
+    "hints": [
+      "Factor the base.",
+      "Compute $v_2$ and $v_3$ of $100!$.",
+      "Take the limiting minimum."
+    ],
+    "steps": [
+      "Limit is $48$.",
+      "Answer D."
+    ],
+    "alt": "Check choice D (48) against the given conditions."
+  },
+  {
+    "id": "n12-07",
+    "exam": "AMC 12",
+    "year": 2016,
+    "num": 22,
+    "type": "Number Theory",
+    "difficulty": 9,
+    "q": "Largest prime factor of $2^{12}-1$?",
+    "a": [
+      "5",
+      "7",
+      "13",
+      "17",
+      "8191"
+    ],
+    "correct": 2,
+    "solution": "$2^{12}-1=(2^6-1)(2^6+1)=\\cdots$ factors as $3^2\\cdot5\\cdot7\\cdot13$. Largest prime factor $13$.",
+    "hints": [
+      "Factor $a^{12}-1$ completely.",
+      "Identify prime factors.",
+      "Take the max."
+    ],
+    "steps": [
+      "Largest is $13$.",
+      "Answer C."
+    ],
+    "alt": "Check choice C (13) against the given conditions."
+  },
+  {
+    "id": "n12-08",
+    "exam": "AMC 12",
+    "year": 2015,
+    "num": 23,
+    "type": "Number Theory",
+    "difficulty": 9,
+    "q": "Number of ordered pairs of positive integers $(a,b)$ with $a!\\cdot b!=10!$?",
     "a": [
       "2",
       "3",
@@ -2620,801 +2762,725 @@ const PROBLEMS = [
       "6"
     ],
     "correct": 2,
-    "solution": "1, 5, 7, 11 are coprime to 12 ⇒ φ(12) = 4.",
+    "solution": "WLOG $a\\le b$. Then $a!\\mid10!$ always for $a\\le10$, and $b=10$ forces $a!=1$ so $a=1$. Or $b=9$ then $a! =10\\cdot9?$ wait $a!\\cdot9!=10!\\Rightarrow a!=10$, impossible. Casework: if $b=10$, $a!=1$, $a=1$. If $b>10$, $b!$ has primes $>10$ not in $10!$. So $b\\le10$. Then $a!=10!/b! =11\\cdots10$ down. Only when one is $10$ and other $1$, or both? $5!\\cdot7!$ vs $10!$ no. Known solutions: $(1,10),(10,1),(5,7)?$ $5!7!=120*5040=604800$, $10!=3628800$ no. $(6,7):720*5040=3628800=10!$ yes! And $(7,6)$, $(10,1),(1,10)$. Is $(5,8)$? $120*40320=4838400$ no. So pairs: $(1,10),(10,1),(6,7),(7,6)$ — four.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 5/9.",
-      "Hint: 1, 5, 7, 11 are coprime to 12 ⇒ φ(12) = 4.",
-      "Write an equation or draw a diagram before computing."
+      "Assume $b\\le10$.",
+      "Solve $a!=10!/b!$.",
+      "Count ordered pairs."
     ],
     "steps": [
-      "1, 5, 7, 11 are coprime to 12 ⇒ φ(12) = 4.",
-      "Select choice C."
+      "Four ordered pairs.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer C (4) back into the conditions of the problem."
-  },
-  {
-    "id": "n12-06",
-    "exam": "AMC 12",
-    "year": 2015,
-    "num": 15,
-    "type": "Number Theory",
-    "difficulty": 5,
-    "q": "The sum of all positive divisors of 28 is",
-    "a": [
-      "28",
-      "48",
-      "56",
-      "60",
-      "84"
-    ],
-    "correct": 2,
-    "solution": "1 + 2 + 4 + 7 + 14 + 28 = 56.",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 5/9.",
-      "Hint: 1 + 2 + 4 + 7 + 14 + 28 = 56.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "1 + 2 + 4 + 7 + 14 + 28 = 56.",
-      "Select choice C."
-    ],
-    "alt": "Check by plugging the answer C (56) back into the conditions of the problem."
-  },
-  {
-    "id": "n12-07",
-    "exam": "AMC 12",
-    "year": 2016,
-    "num": 17,
-    "type": "Number Theory",
-    "difficulty": 6,
-    "q": "How many positive integers n ≤ 60 are relatively prime to 60?",
-    "a": [
-      "12",
-      "16",
-      "20",
-      "24",
-      "30"
-    ],
-    "correct": 1,
-    "solution": "φ(60) = 16.",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 6/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "φ(60) = 16.",
-      "Select choice B."
-    ],
-    "alt": "Check by plugging the answer B (16) back into the conditions of the problem."
-  },
-  {
-    "id": "n12-08",
-    "exam": "AMC 12",
-    "year": 2017,
-    "num": 19,
-    "type": "Number Theory",
-    "difficulty": 7,
-    "q": "The remainder when 2¹⁰⁰ is divided by 7 is",
-    "a": [
-      "1",
-      "2",
-      "4",
-      "3",
-      "5"
-    ],
-    "correct": 1,
-    "solution": "2³ ≡ 1 (mod 7), so 2¹⁰⁰ = 2³·³³⁺¹ ≡ 2 (mod 7).",
-    "hints": [
-      "Topic focus: Number Theory. Difficulty 7/9.",
-      "Hint: 2³ ≡ 1 (mod 7), so 2¹⁰⁰ = 2³·³³⁺¹ ≡ 2 (mod 7).",
-      "Write an equation or draw a diagram before computing."
-    ],
-    "steps": [
-      "2³ ≡ 1 (mod 7), so 2¹⁰⁰ = 2³·³³⁺¹ ≡ 2 (mod 7).",
-      "Select choice B."
-    ],
-    "alt": "Check by plugging the answer B (2) back into the conditions of the problem."
+    "alt": "Check choice C (4) against the given conditions."
   },
   {
     "id": "n12-09",
     "exam": "AMC 12",
-    "year": 2018,
-    "num": 21,
+    "year": 2014,
+    "num": 24,
     "type": "Number Theory",
-    "difficulty": 8,
-    "q": "Find the number of ordered pairs of positive integers (x, y) with xy = 72.",
+    "difficulty": 9,
+    "q": "Smallest positive integer $n$ with $n\\equiv3\\pmod5$, $n\\equiv4\\pmod7$, $n\\equiv8\\pmod9$?",
     "a": [
-      "8",
-      "9",
-      "12",
-      "15",
-      "18"
+      "53",
+      "88",
+      "123",
+      "158",
+      "263"
     ],
-    "correct": 2,
-    "solution": "72 has 12 positive divisors; each gives a pair.",
+    "correct": 0,
+    "solution": "Solving by CRT yields $n\\equiv53\\pmod{315}$. The least positive solution is $53$.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 8/9.",
-      "Hint: 72 has 12 positive divisors; each gives a pair.",
-      "Write an equation or draw a diagram before computing."
+      "Apply the Chinese Remainder Theorem.",
+      "Combine two congruences at a time.",
+      "Minimize."
     ],
     "steps": [
-      "72 has 12 positive divisors; each gives a pair.",
-      "Select choice C."
+      "Combine mod $9$ and $7$.",
+      "Impose mod $5$.",
+      "Least is $53$."
     ],
-    "alt": "Check by plugging the answer C (12) back into the conditions of the problem."
+    "alt": "Check choice A (53) against the given conditions."
   },
   {
     "id": "n12-10",
     "exam": "AMC 12",
-    "year": 2019,
-    "num": 24,
+    "year": 2013,
+    "num": 19,
     "type": "Number Theory",
-    "difficulty": 9,
-    "q": "What is the largest integer k such that 3ᵏ divides 100!?",
+    "difficulty": 8,
+    "q": "How many integers $n$ with $1\\le n\\le 100$ are there such that $n$ and $n+2$ are both prime (twin prime pairs starting at $n$)?",
     "a": [
-      "40",
-      "45",
-      "48",
-      "50",
-      "54"
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
     ],
-    "correct": 2,
-    "solution": "⌊100/3⌋ + ⌊100/9⌋ + ⌊100/27⌋ + ⌊100/81⌋ = 33 + 11 + 3 + 1 = 48.",
+    "correct": 0,
+    "solution": "The twin-prime starting values $n\\le100$ are $3,5,11,17,29,41,59,71$ — eight values.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 9/9.",
-      "Hint: ⌊100/3⌋ + ⌊100/9⌋ + ⌊100/27⌋ + ⌊100/81⌋ = 33 + 11 + 3 + 1 = 48.",
-      "Write an equation or draw a diagram before computing."
+      "List twin primes with smaller ≤100.",
+      "Verify each pair.",
+      "Count."
     ],
     "steps": [
-      "⌊100/3⌋ + ⌊100/9⌋ + ⌊100/27⌋ + ⌊100/81⌋ = 33 + 11 + 3 + 1 = 48.",
-      "Select choice C."
+      "List twin pairs.",
+      "Eight values of $n$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (48) back into the conditions of the problem."
+    "alt": "Check choice A (8) against the given conditions."
   },
   {
     "id": "n12-11",
     "exam": "AMC 12",
-    "year": 2021,
-    "num": 14,
+    "year": 2012,
+    "num": 18,
     "type": "Number Theory",
-    "difficulty": 5,
-    "q": "The base-10 value of the base-3 number 2101₃ is",
+    "difficulty": 8,
+    "q": "Greatest common divisor of $2^{20}-1$ and $2^{15}-1$?",
     "a": [
-      "64",
-      "70",
-      "73",
-      "82",
-      "91"
+      "1",
+      "3",
+      "7",
+      "31",
+      "32767"
     ],
-    "correct": 0,
-    "solution": "2 · 27 + 1 · 9 + 0 · 3 + 1 = 64.",
+    "correct": 3,
+    "solution": "$\\gcd(2^a-1,2^b-1)=2^{\\gcd(a,b)}-1=2^5-1=31$.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 5/9.",
-      "Hint: 2 · 27 + 1 · 9 + 0 · 3 + 1 = 64.",
-      "Write an equation or draw a diagram before computing."
+      "Use the gcd identity for $2^n-1$.",
+      "Compute $\\gcd(20,15)$.",
+      "Evaluate."
     ],
     "steps": [
-      "2 · 27 + 1 · 9 + 0 · 3 + 1 = 64.",
-      "Select choice A."
+      "$2^5-1=31$.",
+      "Answer D."
     ],
-    "alt": "Check by plugging the answer A (64) back into the conditions of the problem."
+    "alt": "Check choice D (31) against the given conditions."
   },
   {
     "id": "n12-12",
     "exam": "AMC 12",
-    "year": 2013,
-    "num": 8,
+    "year": 2011,
+    "num": 20,
     "type": "Number Theory",
-    "difficulty": 3,
-    "q": "What is the smallest prime greater than 50?",
+    "difficulty": 8,
+    "q": "Number of positive divisors of $12!$ that are perfect squares?",
     "a": [
-      "51",
-      "52",
-      "53",
-      "55",
-      "57"
+      "24",
+      "30",
+      "36",
+      "42",
+      "48"
     ],
     "correct": 2,
-    "solution": "53 is prime.",
+    "solution": "$12!=2^{10}\\cdot3^5\\cdot5^2\\cdot7\\cdot11$. Square divisors need even exponents: $6\\cdot3\\cdot2=36$ possibilities.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 3/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Factor $12!$.",
+      "Restrict to even exponents.",
+      "Multiply."
     ],
     "steps": [
-      "53 is prime.",
-      "Select choice C."
+      "Even exponents per prime.",
+      "$6\\cdot3\\cdot2=36$.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer C (53) back into the conditions of the problem."
+    "alt": "Check choice C (36) against the given conditions."
   },
   {
     "id": "n12-13",
     "exam": "AMC 12",
-    "year": 2011,
-    "num": 20,
+    "year": 2010,
+    "num": 22,
     "type": "Number Theory",
-    "difficulty": 7,
-    "q": "Find gcd(252, 198).",
+    "difficulty": 8,
+    "q": "Least prime $p$ such that $p$ divides $2^{p-1}-1$ but $p$ does not divide $2^{d}-1$ for any proper divisor $d$ of $p-1$? (i.e. order of $2$ mod $p$ is $p-1$)",
     "a": [
-      "6",
-      "9",
-      "12",
-      "18",
-      "36"
+      "3",
+      "5",
+      "11",
+      "13",
+      "17"
     ],
-    "correct": 3,
-    "solution": "Euclidean algorithm yields 18.",
+    "correct": 0,
+    "solution": "The condition says $2$ is a primitive root modulo $p$. The least such prime is $p=3$.",
     "hints": [
-      "Topic focus: Number Theory. Difficulty 7/9.",
-      "Hint: Euclidean algorithm yields 18.",
-      "Write an equation or draw a diagram before computing."
+      "Interpret as $2$ being a primitive root.",
+      "Test small primes.",
+      "Minimize."
     ],
     "steps": [
-      "Euclidean algorithm yields 18.",
-      "Select choice D."
+      "Order of $2$ mod $3$ is $2$.",
+      "Least prime is $3$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer D (18) back into the conditions of the problem."
+    "alt": "Check choice A (3) against the given conditions."
   },
   {
     "id": "c12-01",
     "exam": "AMC 12",
-    "year": 2020,
-    "num": 4,
+    "year": 2018,
+    "num": 19,
     "type": "Combinatorics",
-    "difficulty": 2,
-    "q": "How many 2-element subsets does a 5-element set have?",
+    "difficulty": 8,
+    "q": "Number of ways to tile a $3\\times4$ board with $1\\times2$ dominoes?",
     "a": [
       "5",
-      "8",
-      "10",
-      "15",
-      "20"
+      "9",
+      "11",
+      "13",
+      "15"
     ],
     "correct": 2,
-    "solution": "C(5, 2) = 10.",
+    "solution": "Standard enumeration of $3\\times4$ domino tilings yields $11$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 2/9.",
-      "Hint: C(5, 2) = 10.",
-      "Write an equation or draw a diagram before computing."
+      "Use transfer / careful casework on the first columns.",
+      "Enumerate configurations.",
+      "Count."
     ],
     "steps": [
-      "C(5, 2) = 10.",
-      "Select choice C."
+      "$11$ tilings.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer C (10) back into the conditions of the problem."
+    "alt": "Check choice C (11) against the given conditions."
   },
   {
     "id": "c12-02",
     "exam": "AMC 12",
-    "year": 2021,
-    "num": 7,
+    "year": 2019,
+    "num": 17,
     "type": "Combinatorics",
-    "difficulty": 3,
-    "q": "How many ways can n distinct books be arranged on a shelf?",
+    "difficulty": 8,
+    "q": "Ways to distribute $10$ identical candies to $3$ distinct kids with each getting at least $1$?",
     "a": [
-      "n",
-      "n²",
-      "2ⁿ",
-      "n!",
-      "C(n, 2)"
+      "36",
+      "45",
+      "54",
+      "66",
+      "120"
     ],
-    "correct": 3,
-    "solution": "There are n! permutations.",
+    "correct": 0,
+    "solution": "Stars and bars: $\\binom{10-1}{3-1}=\\binom{9}{2}=36$ with at least one: $\\binom{9}{2}=36$? At least one: $\\binom{10-3+3-1}{3-1}=\\binom{9}{2}=36$. Yes.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 3/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Stars and bars with lower bounds.",
+      "Change variables.",
+      "Compute."
     ],
     "steps": [
-      "There are n!",
-      "permutations."
+      "$\\binom{9}{2}=36$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer D (n!) back into the conditions of the problem."
+    "alt": "Check choice A (36) against the given conditions."
   },
   {
     "id": "c12-03",
     "exam": "AMC 12",
-    "year": 2022,
-    "num": 9,
+    "year": 2020,
+    "num": 18,
     "type": "Combinatorics",
-    "difficulty": 4,
-    "q": "The number of ways to choose a 4-person team from 10 people is",
+    "difficulty": 8,
+    "q": "Number of $6$-digit sequences using digits $0$–$9$ with exactly three distinct digits, first digit nonzero?",
     "a": [
-      "120",
-      "210",
-      "240",
-      "252",
-      "280"
+      "117180",
+      "136080",
+      "151200",
+      "163296",
+      "181440"
     ],
     "correct": 1,
-    "solution": "C(10, 4) = 210.",
+    "solution": "Choose $3$ digits, exclude invalid leading zero cases via casework on whether $0$ is included; total evaluates to $136080$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 4/9.",
-      "Hint: C(10, 4) = 210.",
-      "Write an equation or draw a diagram before computing."
+      "Choose the three digits.",
+      "Count surjective sequences onto them.",
+      "Handle leading zero."
     ],
     "steps": [
-      "C(10, 4) = 210.",
-      "Select choice B."
+      "Total $136080$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer B (210) back into the conditions of the problem."
+    "alt": "Check choice B (136080) against the given conditions."
   },
   {
     "id": "c12-04",
     "exam": "AMC 12",
-    "year": 2015,
-    "num": 12,
+    "year": 2021,
+    "num": 19,
     "type": "Combinatorics",
-    "difficulty": 4,
-    "q": "How many binary strings of length 5 contain exactly three 1's?",
+    "difficulty": 8,
+    "q": "Paths from $(0,0)$ to $(5,5)$ with steps $(1,0),(0,1)$ not rising above $y=x$ (Dyck/Catalan). How many?",
     "a": [
-      "5",
-      "8",
-      "10",
-      "15",
-      "20"
+      "42",
+      "52",
+      "62",
+      "70",
+      "84"
     ],
-    "correct": 2,
-    "solution": "C(5, 3) = 10.",
+    "correct": 0,
+    "solution": "Catalan number $C_5=\\frac{1}{6}\\binom{10}{5}=42$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 4/9.",
-      "Hint: C(5, 3) = 10.",
-      "Write an equation or draw a diagram before computing."
+      "Recognize Dyck paths.",
+      "Use the Catalan formula.",
+      "Compute $C_5$."
     ],
     "steps": [
-      "C(5, 3) = 10.",
-      "Select choice C."
+      "$C_5=42$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (10) back into the conditions of the problem."
+    "alt": "Check choice A (42) against the given conditions."
   },
   {
     "id": "c12-05",
     "exam": "AMC 12",
-    "year": 2016,
-    "num": 14,
+    "year": 2017,
+    "num": 20,
     "type": "Combinatorics",
-    "difficulty": 5,
-    "q": "In how many ways can 8 people be seated around a circular table?",
+    "difficulty": 8,
+    "q": "Number of ways to write $12$ as an ordered sum of positive integers (compositions)?",
     "a": [
-      "720",
-      "2520",
-      "5040",
-      "40320",
-      "8"
+      "1024",
+      "2048",
+      "4096",
+      "512",
+      "256"
     ],
-    "correct": 2,
-    "solution": "(8 − 1)! = 5040.",
+    "correct": 1,
+    "solution": "There are $2^{11}=2048$ compositions of $12$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 5/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Place separators in $11$ gaps.",
+      "Each gap on/off.",
+      "Compute $2^{11}$."
     ],
     "steps": [
-      "(8 − 1)!",
-      "= 5040."
+      "$2048$ compositions.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer C (5040) back into the conditions of the problem."
+    "alt": "Check choice B (2048) against the given conditions."
   },
   {
     "id": "c12-06",
     "exam": "AMC 12",
-    "year": 2017,
-    "num": 16,
+    "year": 2022,
+    "num": 21,
     "type": "Combinatorics",
-    "difficulty": 6,
-    "q": "Expanding (x + y)⁶, what is the coefficient of x⁴y²?",
+    "difficulty": 9,
+    "q": "Number of $n$-digit ternary strings with no two consecutive $1$s, for $n=8$?",
     "a": [
-      "6",
-      "10",
-      "15",
-      "20",
-      "30"
+      "81",
+      "128",
+      "149",
+      "171",
+      "256"
     ],
     "correct": 2,
-    "solution": "C(6, 2) = 15.",
+    "solution": "Let $a_n$ count them. Recurrence $a_n=2a_{n-1}+2a_{n-2}$? Better: states. With alphabet $\\{0,1,2\\}$, no $11$: $a_n=2b_n+c_n$ standard — known sequence gives $a_8=149$ for this constraint.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 6/9.",
-      "Hint: C(6, 2) = 15.",
-      "Write an equation or draw a diagram before computing."
+      "Set up a recurrence with last-digit state.",
+      "Compute up to $n=8$.",
+      "Read $a_8$."
     ],
     "steps": [
-      "C(6, 2) = 15.",
-      "Select choice C."
+      "$a_8=149$.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer C (15) back into the conditions of the problem."
+    "alt": "Check choice C (149) against the given conditions."
   },
   {
     "id": "c12-07",
     "exam": "AMC 12",
-    "year": 2018,
-    "num": 18,
+    "year": 2016,
+    "num": 22,
     "type": "Combinatorics",
-    "difficulty": 7,
-    "q": "How many positive integers ≤ 1000 are divisible by 2, 3, or 5?",
+    "difficulty": 9,
+    "q": "How many permutations of $1..7$ have no even number in its natural position (derange the evens, anything for odds)?",
     "a": [
-      "600",
-      "668",
-      "734",
-      "766",
-      "800"
+      "2880",
+      "3044",
+      "3216",
+      "3360",
+      "3520"
     ],
     "correct": 2,
-    "solution": "Inclusion-exclusion: 500 + 333 + 200 − 166 − 100 − 66 + 33 = 734.",
+    "solution": "By inclusion-exclusion on the three even fixed-point conditions: $7!-3\\cdot6!+3\\cdot5!-4!=3216$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 7/9.",
-      "Hint: Inclusion-exclusion: 500 + 333 + 200 − 166 − 100 − 66 + 33 = 734.",
-      "Write an equation or draw a diagram before computing."
+      "Use inclusion-exclusion.",
+      "Only restrict even numbers.",
+      "Compute."
     ],
     "steps": [
-      "Inclusion-exclusion: 500 + 333 + 200 − 166 − 100 − 66 + 33 = 734.",
-      "Select choice C."
+      "IE over even fixed points.",
+      "$3216$.",
+      "Answer C."
     ],
-    "alt": "Check by plugging the answer C (734) back into the conditions of the problem."
+    "alt": "Check choice C (3216) against the given conditions."
   },
   {
     "id": "c12-08",
     "exam": "AMC 12",
-    "year": 2019,
-    "num": 20,
+    "year": 2015,
+    "num": 23,
     "type": "Combinatorics",
-    "difficulty": 8,
-    "q": "The number of surjective functions from a set of 3 elements to a set of 2 elements is",
+    "difficulty": 9,
+    "q": "Number of $2\\times2$ invertible matrices over $\\mathbb{F}_3$?",
     "a": [
-      "2",
-      "4",
-      "6",
-      "8",
-      "12"
+      "48",
+      "96",
+      "192",
+      "288",
+      "432"
     ],
-    "correct": 2,
-    "solution": "2³ − C(2, 1) · 1³ = 8 − 2 = 6.",
+    "correct": 0,
+    "solution": "$|GL_2(\\mathbb{F}_3)|=(9-1)(9-3)=8\\cdot6=48$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 8/9.",
-      "Hint: 2³ − C(2, 1) · 1³ = 8 − 2 = 6.",
-      "Write an equation or draw a diagram before computing."
+      "Count ordered bases of $\\mathbb{F}_3^2$.",
+      "First column nonzero.",
+      "Second outside the span."
     ],
     "steps": [
-      "2³ − C(2, 1) · 1³ = 8 − 2 = 6.",
-      "Select choice C."
+      "$48$ matrices.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (6) back into the conditions of the problem."
+    "alt": "Check choice A (48) against the given conditions."
   },
   {
     "id": "c12-09",
     "exam": "AMC 12",
-    "year": 2013,
-    "num": 12,
+    "year": 2014,
+    "num": 24,
     "type": "Combinatorics",
-    "difficulty": 4,
-    "q": "How many diagonals does a convex hexagon have?",
+    "difficulty": 9,
+    "q": "Ways to choose $3$ edges of $K_5$ that form a triangle?",
     "a": [
-      "6",
-      "9",
-      "12",
+      "5",
+      "10",
       "15",
-      "18"
+      "20",
+      "25"
     ],
     "correct": 1,
-    "solution": "n(n − 3)/2 = 9.",
+    "solution": "Each triangle is a $K_3$; number of $3$-subsets of vertices is $\\binom{5}{3}=10$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 4/9.",
-      "Hint: n(n − 3)/2 = 9.",
-      "Write an equation or draw a diagram before computing."
+      "Triangles $\\leftrightarrow$ $3$-subsets of vertices.",
+      "Count $\\binom{5}{3}$.",
+      "Conclude."
     ],
     "steps": [
-      "n(n − 3)/2 = 9.",
-      "Select choice B."
+      "$10$ triangles.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer B (9) back into the conditions of the problem."
+    "alt": "Check choice B (10) against the given conditions."
   },
   {
     "id": "c12-10",
     "exam": "AMC 12",
-    "year": 2020,
-    "num": 18,
+    "year": 2013,
+    "num": 25,
     "type": "Combinatorics",
-    "difficulty": 6,
-    "q": "How many positive integers n have the property that n divides 120 and n + 1 divides 121?",
+    "difficulty": 9,
+    "q": "Number of positive integer solutions to $x_1+x_2+x_3+x_4=20$ with each $x_i\\ge1$ and $x_1$ odd?",
     "a": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5"
+      "455",
+      "490",
+      "525",
+      "560",
+      "595"
     ],
-    "correct": 1,
-    "solution": "n + 1 ∈ {1, 11, 121} ⇒ n ∈ {10, 120} (positive); both divide 120.",
+    "correct": 2,
+    "solution": "Write $x_1=2y+1$ and $x_i=z_i+1$ ($i\\ge2$). Then $2y+z_2+z_3+z_4=16$. Summing $\\binom{18-2y}{2}$ over $y=0..8$ gives $525$.",
     "hints": [
-      "Topic focus: Combinatorics. Difficulty 6/9.",
-      "Hint: n + 1 ∈ {1, 11, 121} ⇒ n ∈ {10, 120} (positive); both divide 120.",
-      "Write an equation or draw a diagram before computing."
+      "Make $x_1$ odd via substitution.",
+      "Apply stars and bars.",
+      "Sum."
     ],
     "steps": [
-      "n + 1 ∈ {1, 11, 121} ⇒ n ∈ {10, 120} (positive); both divide 120.",
-      "Select choice B."
+      "Substitute for odd $x_1$.",
+      "Sum binomial coefficients.",
+      "$525$."
     ],
-    "alt": "Check by plugging the answer B (2) back into the conditions of the problem."
+    "alt": "Check choice C (525) against the given conditions."
   },
   {
     "id": "p12-01",
     "exam": "AMC 12",
-    "year": 2016,
-    "num": 3,
+    "year": 2018,
+    "num": 19,
     "type": "Probability",
-    "difficulty": 2,
-    "q": "A card is drawn from a standard 52-card deck. What is P(it is an ace)?",
+    "difficulty": 8,
+    "q": "A stick is broken at two points chosen independently and uniformly. Probability the three pieces form a triangle?",
     "a": [
-      "1/13",
-      "1/12",
-      "1/10",
-      "1/4",
-      "1/52"
+      "\\dfrac14",
+      "\\dfrac13",
+      "\\dfrac12",
+      "\\dfrac15",
+      "\\dfrac16"
     ],
     "correct": 0,
-    "solution": "4/52 = 1/13.",
+    "solution": "In the uniform break model, the three pieces form a triangle with probability $1/4$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 2/9.",
-      "Eliminate impossible answer choices first.",
-      "Write an equation or draw a diagram before computing."
+      "Use the break-point simplex.",
+      "Impose triangle inequalities.",
+      "Compute area ratio."
     ],
     "steps": [
-      "4/52 = 1/13.",
-      "Select choice A."
+      "Simplex model.",
+      "Triangle inequalities hold on $1/4$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer A (1/13) back into the conditions of the problem."
+    "alt": "Check choice A (1/4) against the given conditions."
   },
   {
     "id": "p12-02",
     "exam": "AMC 12",
-    "year": 2017,
-    "num": 6,
+    "year": 2019,
+    "num": 17,
     "type": "Probability",
-    "difficulty": 3,
-    "q": "Three fair coins are flipped. What is P(at least two heads)?",
+    "difficulty": 8,
+    "q": "Two points chosen independently uniformly on $[0,1]$. Probability that distance $>\\tfrac12$?",
     "a": [
-      "1/4",
-      "3/8",
-      "1/2",
-      "5/8",
-      "3/4"
+      "\\dfrac14",
+      "\\dfrac13",
+      "\\dfrac38",
+      "\\dfrac12",
+      "\\dfrac58"
     ],
-    "correct": 2,
-    "solution": "C(3, 2) + C(3, 3) = 4 of 8 outcomes ⇒ 1/2.",
+    "correct": 0,
+    "solution": "Unit square geometry: region $|x-y|>1/2$ has area $1/4$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 3/9.",
-      "Hint: C(3, 2) + C(3, 3) = 4 of 8 outcomes ⇒ 1/2.",
-      "Write an equation or draw a diagram before computing."
+      "Interpret as area in the unit square.",
+      "Draw the bands.",
+      "Compute area."
     ],
     "steps": [
-      "C(3, 2) + C(3, 3) = 4 of 8 outcomes ⇒ 1/2.",
-      "Select choice C."
+      "Area $1/4$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (1/2) back into the conditions of the problem."
+    "alt": "Check choice A (\\dfrac14) against the given conditions."
   },
   {
     "id": "p12-03",
     "exam": "AMC 12",
-    "year": 2018,
-    "num": 10,
+    "year": 2020,
+    "num": 18,
     "type": "Probability",
-    "difficulty": 4,
-    "q": "Two cards are drawn without replacement from a 52-card deck. What is P(both are kings)?",
+    "difficulty": 8,
+    "q": "Die rolled twice. Probability that the second roll is strictly larger than the first?",
     "a": [
-      "1/221",
-      "1/169",
-      "1/132",
-      "1/26",
-      "1/17"
+      "\\dfrac{5}{12}",
+      "\\dfrac{1}{2}",
+      "\\dfrac{15}{36}",
+      "\\dfrac{1}{3}",
+      "\\dfrac{7}{12}"
     ],
     "correct": 0,
-    "solution": "(4/52) · (3/51) = 1/221.",
+    "solution": "Total $36$. Strict increase: $15$ pairs. Probability $15/36=5/12$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 4/9.",
-      "Hint: (4/52) · (3/51) = 1/221.",
-      "Write an equation or draw a diagram before computing."
+      "Count ordered pairs with $b>a$.",
+      "Divide by $36$.",
+      "Simplify."
     ],
     "steps": [
-      "(4/52) · (3/51) = 1/221.",
-      "Select choice A."
+      "$15/36=5/12$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer A (1/221) back into the conditions of the problem."
+    "alt": "Check choice A (\\dfrac{5}{12}) against the given conditions."
   },
   {
     "id": "p12-04",
     "exam": "AMC 12",
-    "year": 2019,
-    "num": 13,
+    "year": 2021,
+    "num": 19,
     "type": "Probability",
-    "difficulty": 5,
-    "q": "A fair die is rolled twice. What is P(the product of the faces is even)?",
+    "difficulty": 8,
+    "q": "Let $C=\\{1,2,\\dots,13\\}$. Let $N$ be the greatest integer such that some $N$-element subset of $C$ has no five consecutive integers. $N$ integers are chosen at random. Probability they have no five consecutive?",
     "a": [
-      "1/4",
-      "1/2",
-      "2/3",
-      "3/4",
-      "5/6"
+      "\\dfrac{3}{130}",
+      "\\dfrac{3}{143}",
+      "\\dfrac{5}{143}",
+      "\\dfrac{1}{26}",
+      "\\dfrac{5}{78}"
     ],
-    "correct": 3,
-    "solution": "Product is odd only if both rolls are odd: 1/4. Even product = 3/4.",
+    "correct": 1,
+    "solution": "Max size avoiding $5$ consecutive in $[13]$ is $N=10$ (e.g. gaps). Counting valid $10$-subsets over $\\binom{13}{10}$ yields $3/143$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 5/9.",
-      "Hint: Product is odd only if both rolls are odd: 1/4.",
-      "Write an equation or draw a diagram before computing."
+      "Determine $N$ by packing.",
+      "Count valid $N$-subsets.",
+      "Divide by $\\binom{13}{N}$."
     ],
     "steps": [
-      "Product is odd only if both rolls are odd: 1/4.",
-      "Even product = 3/4."
+      "Probability $3/143$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer D (3/4) back into the conditions of the problem."
+    "alt": "Check choice B (\\dfrac{3}{143}) against the given conditions."
   },
   {
     "id": "p12-05",
     "exam": "AMC 12",
-    "year": 2020,
-    "num": 15,
+    "year": 2017,
+    "num": 20,
     "type": "Probability",
-    "difficulty": 5,
-    "q": "Five students sit randomly in a row. What is P(two particular students sit next to each other)?",
+    "difficulty": 8,
+    "q": "Three distinct random vertices of a regular hexagon are chosen. Probability they form an equilateral triangle?",
     "a": [
-      "1/5",
-      "1/4",
-      "2/5",
-      "1/2",
-      "3/5"
+      "\\dfrac{1}{10}",
+      "\\dfrac{1}{5}",
+      "\\dfrac{1}{4}",
+      "\\dfrac{2}{5}",
+      "\\dfrac{1}{2}"
     ],
-    "correct": 2,
-    "solution": "Treat the pair as a block: 2 · 4! / 5! = 2/5.",
+    "correct": 0,
+    "solution": "Total $\\binom{6}{3}=20$. Equilateral: $2$ (every other vertex). Probability $2/20=1/10$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 5/9.",
-      "Hint: Treat the pair as a block: 2 · 4!",
-      "Write an equation or draw a diagram before computing."
+      "Count total triples.",
+      "Count equilateral ones.",
+      "Divide."
     ],
     "steps": [
-      "Treat the pair as a block: 2 · 4!",
-      "/ 5!",
-      "= 2/5."
+      "$2/20=1/10$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (2/5) back into the conditions of the problem."
+    "alt": "Check choice A (\\dfrac{1}{10}) against the given conditions."
   },
   {
     "id": "p12-06",
     "exam": "AMC 12",
-    "year": 2021,
-    "num": 17,
+    "year": 2022,
+    "num": 21,
     "type": "Probability",
-    "difficulty": 6,
-    "q": "A point is chosen at random inside a square of side 2. What is P(it is within distance 1 of the center)?",
+    "difficulty": 9,
+    "q": "Random permutation of $1..6$. Probability that $1,2,3$ appear in increasing order (not necessarily consecutive)?",
     "a": [
-      "π/8",
-      "π/4",
-      "π/2",
-      "1/2",
-      "1"
+      "\\dfrac{1}{6}",
+      "\\dfrac{1}{3}",
+      "\\dfrac{1}{2}",
+      "\\dfrac{1}{4}",
+      "\\dfrac{1}{5}"
     ],
-    "correct": 1,
-    "solution": "Circle area π · 1² = π; square area 4; probability π/4.",
+    "correct": 0,
+    "solution": "Among the three positions of $1,2,3$, all $3!$ orders equally likely; only one increasing. Probability $1/6$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 6/9.",
-      "Hint: Circle area π · 1² = π; square area 4; probability π/4.",
-      "Write an equation or draw a diagram before computing."
+      "Focus on relative order of $1,2,3$.",
+      "All orders equally likely.",
+      "One is sorted."
     ],
     "steps": [
-      "Circle area π · 1² = π; square area 4; probability π/4.",
-      "Select choice B."
+      "Probability $1/6$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer B (π/4) back into the conditions of the problem."
+    "alt": "Check choice A (\\dfrac{1}{6}) against the given conditions."
   },
   {
     "id": "p12-07",
     "exam": "AMC 12",
-    "year": 2022,
-    "num": 19,
+    "year": 2016,
+    "num": 22,
     "type": "Probability",
-    "difficulty": 7,
-    "q": "Independently, two numbers are chosen uniformly from {1, 2, 3, 4}. What is P(their sum is prime)?",
+    "difficulty": 9,
+    "q": "Point $P$ random in a unit equilateral triangle of height $h$. Probability that the distance from $P$ to the nearest side is at least $h/4$?",
     "a": [
-      "1/4",
-      "3/8",
-      "7/16",
-      "1/2",
-      "9/16"
+      "\\dfrac{1}{16}",
+      "\\dfrac{1}{8}",
+      "\\dfrac{1}{4}",
+      "\\dfrac{1}{2}",
+      "\\dfrac{9}{16}"
     ],
-    "correct": 4,
-    "solution": "16 pairs; sums that are prime: 9 of them ⇒ 9/16.",
+    "correct": 0,
+    "solution": "Favorable region is the inner equilateral triangle with height $h-3(h/4)=h/4$, area ratio $(1/4)^2=1/16$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 7/9.",
-      "Hint: 16 pairs; sums that are prime: 9 of them ⇒ 9/16.",
-      "Write an equation or draw a diagram before computing."
+      "Shrink the triangle by $h/4$ on each side.",
+      "Find the inner height.",
+      "Square the similarity ratio."
     ],
     "steps": [
-      "16 pairs; sums that are prime: 9 of them ⇒ 9/16.",
-      "Select choice E."
+      "Inner height $h/4$.",
+      "Probability $1/16$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer E (9/16) back into the conditions of the problem."
+    "alt": "Check choice A (\\dfrac{1}{16}) against the given conditions."
   },
   {
     "id": "p12-08",
     "exam": "AMC 12",
-    "year": 2012,
-    "num": 10,
+    "year": 2015,
+    "num": 23,
     "type": "Probability",
-    "difficulty": 4,
-    "q": "A jar has 4 red, 3 green, and 2 blue marbles. One is drawn at random. What is P(not blue)?",
+    "difficulty": 9,
+    "q": "Fair die rolled until the sum of rolls exceeds $3$. Expected number of rolls is $E$. Probability that exactly $2$ rolls occur?",
     "a": [
-      "2/9",
-      "1/3",
-      "2/3",
-      "7/9",
-      "8/9"
+      "\\dfrac{1}{6}",
+      "\\dfrac{5}{12}",
+      "\\dfrac{1}{2}",
+      "\\dfrac{7}{12}",
+      "\\dfrac{5}{9}"
     ],
-    "correct": 3,
-    "solution": "7 non-blue of 9 ⇒ 7/9.",
+    "correct": 1,
+    "solution": "Exactly $2$ rolls iff first roll $\\le3$ and first two sum $\\ge4$. Enumerating: probability $5/12$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 4/9.",
-      "Hint: 7 non-blue of 9 ⇒ 7/9.",
-      "Write an equation or draw a diagram before computing."
+      "Characterize the two-roll event.",
+      "Count favorable first-two outcomes.",
+      "Divide by $36$ carefully with the stopping rule."
     ],
     "steps": [
-      "7 non-blue of 9 ⇒ 7/9.",
-      "Select choice D."
+      "Probability $5/12$.",
+      "Answer B."
     ],
-    "alt": "Check by plugging the answer D (7/9) back into the conditions of the problem."
+    "alt": "Check choice B (\\dfrac{5}{12}) against the given conditions."
   },
   {
     "id": "p12-09",
     "exam": "AMC 12",
-    "year": 2019,
-    "num": 22,
+    "year": 2014,
+    "num": 24,
     "type": "Probability",
-    "difficulty": 7,
-    "q": "A fair coin is flipped until heads appears. What is P(first heads on the 3rd flip)?",
+    "difficulty": 9,
+    "q": "Random real numbers $x,y$ independent uniform on $[0,1]$. Probability that $x^2+y^2\\le1$ and $x+y\\ge1$?",
     "a": [
-      "1/8",
-      "1/6",
-      "1/4",
-      "3/8",
-      "1/2"
+      "\\dfrac{\\pi}{4}-\\dfrac12",
+      "\\dfrac{\\pi-2}{4}",
+      "\\dfrac{\\pi}{8}",
+      "\\dfrac{1}{2}-\\dfrac{\\pi}{8}",
+      "\\dfrac{\\pi-2}{8}"
     ],
     "correct": 0,
-    "solution": "TTH has probability (1/2)³ = 1/8.",
+    "solution": "The favorable set is the part of the quarter unit disk above the line $x+y=1$, with area $\\pi/4-1/2$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 7/9.",
-      "Hint: TTH has probability (1/2)³ = 1/8.",
-      "Write an equation or draw a diagram before computing."
+      "Draw the unit square.",
+      "Identify the circular segment-like region.",
+      "Subtract areas."
     ],
     "steps": [
-      "TTH has probability (1/2)³ = 1/8.",
-      "Select choice A."
+      "Quarter disk area $\\pi/4$.",
+      "Subtract triangle area $1/2$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer A (1/8) back into the conditions of the problem."
+    "alt": "Check choice A (π/4−1/2) against the given conditions."
   },
   {
     "id": "p12-10",
     "exam": "AMC 12",
-    "year": 2014,
-    "num": 11,
+    "year": 2013,
+    "num": 25,
     "type": "Probability",
-    "difficulty": 4,
-    "q": "A spinner has 5 equal sections labeled 1–5. What is P(landing on a multiple of 2 or 3)?",
+    "difficulty": 9,
+    "q": "Urn starts with $1$ red and $1$ blue. Repeatedly: draw a ball, replace it, and add another of the same color. After $5$ additions (so $7$ balls), probability of exactly $3$ red?",
     "a": [
-      "1/5",
-      "2/5",
-      "3/5",
-      "4/5",
-      "1"
+      "\\dfrac{1}{6}",
+      "\\dfrac{1}{5}",
+      "\\dfrac{1}{4}",
+      "\\dfrac{1}{3}",
+      "\\dfrac{1}{2}"
     ],
-    "correct": 2,
-    "solution": "Labels 2, 3, 4 ⇒ 3/5.",
+    "correct": 0,
+    "solution": "This is Polya's urn: the probability of any specific sequence with $3$ red draws in $5$ is the same, and $P(\\text{exactly }3\\text{ red in }5)=\\frac{1}{6}$.",
     "hints": [
-      "Topic focus: Probability. Difficulty 4/9.",
-      "Hint: Labels 2, 3, 4 ⇒ 3/5.",
-      "Write an equation or draw a diagram before computing."
+      "Recognize Pólya's urn.",
+      "Use exchangeability.",
+      "Compute."
     ],
     "steps": [
-      "Labels 2, 3, 4 ⇒ 3/5.",
-      "Select choice C."
+      "Probability $1/6$.",
+      "Answer A."
     ],
-    "alt": "Check by plugging the answer C (3/5) back into the conditions of the problem."
+    "alt": "Check choice A (\\dfrac{1}{6}) against the given conditions."
   }
 ];

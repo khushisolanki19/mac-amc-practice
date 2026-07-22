@@ -9,7 +9,7 @@ Local-first AMC 10/12 trainer with practice modes, mock exams, hints, progress c
 
 ## Features (shipped)
 
-- 120+ original practice problems with hints, step-by-step solutions, alt checks
+- 120+ original contest-depth practice problems (AMC 10/12 style, difficulty 6–9) with hints, step-by-step solutions, alt checks
 - Official archive links: AMC 10/12 A & B, **2000–2024** (~2,500 problem links)
 - Modes: random, topic, adaptive, incorrect-only, bookmarks, daily challenge + streaks
 - Timed 25-question mock exams with official-style scoring (6 / 1.5 / 0)
